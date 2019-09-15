@@ -1,13 +1,9 @@
 const express = require('express')
 const app = express()
 
-// View Engine + Url encoding
-app.set("views", __dirname + "/views");
-app.set('view engine', 'ejs');
-
 // routes
 app.get('/', function (req, res) {
-  res.render("index.ejs");
+  res.sendfile("views/index.html");
 })
 
 app.get('/api/test', function (req, res) {
@@ -15,5 +11,5 @@ app.get('/api/test', function (req, res) {
 })
 
 // open on port 80
-app.listen(80)
+app.listen(8080)
 console.log("application is running ...")
