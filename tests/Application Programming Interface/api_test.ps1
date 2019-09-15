@@ -1,0 +1,1 @@
+Invoke-WebRequest -Uri "http://70.37.77.126/api/test"
