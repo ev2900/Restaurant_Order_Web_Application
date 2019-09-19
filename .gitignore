@@ -1,0 +1,6 @@
+# Ignore Node Modules
+node_modules/
+
+# Ignore IDE-specific files
+package.json
+package-lock.json
