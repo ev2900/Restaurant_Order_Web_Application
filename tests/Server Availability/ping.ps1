@@ -1,1 +1,0 @@
-Test-Connection http://70.37.77.126/
