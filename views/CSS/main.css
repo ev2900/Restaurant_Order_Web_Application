@@ -2,6 +2,10 @@
   font-family: myfont;
   src: url(../fonts/ufonts.com_tw-cen-mt.ttf);
 }
+.img-responsive{
+  width:100%;
+  height:auto;
+}
 .overlay-effect {
   content: "";
   position: absolute;
