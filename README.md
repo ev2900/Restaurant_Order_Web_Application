@@ -1,1 +1,125 @@
-# Restaurant_Order_Web_Application
+# Restaurant Order Web Application
+
+## Application Programming Interface (API)
+The following section provides an example(s) request for each API end point.
+
+### Create Order 
+```
+Http verb: POST
+Url: https://prod-28.centralus.logic.azure.com:443/workflows/7c1ad9e5dcad4006b753aec1e38a03af/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=s6j6VK6JcnXrxCkz3saCQYWnW4SO6qZRchpdg6aWzMI
+Headers:'Content-Type': 'application/json'
+Body (example):
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456",
+    "ITEM": "Pineapple",
+    "QUANTITY": 1,
+    "STATUS": "In cart"
+}
+Response (example):
+{
+    "@odata.context": "https://sql-cus.azconn-cus.p.azurewebsites.net/v2/$metadata#datasets('restaurant546.database.windows.net%2Crestaurant')/tables('%255Bdbo%255D.%255BORDER%255D')/items/$entity",
+    "@odata.etag": "",
+    "ItemInternalId": "e3c3e3a3-1e06-49ab-932d-226e32806f0d",
+    "ORDER_ID": 12,
+    "CREATE_TIME": "2019-09-24T19:51:36.6630000",
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456",
+    "ITEM": "Pineapple",
+    "QUANTITY": 1,
+    "STATUS": "In cart"
+}  
+```
+
+### Get Cart 
+```
+Http verb: POST
+Url: https://prod-28.centralus.logic.azure.com:443/workflows/dfc9c8d5d66f4de4bb624ee5a028313c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8Ol6v5iRX72ZyaptoqnaDjw9A-QZk2vmC3LxoRusw2Q
+Body (example):
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456"
+}
+Response (example):
+{
+    "OutputParameters": {},
+    "ResultSets": {
+        "Table1": [
+            {
+                "ORDER_ID": 10,
+                "CREATE_TIME": "2019-09-24T18:37:07.76",
+                "CONTACT_NAME": "William Smith",
+                "CONTACT_PHONE": "1 (912) 234 3456",
+                "ITEM": "Pineapple",
+                "QUANTITY": 1,
+                "STATUS": "In cart"
+            }
+        ]
+    }
+}
+```
+
+### Get Order
+```
+Http verb: POST
+Url: https://prod-00.centralus.logic.azure.com:443/workflows/0274b0815d154d7ba8d196cf673d6f52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XOQgBWSe8M78klr0B51omcpP1fwlCND-z2lvaiLMdG8
+Body (example):
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456"
+}
+Response (example):
+{
+    "OutputParameters": {},
+    "ResultSets": {
+        "Table1": [
+            {
+                "ORDER_ID": 13,
+                "CREATE_TIME": "2019-09-24T20:32:23.167",
+                "CONTACT_NAME": "William Smith",
+                "CONTACT_PHONE": "1 (912) 234 3456",
+                "ITEM": "Pasta",
+                "QUANTITY": 1,
+                "STATUS": "Cooking"
+            },
+            {
+                "ORDER_ID": 14,
+                "CREATE_TIME": "2019-09-24T20:33:19.77",
+                "CONTACT_NAME": "William Smith",
+                "CONTACT_PHONE": "1 (912) 234 3456",
+                "ITEM": "Hamburger",
+                "QUANTITY": 1,
+                "STATUS": "Out for delivery"
+            }
+        ]
+    }
+}
+```
+
+### Get History 
+```
+Http verb: POST
+Url: https://prod-31.centralus.logic.azure.com:443/workflows/23df81c62d1d44bda302a21c48a94353/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=un4IehybnRCYypsaIAIsimFBT493NbUieak9HKrEgY8
+Body (example):
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456"
+}
+Response (example):
+{
+    "OutputParameters": {},
+    "ResultSets": {
+        "Table1": [
+            {
+                "ORDER_ID": 15,
+                "CREATE_TIME": "2019-09-24T20:33:53.883",
+                "CONTACT_NAME": "William Smith",
+                "CONTACT_PHONE": "1 (912) 234 3456",
+                "ITEM": "Fruit",
+                "QUANTITY": 1,
+                "STATUS": "Delivered"
+            }
+        ]
+    }
+}
+```
