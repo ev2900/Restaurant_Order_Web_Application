@@ -27,4 +27,7 @@ INSERT INTO [ORDER]
 -- example select
 SELECT * FROM [ORDER];
 
+-- example delete row
+DELETE FROM [ORDER] WHERE CONTACT_PHONE='1 516 965 2497'
+
 */
