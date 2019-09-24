@@ -1,22 +1,30 @@
 
--- drop table if exists
+-- drop table if exists drop it
 IF OBJECT_ID('ORDER', 'U') IS NOT NULL DROP TABLE [ORDER];
 
 -- create table
-CREATE TABLE [ORDER] (
-	ORDER_ID INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
-	CREATE_TIME DATETIME DEFAULT CURRENT_TIMESTAMP,
-	CONTACT_NAME NVARCHAR(500),
-	CONTACT_PHONE NVARCHAR(500), 
-	[STATUS] NVARCHAR(100),
-	ITEM_1 NVARCHAR(500),
-	QUANTITY_1 INT,
-	ITEM_2 NVARCHAR(500),
-	QUANTITY_2 INT,
-	ITEM_3 NVARCHAR(500),
-	QUANTITY_3 INT,
-	ITEM_4 NVARCHAR(500),
-	QUANTITY_4 INT,
-	ITEM_5 NVARCHAR(500),
-	QUANTITY_5 INT
+CREATE TABLE [dbo].[ORDER](
+	[ORDER_ID] [int] IDENTITY(1,1) NOT NULL,
+	[CREATE_TIME] [datetime] NULL,
+	[CONTACT_NAME] [nvarchar](500) NULL,
+	[CONTACT_PHONE] [nvarchar](500) NULL,
+	[ITEM] [nvarchar](500) NULL,
+	[QUANTITY] [int] NULL,
+	[STATUS] [nvarchar](100) NULL
 );
+
+/*
+-- example insert statment
+INSERT INTO [ORDER] 
+	(
+		[CREATE_TIME], [CONTACT_NAME], [CONTACT_PHONE],  [ITEM], [QUANTITY], [STATUS]      
+	) 
+	VALUES 
+	(
+		GETDATE(), 'Christopher Sharkey', '1 (516) 965 2497', 'Sushi', 1, 'Delivered'
+	);
+
+-- example select
+SELECT * FROM [ORDER];
+
+*/
