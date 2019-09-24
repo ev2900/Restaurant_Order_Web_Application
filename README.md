@@ -1,6 +1,7 @@
 # Restaurant Order Web Application
+SWENG 894 Capstone Project
 
-## Application Programming Interface (API)
+## Application Programming Interface
 The following section provides an example(s) request for each API end point.
 
 ### Create Order 
