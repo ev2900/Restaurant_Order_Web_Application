@@ -16,16 +16,9 @@
                     "body": {
                         "CONTACT_NAME": "@triggerBody()?['CONTACT_NAME']",
                         "CONTACT_PHONE": "@triggerBody()?['CONTACT_PHONE']",
-                        "ITEM_1": "@triggerBody()?['ITEM_1']",
-                        "ITEM_2": "@triggerBody()?['ITEM_2']",
-                        "ITEM_3": "@triggerBody()?['ITEM_3']",
-                        "ITEM_4": "@triggerBody()?['ITEM_4']",
-                        "ITEM_5": "@triggerBody()?['ITEM_5']",
-                        "QUANTITY_1": "@triggerBody()?['QUANTITY_1']",
-                        "QUANTITY_2": "@triggerBody()?['QUANTITY_2']",
-                        "QUANTITY_3": "@triggerBody()?['QUANTITY_3']",
-                        "QUANTITY_4": "@triggerBody()?['QUANTITY_4']",
-                        "QUANTITY_5": "@triggerBody()?['QUANTITY_5']",
+                        "CREATE_TIME": "@{utcNow()}",
+                        "ITEM": "@triggerBody()?['ITEM']",
+                        "QUANTITY": "@triggerBody()?['QUANTITY']",
                         "STATUS": "@triggerBody()?['STATUS']"
                     },
                     "host": {
@@ -41,9 +34,7 @@
             },
             "Response": {
                 "inputs": {
-                    "body": {
-                        "Status": "Success"
-                    },
+                    "body": "@body('Insert_row_(V2)')",
                     "statusCode": 200
                 },
                 "kind": "Http",
@@ -74,34 +65,10 @@
                             "CONTACT_PHONE": {
                                 "type": "string"
                             },
-                            "ITEM_1": {
+                            "ITEM": {
                                 "type": "string"
                             },
-                            "ITEM_2": {
-                                "type": "string"
-                            },
-                            "ITEM_3": {
-                                "type": "string"
-                            },
-                            "ITEM_4": {
-                                "type": "string"
-                            },
-                            "ITEM_5": {
-                                "type": "string"
-                            },
-                            "QUANTITY_1": {
-                                "type": "number"
-                            },
-                            "QUANTITY_2": {
-                                "type": "number"
-                            },
-                            "QUANTITY_3": {
-                                "type": "number"
-                            },
-                            "QUANTITY_4": {
-                                "type": "number"
-                            },
-                            "QUANTITY_5": {
+                            "QUANTITY": {
                                 "type": "number"
                             },
                             "STATUS": {
