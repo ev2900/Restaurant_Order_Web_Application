@@ -11,27 +11,30 @@
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
-            "Get_rows_(V2)": {
+            "Execute_a_SQL_query_(V2)": {
                 "inputs": {
+                    "body": {
+                        "query": "SELECT * FROM [IN_PROGRESS] WHERE [CONTACT_NAME] ='@{triggerBody()?['CONTACT_NAME']}' AND [CONTACT_PHONE] ='@{triggerBody()?['CONTACT_PHONE']}';"
+                    },
                     "host": {
                         "connection": {
                             "name": "@parameters('$connections')['sql']['connectionId']"
                         }
                     },
-                    "method": "get",
-                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('restaurant546.database.windows.net'))},@{encodeURIComponent(encodeURIComponent('restaurant'))}/tables/@{encodeURIComponent(encodeURIComponent('[dbo].[ORDER]'))}/items"
+                    "method": "post",
+                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('restaurant546.database.windows.net'))},@{encodeURIComponent(encodeURIComponent('restaurant'))}/query/sql"
                 },
                 "runAfter": {},
                 "type": "ApiConnection"
             },
             "Response": {
                 "inputs": {
-                    "body": "@body('Get_rows_(V2)')",
+                    "body": "@body('Execute_a_SQL_query_(V2)')",
                     "statusCode": 200
                 },
                 "kind": "Http",
                 "runAfter": {
-                    "Get_rows_(V2)": [
+                    "Execute_a_SQL_query_(V2)": [
                         "Succeeded"
                     ]
                 },
@@ -49,7 +52,17 @@
         "triggers": {
             "manual": {
                 "inputs": {
-                    "schema": {}
+                    "schema": {
+                        "properties": {
+                            "CONTACT_NAME": {
+                                "type": "string"
+                            },
+                            "CONTACT_PHONE": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
                 },
                 "kind": "Http",
                 "type": "Request"
