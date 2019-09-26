@@ -46,14 +46,15 @@ $(function (){
                         url: 'https://prod-28.centralus.logic.azure.com:443/workflows/7c1ad9e5dcad4006b753aec1e38a03af/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=s6j6VK6JcnXrxCkz3saCQYWnW4SO6qZRchpdg6aWzMI',
                         data: order,
                         success: function(resp){
-                            setTimeout(alert('success'), 4000);
+                            console.log('success');
+                            window.location.href ='cart.html';
                         },
                         error: function() {
-                            alert('error');
+                            console.log('error');
                         }
                     });
 
-                    setTimeout(alert(order), 4000);
+                    // setTimeout(alert(order), 4000);
                 }
 
             }
