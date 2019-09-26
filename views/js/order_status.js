@@ -18,7 +18,7 @@ $(function (){
             headers: { 
                 'Content-Type': 'application/json'
             },
-            url: 'https://prod-28.centralus.logic.azure.com:443/workflows/dfc9c8d5d66f4de4bb624ee5a028313c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8Ol6v5iRX72ZyaptoqnaDjw9A-QZk2vmC3LxoRusw2Q',
+            url: 'https://prod-00.centralus.logic.azure.com:443/workflows/0274b0815d154d7ba8d196cf673d6f52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XOQgBWSe8M78klr0B51omcpP1fwlCND-z2lvaiLMdG8',
             data: person,
             success: function(resp){
                 
@@ -27,7 +27,7 @@ $(function (){
                     // cart.append(each.ITEM + ' ' + each.QUANTITY + ' ');
                     
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY);
+                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.STATUS);
                     node.appendChild(textnode);
                     document.getElementById("cart").appendChild(node);
 
