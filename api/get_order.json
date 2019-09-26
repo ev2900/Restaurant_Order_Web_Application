@@ -29,7 +29,7 @@
             },
             "Response": {
                 "inputs": {
-                    "body": "@body('Execute_a_SQL_query_(V2)')",
+                    "body": "@body('Execute_a_SQL_query_(V2)')?['resultsets']",
                     "statusCode": 200
                 },
                 "kind": "Http",
