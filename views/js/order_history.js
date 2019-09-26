@@ -6,7 +6,7 @@ $(function (){
         var contact_name = ca[0].replace("name=","")
         var contact_phone = ca[1].replace(" phone=","") 
 
-        var $cart = $('#order_status');
+        var $cart = $('#cart');
 
         var person = JSON.stringify({
             "CONTACT_NAME": contact_name,
@@ -18,14 +18,14 @@ $(function (){
             headers: { 
                 'Content-Type': 'application/json'
             },
-            url: 'https://prod-00.centralus.logic.azure.com:443/workflows/0274b0815d154d7ba8d196cf673d6f52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XOQgBWSe8M78klr0B51omcpP1fwlCND-z2lvaiLMdG8',
+            url: 'https://prod-31.centralus.logic.azure.com:443/workflows/23df81c62d1d44bda302a21c48a94353/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=un4IehybnRCYypsaIAIsimFBT493NbUieak9HKrEgY8',
             data: person,
             success: function(resp){
                 
                 $.each(resp.Table1, function(i, each) {
-                
+                            
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.STATUS);
+                    var textnode = document.createTextNode(each.CREATE_TIME + ' | ' + each.ITEM + ' | ' + each.QUANTITY);
                     node.appendChild(textnode);
                     document.getElementById("cart").appendChild(node);
 
