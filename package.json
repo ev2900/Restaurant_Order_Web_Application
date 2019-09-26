@@ -22,7 +22,7 @@
     "express": "^4.13.4",
     "mongoose": "4.10.8",
     "node-restful": "^0.2.5",
-    "nodemon": "^1.9.2",
+    "nodemon": "^1.19.2",
     "sendgrid": "^2.0.0"
   }
 }
