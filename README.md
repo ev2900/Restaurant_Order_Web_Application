@@ -45,6 +45,7 @@ Response (example):
 ```
 Http verb: POST
 Url: https://prod-28.centralus.logic.azure.com:443/workflows/dfc9c8d5d66f4de4bb624ee5a028313c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8Ol6v5iRX72ZyaptoqnaDjw9A-QZk2vmC3LxoRusw2Q
+Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
@@ -73,6 +74,7 @@ Response (example):
 ```
 Http verb: POST
 Url: https://prod-00.centralus.logic.azure.com:443/workflows/0274b0815d154d7ba8d196cf673d6f52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XOQgBWSe8M78klr0B51omcpP1fwlCND-z2lvaiLMdG8
+Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
@@ -110,6 +112,7 @@ Response (example):
 ```
 Http verb: POST
 Url: https://prod-31.centralus.logic.azure.com:443/workflows/23df81c62d1d44bda302a21c48a94353/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=un4IehybnRCYypsaIAIsimFBT493NbUieak9HKrEgY8
+Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
@@ -138,6 +141,7 @@ Response (example):
 ```
 Http verb: POST
 Url: https://prod-11.centralus.logic.azure.com:443/workflows/3db59ce21d324c7d8a21e69a2f24ddf7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=HyCGNasa6QEMTNfYyrDh4qTquA8UhytkmyIiEdVlbQU 
+Headers:'Content-Type': 'application/json'
 Body (example):
 {
 	"ORDER_ID": 28
@@ -148,10 +152,11 @@ Response (example):
 }
 ```
 
-### Delete Order 
+### Edit Order 
 ```
 Http verb: POST
 Url: https://prod-01.centralus.logic.azure.com:443/workflows/706e96b0172549f988570b5016599d0a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O-ALExSXWm7vYGkJXcuGmiYfCumrctb3QqgCuu7fglM
+Headers:'Content-Type': 'application/json'
 Body (example): 
 {
 	"ORDER_ID": 24,
