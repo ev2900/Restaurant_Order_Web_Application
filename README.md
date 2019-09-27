@@ -147,3 +147,20 @@ Response (example):
     "status": "success"
 }
 ```
+
+### Delete Order 
+```
+Http verb: POST
+Url: https://prod-01.centralus.logic.azure.com:443/workflows/706e96b0172549f988570b5016599d0a/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O-ALExSXWm7vYGkJXcuGmiYfCumrctb3QqgCuu7fglM
+Body (example): 
+{
+	"ORDER_ID": 24,
+	"ITEM":"Pizza",
+	"QUANTITY":"1",
+	"STATUS":"In cart"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
