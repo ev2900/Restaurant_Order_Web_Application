@@ -1,6 +1,15 @@
 # Restaurant Order Web Application
 SWENG 894 Capstone Project. Application is hosted at **[70.37.77.126](http://70.37.77.126/)**
 
+## Front End (User Interface)
+The front end of the application has the following page 
+
+* cart
+* index
+* order_history
+* order_status
+* place_order
+
 ## Application Programming Interface
 The following section provides an example(s) request for each API end point.
 
@@ -122,5 +131,19 @@ Response (example):
             }
         ]
     }
+}
+```
+
+### Delete Order 
+```
+Http verb: POST
+Url: https://prod-11.centralus.logic.azure.com:443/workflows/3db59ce21d324c7d8a21e69a2f24ddf7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=HyCGNasa6QEMTNfYyrDh4qTquA8UhytkmyIiEdVlbQU 
+Body (example):
+{
+	"ORDER_ID": 28
+}
+Response (example):
+{
+    "status": "success"
 }
 ```
