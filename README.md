@@ -10,7 +10,7 @@ The front end of the application has the following page
 * order_status
 * place_order
 
-## Application Programming Interface
+## Middleware (Application Programming Interfaces)
 The following section provides an example(s) request for each API end point.
 
 ### Create Order 
@@ -164,3 +164,14 @@ Response (example):
     "status": "success"
 }
 ```
+
+## Back End (Database)
+A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
+
+### Table
+* ORDER
+
+### View
+* CART
+* HISTORY
+* IN_PROGRESS
