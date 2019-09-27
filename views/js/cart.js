@@ -26,9 +26,10 @@ $(function (){
                                         
                     var node = document.createElement("li");
                     var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY);
+                    //var htmlnode = document.createElement("<input type='submit' value='Edit'>")
                     node.appendChild(textnode);
                     document.getElementById("cart").appendChild(node);
-                    
+
                 });
                 
                 console.log(resp);
