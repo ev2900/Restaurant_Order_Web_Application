@@ -1,5 +1,5 @@
 # Restaurant Order Web Application
-SWENG 894 Capstone Project
+SWENG 894 Capstone Project. Application is hosted at **70.37.77.126**
 
 ## Application Programming Interface
 The following section provides an example(s) request for each API end point.
