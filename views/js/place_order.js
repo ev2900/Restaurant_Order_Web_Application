@@ -10,11 +10,11 @@ $(function (){
         var $pizza = $('#pizza');
         var $sushi = $('#sushi');
         var $pasta = $('#pasta');
-        var $sandwhich = $('#sandwhich');
+        var $sandwhich = $('#sandwich');
         var $soda = $('#soda');
 
         var order_combined = [$pizza, $sushi, $pasta, $sandwhich, $soda];
-        var menu = ['Pizza', 'Sushi', 'Pasta', 'Sandwhich', 'Soda'];
+        var menu = ['Pizza', 'Sushi', 'Pasta', 'Sandwich', 'Soda'];
     
         $('#order').on('submit', function(ev) {
             
