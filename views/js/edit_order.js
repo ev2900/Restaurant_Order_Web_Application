@@ -55,7 +55,7 @@ $(function (){
                     node.appendChild(lineBreak);
                     
                     // Listed cart item
-                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY);
+                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY + ' | ');
                     node.appendChild(textnode);
 
                     // Create delete button to be next to cart item
