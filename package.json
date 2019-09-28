@@ -4,25 +4,20 @@
   "description": "",
   "main": "views/index.js",
   "scripts": {
-    "test": ""
+    "test": "tests/"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ev2900/Restaurant_Order_Web_Application"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christopher Sharkey",
+  "license": "",
   "bugs": {
     "url": ""
   },
   "homepage": "https://github.com/ev2900/Restaurant_Order_Web_Application#readme",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "ejs": "^2.5.7",
     "express": "^4.13.4",
-    "mongoose": "4.10.8",
-    "node-restful": "^0.2.5",
-    "nodemon": "^1.19.2",
-    "sendgrid": "^2.0.0"
+    "path": "^0.12.7"
   }
 }
