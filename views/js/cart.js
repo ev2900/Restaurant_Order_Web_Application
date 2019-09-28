@@ -25,6 +25,7 @@ $(function (){
                 $.each(resp.Table1, function(i, each) {
                                         
                     var node = document.createElement("li");
+                    
                     var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY);
                     node.appendChild(textnode);
                     
