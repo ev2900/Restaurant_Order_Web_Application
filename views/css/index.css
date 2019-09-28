@@ -7,5 +7,9 @@
 }
 
 .input-box {
-    width: 70%;
+    width: 75%;
+}
+
+.submit {
+    font-size: 18px;
 }
