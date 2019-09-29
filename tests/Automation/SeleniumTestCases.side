@@ -1,0 +1,450 @@
+{
+  "id": "880a5d0d-397b-42c0-965e-a18efcb3bfcf",
+  "version": "2.0",
+  "name": "Restaurant Ordering",
+  "url": "http://70.37.77.126",
+  "tests": [{
+    "id": "0b361e9b-dddd-43ec-9b44-7c330f21331d",
+    "name": "TC_3.0",
+    "commands": [{
+      "id": "3c6bbaf6-9ab2-4d25-a83e-6444a4905f8b",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81a0151f-d328-4f5b-ba9b-6a0f43d5edea",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b340055b-67e6-4223-b16e-02a122317573",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09853453-a80a-41a0-a352-1903eb35b54c",
+      "comment": "",
+      "command": "type",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "5a78c97b-9b28-4076-9d72-1f812d388247",
+      "comment": "",
+      "command": "click",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef02e61a-76be-40c9-af00-1f451db301a0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03c57472-fe42-4e19-9f98-4e47de946b41",
+      "comment": "",
+      "command": "pause",
+      "target": "4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd307f0d-4be0-410f-8b47-d109c555e577",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=li",
+      "targets": [
+        ["css=li", "css:finder"],
+        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Item: Pizza\nQuantity: 1\n\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d8cbe9f2-44c4-4518-97f2-e162472eec13",
+    "name": "TC_2.0",
+    "commands": [{
+      "id": "c34d46a4-9637-4ab4-b3c1-6a0258e11cd7",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0da7c68e-71e7-4faf-9cec-0315b330c70b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "887x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9264cccf-713a-4b4b-b5f7-1c35c4f918bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .btn-default",
+      "targets": [
+        ["css=div:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Edit cart']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b70203a-273a-4610-bd5b-df23926a2f5d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//li[2]/input",
+      "targets": [
+        ["id=183", "id"],
+        ["css=#\\31 83", "css:finder"],
+        ["xpath=//input[@id='183']", "xpath:attributes"],
+        ["xpath=//ul[@id='cart']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5fdfd84a-dc64-4d02-b397-ea43fa8a2ca2",
+      "comment": "",
+      "command": "pause",
+      "target": "4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5da1a579-e7b7-4562-9b16-209d3104ea51",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=li:nth-child(2)",
+      "targets": [
+        ["css=li:nth-child(2)", "css:finder"],
+        ["xpath=//ul[@id='cart']/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"],
+        ["xpath=//li[contains(.,'Item: Sushi\nQuantity: 1\n\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "52734ee8-faad-4a93-b3de-0e672f9fb986",
+    "name": "TC_2.1",
+    "commands": [{
+      "id": "68d42423-7501-40d9-999d-998a261af079",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fe8f2bce-548a-4098-8709-54eb2220c69f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "794x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "88cd2e98-8684-4ff9-b9b2-a096af408941",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Place an order']",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7deef095-b945-45c3-bcf1-49bf6865c096",
+      "comment": "",
+      "command": "type",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "63676216-0fe7-469b-b83b-1a6edde1e327",
+      "comment": "",
+      "command": "click",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c545362f-2c67-4b19-9a11-4e4379606a0f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09fd492d-1a27-47a0-b2ae-36422be66840",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Place an order']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f4dd6464-8073-4cc2-8d00-591153ef6288",
+      "comment": "",
+      "command": "pause",
+      "target": "3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "576d02a9-d526-4a78-a846-746f59c105e8",
+      "comment": "",
+      "command": "assertNotEditable",
+      "target": "css=.row:nth-child(4) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Edit order']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "83caecc4-6e6a-49b0-b9af-b3201e77ff49",
+    "name": "TC_1.1",
+    "commands": [{
+      "id": "d77cfc81-1f6a-49eb-9c6f-724f3b648d16",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b05e0811-0071-4d9d-9808-56b6575c2366",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "887x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27bd2206-1876-4c93-a406-10564ff50315",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa90c74e-7b71-44ed-9d83-b94dd8d7b2ea",
+      "comment": "",
+      "command": "type",
+      "target": "id=sushi",
+      "targets": [
+        ["id=sushi", "id"],
+        ["css=#sushi", "css:finder"],
+        ["xpath=//input[@id='sushi']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[10]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[10]/td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "fdd14121-8033-482b-a501-74bb72fbec35",
+      "comment": "",
+      "command": "click",
+      "target": "id=sushi",
+      "targets": [
+        ["id=sushi", "id"],
+        ["css=#sushi", "css:finder"],
+        ["xpath=//input[@id='sushi']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[10]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[10]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e40ac579-4ce2-47c6-b491-a897611bf91d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "316b13bb-0c56-437a-b673-f23a1eca3037",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33022ee0-b6ec-4770-83ef-8305c7e586a7",
+      "comment": "",
+      "command": "pause",
+      "target": "3",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5516805d-f467-470f-ba23-f90078d4bcf0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//ul[@id='cart']/OrderSuccess",
+      "targets": [
+        ["css=li:nth-child(2)", "css:finder"],
+        ["xpath=//ul[@id='cart']/li[2]", "xpath:idRelative"],
+        ["xpath=//li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "d753c0ab-f9a2-479c-a19c-83124d77f07d",
+    "name": "TC_1.0",
+    "commands": [{
+      "id": "c9336905-0c8e-4d7a-947b-ca0f5b4abdc0",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e480400-905b-4271-b94a-65b5cce2689a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "887x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aea84b73-4c7e-42a6-a221-e7a46196178e",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b67d74aa-df65-4813-a5a6-197678b67b4b",
+      "comment": "",
+      "command": "type",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "435f3aea-eb8d-448d-881d-f382a2f682d8",
+      "comment": "",
+      "command": "click",
+      "target": "id=pizza",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59516e9f-2822-4c6d-963f-d256ef4fb4a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "97e24ccd-ab9c-45fb-b887-4ebb2d289d2b",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d27efe3-5472-41a7-a14a-d9ac79f5c187",
+      "comment": "",
+      "command": "pause",
+      "target": "5",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d810430f-3e83-4fca-8ed4-a79c7a1fe91f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//input[@value='OrderSucces]",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Edit order']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://70.37.77.126/"],
+  "plugins": []
+}
