@@ -55,13 +55,13 @@ $(function (){
                     node.appendChild(lineBreak);
                     
                     // Listed cart item
-                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY + ' | ');
+                    var textnode = document.createTextNode("Item: " + each.ITEM + "\n" + "Quantity: " + each.QUANTITY + "\n");
                     node.appendChild(textnode);
 
                     // Create delete button to be next to cart item
                     var delButton = document.createElement("input");
                     delButton.type = "submit";
-                    delButton.value = "DELETE";
+                    delButton.value = "Delete";
                     delButton.id = each.ORDER_ID;
                     delButton.onclick = deleteOrder;
                     node.appendChild(delButton);

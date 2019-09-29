@@ -1,0 +1,45 @@
+.input-box {
+    width: 75%;
+}
+
+/* Remove controls from Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+ }
+  
+/* Re-applies the controls on :hover and :focus */
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.submit {
+    font-size: 18px;
+}
+
+.nav-css {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.aaaa {
+    font-size: 1000px;
+}
+
+img {
+    width: 200%;
+    height: auto;
+}
+
+ul {
+    white-space: pre;  
+  }
+  
+  li {
+      text-size-adjust: 150px;
+  }
