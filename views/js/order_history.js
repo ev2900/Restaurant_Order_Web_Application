@@ -25,7 +25,7 @@ $(function (){
                 $.each(resp.Table1, function(i, each) {
                             
                     var node = document.createElement("li");
-                    var textnode = document.createTextNode(each.CREATE_TIME + ' | ' + each.ITEM + ' | ' + each.QUANTITY);
+                    var textnode = document.createTextNode("Item: " + each.ITEM + '\n' + "Quantity: " + each.QUANTITY + '\n' + "Date/time: " + each.CREATE_TIME);
                     node.appendChild(textnode);
                     document.getElementById("cart").appendChild(node);
 

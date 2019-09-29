@@ -11,6 +11,6 @@ app.get('/', function (req, res) {
 })
 
 // open on port
-app.listen(80,function(){
+app.listen(8080,function(){
 console.log("application is running ...")
 })

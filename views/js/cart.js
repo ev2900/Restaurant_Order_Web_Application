@@ -26,7 +26,7 @@ $(function (){
                                         
                     var node = document.createElement("li");
                     
-                    var textnode = document.createTextNode(each.ITEM + ' | ' + each.QUANTITY);
+                    var textnode = document.createTextNode("Item: " + each.ITEM + "\n" + "Quantity: " + each.QUANTITY + "\n\n");
                     node.appendChild(textnode);
                     
                     document.getElementById("cart").appendChild(node);

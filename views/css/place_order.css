@@ -35,3 +35,11 @@ img {
     width: 200%;
     height: auto;
 }
+
+ul {
+    white-space: pre;  
+  }
+  
+  li {
+      text-size-adjust: 150px;
+  }
