@@ -172,6 +172,23 @@ Response (example):
 }
 ```
 
+### Email Recipt 
+```
+Http verb: POST
+Url: https://prod-31.centralus.logic.azure.com:443/workflows/26c898759c6a4faeab672826ebb9f265/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L01OFr7RI1bPta2kZG7fizRRqhIzQBAzjYq8GeqOiEM
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+	"TO": "example_email@gmail.com",
+	"SUBJECT":"Email Recipt Order #42",
+	"BODY":"Thank you for your order from Online Cafeteria. You purchased the following items <br><br> Pizza $12, <br> Sandwich $7 <br> Soda $1 <br> Soda $1 <br> ----- <br> Order Total $21 <br><br> Thank you for your purchase!",
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
