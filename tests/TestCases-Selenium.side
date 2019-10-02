@@ -333,7 +333,7 @@
       "id": "db0b0789-26c6-4e77-85ee-70a9ae523160",
       "comment": "",
       "command": "click",
-      "target": "id=226",
+      "target": "id=228",
       "targets": [
         ["id=223", "id"],
         ["css=#\\32 23", "css:finder"],

@@ -1,0 +1,79 @@
+{
+    "$connections": {
+        "value": {
+            "gmail": {
+                "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/gmail",
+                "connectionName": "gmail",
+                "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/gmail"
+            }
+        }
+    },
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Response": {
+                "inputs": {
+                    "body": {
+                        "status": "sucess"
+                    },
+                    "statusCode": 200
+                },
+                "kind": "Http",
+                "runAfter": {
+                    "Send_email": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Response"
+            },
+            "Send_email": {
+                "inputs": {
+                    "body": {
+                        "Body": "@triggerBody()?['BODY']",
+                        "Subject": "@triggerBody()?['SUBJECT']",
+                        "To": "@triggerBody()?['TO']"
+                    },
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['gmail']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/Mail"
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "BODY": {
+                                "type": "string"
+                            },
+                            "SUBJECT": {
+                                "type": "string"
+                            },
+                            "TO": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    }
+}
