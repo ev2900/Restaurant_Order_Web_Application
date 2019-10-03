@@ -15,7 +15,7 @@ $(function (){
         {item:"Soda", quantity:$('#soda'), price:1}
     ];
 
-    $('#payment').on('click', function(ev) {
+    $('#email').on('click', function(ev) {
         
         ev.preventDefault();
 
@@ -34,7 +34,7 @@ $(function (){
             if(order.quantity.val() > 0) {
                 var itemPrice = order.price * order.quantity.val();
 
-                var receipt = receipt.concat(order.item + " $" + order.price + " <br> ");
+                var receipt = receipt.concat(order.item + " (" + order.quantity.val() + ") $" + itemPrice + " <br> ");
 
                 subTotal = subTotal + itemPrice;
             }
