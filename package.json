@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/ev2900/Restaurant_Order_Web_Application#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "braintree": "^2.20.0",
+    "ejs": "^2.7.1",
     "express": "^4.13.4",
-    "path": "^0.12.7",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "path": "^0.12.7"
   }
 }

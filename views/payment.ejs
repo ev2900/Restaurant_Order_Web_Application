@@ -1,0 +1,60 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>Awesome picture of Maya</title>
+    <link rel="stylesheet" href="css/pure-min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/cart.css">
+</head>
+
+<body>
+
+    <div class="nav-css">
+        <nav class="navbar navbar-default navbar-expand-lg">
+            <div class="col-sm-11"> <h2> <a href="cart.html" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
+            <div class="col-sm-1"> <input class="btn-default submit" type="submit" value="Log out" onclick="document.cookie = 'name= ;path=/';document.cookie = 'phone= ;path=/';window.location.href ='index.html'"> </div> </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row justify-content-center align-self-center vertical-center">
+                    <h1> Pay for your order: </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment-card">
+
+        <form class="pure-form pure-form-stacked " action="/process" method="post">
+            <fieldset>
+                <div class="pure-g">
+                    <label class="pure-u-1-3 label" for="amount"> Your order total is: </label>
+                    <input class="pure-u-2-3" id="amount" class="pure-input-1" name="amount" type="text" placeholder="XX.XX" required>
+                </div>
+
+                <br>
+
+                <div id="checkout"></div>
+
+                <button type="submit" class="pure-button pure-button-primary">Pay now</button>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="js/braintree.js"></script>
+    <script>
+        braintree.setup('<%- clientToken %>', 'dropin', {
+            container: 'checkout'
+        });
+    </script>
+
+</body>
+
+</html>
