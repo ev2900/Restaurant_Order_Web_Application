@@ -10,6 +10,7 @@ The front end of the application has the following page
 * order_status
 * place_order
 * edit_order
+* payment
 
 
 ## Middleware (Application Programming Interfaces)
@@ -169,6 +170,43 @@ Body (example):
 Response (example): 
 {
     "status": "success"
+}
+```
+
+### Email Recipt 
+```
+Http verb: POST
+Url: https://prod-31.centralus.logic.azure.com:443/workflows/26c898759c6a4faeab672826ebb9f265/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L01OFr7RI1bPta2kZG7fizRRqhIzQBAzjYq8GeqOiEM
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+	"TO": "example_email@gmail.com",
+	"SUBJECT":"Email Recipt Order #42",
+	"BODY":"Thank you for your order from Online Cafeteria. You purchased the following items <br><br> Pizza $12, <br> Sandwich $7 <br> Soda $1 <br> Soda $1 <br> ----- <br> Order Total $21 <br><br> Thank you for your purchase!",
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
+### Get Order Total 
+```
+Http verb: POST
+Url: https://prod-10.centralus.logic.azure.com:443/workflows/06deabfdd9874a478922439c097a6ac5/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YTLC6ocCOCmjtFW_4OH67zob5Qfm0SDgUeIJQGCvmac
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456"
+}
+Response (example): 
+{
+    "Table1": [
+        {
+            "total": 45
+        }
+    ]
 }
 ```
 

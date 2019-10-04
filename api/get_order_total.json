@@ -1,0 +1,73 @@
+{
+    "$connections": {
+        "value": {
+            "sql": {
+                "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/sql",
+                "connectionName": "sql",
+                "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/sql"
+            }
+        }
+    },
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Execute_stored_procedure_(V2)": {
+                "inputs": {
+                    "body": {
+                        "contact_name": "@triggerBody()?['CONTACT_NAME']",
+                        "contact_phone": "@triggerBody()?['CONTACT_PHONE']"
+                    },
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['sql']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('restaurant546.database.windows.net'))},@{encodeURIComponent(encodeURIComponent('restaurant'))}/procedures/@{encodeURIComponent(encodeURIComponent('[dbo].[GET_CART_TOTAL]'))}"
+                },
+                "runAfter": {},
+                "type": "ApiConnection"
+            },
+            "Response": {
+                "inputs": {
+                    "body": "@body('Execute_stored_procedure_(V2)')?['resultsets']",
+                    "statusCode": 200
+                },
+                "kind": "http",
+                "runAfter": {
+                    "Execute_stored_procedure_(V2)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Response"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "CONTACT_NAME": {
+                                "type": "string"
+                            },
+                            "CONTACT_PHONE": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    }
+}
