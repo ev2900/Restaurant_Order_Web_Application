@@ -6,51 +6,26 @@ $(function (){
     var contact_name = ca[0].replace("name=","")
     var contact_phone = ca[1].replace(" phone=","")
     
-    // Build array of order data (prices are static for now)
-    var orders = [
-        {item:"Pizza", quantity:$('#pizza'), price:12},
-        {item:"Sushi", quantity:$('#sushi'), price:8},
-        {item:"Pasta", quantity:$('#pasta'), price:9},
-        {item:"Sandwich", quantity:$('#sandwich'), price:7},
-        {item:"Soda", quantity:$('#soda'), price:1}
-    ];
+    var email = $('#email');
 
-    $('#email').on('click', function(ev) {
+    $('#send').on('click', function(ev) {
         
         ev.preventDefault();
 
-        // Price per item shown on bill
-        var receipt = "Thank you for your order from Online Cafeteria. You purchased the following items <br><br> ";
+        var receipt = "Thank you for your order from Online Cafeteria.<br><br>";
 
-        // sum of prices before tax
-        var subTotal = 0;
+        // build receipt to email from receipt on page:
+        $('#receipt li').each( function() {
+            receipt += $( this ).text() + "<br>";
+        });
 
-        // Tax is 7%
-        const tax = 1.07;
-
-        // Loop through active orders to build receipt and subtotal
-        for(var order of orders) {
-            // alert(order.quantity.val());
-            if(order.quantity.val() > 0) {
-                var itemPrice = order.price * order.quantity.val();
-
-                var receipt = receipt.concat(order.item + " (" + order.quantity.val() + ") $" + itemPrice + " <br> ");
-
-                subTotal = subTotal + itemPrice;
-            }
-        }
-
-        var receipt = receipt.concat("----- <br> Subtotal: $" + subTotal + " <br> ");
+        var receipt = receipt.concat("<br>Thank you for your purchase!<br><br>See you next time,<br><br>Online Cafeteria");
         
-        // Use tax to calculate total and append to receipt
-        var total = subTotal * tax;
-        var receipt = receipt.concat("Total: $" + total.toFixed(2) + " <br><br> Thank you for your purchase!");
         var orderId = 99;
-        var email = "mpistacchio77@gmail.com";
 
         // Can now make email JSON
         var email_receipt = JSON.stringify({
-            "TO": email,
+            "TO": email.val(),
             "SUBJECT": "Email Receipt Order #" + orderId,
             "BODY": receipt
         });
