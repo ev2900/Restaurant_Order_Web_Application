@@ -14,7 +14,7 @@ describe('TC4 - View order history', function() {
     await driver.quit();
   })
   it('TC4 - View order history', async function() {
-    await driver.get("http://70.37.77.126/cart.html/cart.html")
+    await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(6) .btn-default")).click()
     assert(await driver.findElement(By.css("li")).getText() == "Item: Sushi\\\\nQuantity: 1\\\\nDate/time: 2019-09-29T14:31:27.35")

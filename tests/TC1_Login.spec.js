@@ -14,7 +14,7 @@ describe('TC1 - Login', function() {
     await driver.quit();
   })
   it('TC1 - Login', async function() {
-    await driver.get("http://70.37.77.126/cart.html/")
+    await driver.get("http://onlinecafeteria.com//")
     await driver.setRect(791, 824)
     await driver.findElement(By.id("name")).click()
     await driver.findElement(By.id("name")).sendKeys("Test User")

@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC3 - Add a pizza to cart', function() {
+describe('TC3.3 - Add nothing to cart', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,13 +13,11 @@ describe('TC3 - Add a pizza to cart', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC3 - Add a pizza to cart', async function() {
+  it('TC3.3 - Add nothing to cart', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(4) .btn-default")).click()
-    await driver.findElement(By.id("pizza")).click()
-    await driver.findElement(By.id("pizza")).sendKeys("1")
     await driver.findElement(By.css(".row:nth-child(3) .btn-default")).click()
-    assert(await driver.findElement(By.css("li:nth-child(1)")).getText() == "Item: Pizza\\\\nQuantity: 1")
+    assert(await driver.findElement(By.css("h1")).getText() == "Place an order:")
   })
 })
