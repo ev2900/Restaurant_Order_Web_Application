@@ -14,7 +14,7 @@ describe('TC6 - Remove pizza from a cart', function() {
     await driver.quit();
   })
   it('TC6 - Remove pizza from a cart', async function() {
-    await driver.get("http://70.37.77.126/cart.html")
+    await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(3) .btn-default")).click()
     {
@@ -25,7 +25,7 @@ describe('TC6 - Remove pizza from a cart', function() {
       const element = await driver.findElement(By.CSS_SELECTOR, "body")
       await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
     }
-    await driver.findElement(By.id("226")).click()
+    await driver.findElement(By.id("263")).click()
     {
       const elements = await driver.findElements(By.xpath("//li[contains(.,\'Item: Pizza\nQuantity: 1\n\n\')]"))
       assert(!elements.length)

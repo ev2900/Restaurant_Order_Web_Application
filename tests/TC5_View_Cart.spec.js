@@ -14,7 +14,7 @@ describe('TC5 - View cart', function() {
     await driver.quit();
   })
   it('TC5 - View cart', async function() {
-    await driver.get("http://70.37.77.126/cart.html")
+    await driver.get("http://onlinecafeteria.com//cart.html")
     assert(await driver.findElement(By.css("li")).getText() == "Item: Pizza\\\\nQuantity: 1")
   })
 })
