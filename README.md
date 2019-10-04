@@ -220,3 +220,6 @@ A Microsoft SQL database is the back end of the applicaiton. The database has ta
 * CART
 * HISTORY
 * IN_PROGRESS
+
+### Stored Procedure
+GET_CART_TOTAL
