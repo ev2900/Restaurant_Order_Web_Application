@@ -1,5 +1,5 @@
 # Restaurant Order Web Application
-SWENG 894 Capstone Project. Application is hosted at **[70.37.77.126](http://70.37.77.126/)**
+SWENG 894 Capstone Project. Application is hosted at **[www.onlinecafeteria.com](h://www.onlinecafeteria.com/)**
 
 ## Front End (User Interface)
 The front end of the application has the following page 
