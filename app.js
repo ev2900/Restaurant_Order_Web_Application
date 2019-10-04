@@ -50,13 +50,11 @@ app.post('/process', parseUrlEnconded, function (request, response) {
 
       console.log(result);
 
-      response.sendFile('receipt.html', {
+      response.sendFile('order_confirmation.html', {
         root: './views'
       });
     } else {
-      response.sendFile('error.html', {
-        root: './public'
-      });
+      response.render('payment');
     }
   });
 

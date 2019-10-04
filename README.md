@@ -1,5 +1,5 @@
 # Restaurant Order Web Application
-SWENG 894 Capstone Project. Application is hosted at **[70.37.77.126](http://70.37.77.126/)**
+SWENG 894 Capstone Project. Application is hosted at **[www.onlinecafeteria.com](http://www.onlinecafeteria.com/)**
 
 ## Front End (User Interface)
 The front end of the application has the following page 
@@ -11,6 +11,7 @@ The front end of the application has the following page
 * place_order
 * edit_order
 * payment
+* receipt
 
 
 ## Middleware (Application Programming Interfaces)
@@ -220,3 +221,6 @@ A Microsoft SQL database is the back end of the applicaiton. The database has ta
 * CART
 * HISTORY
 * IN_PROGRESS
+
+### Stored Procedure
+* GET_CART_TOTAL

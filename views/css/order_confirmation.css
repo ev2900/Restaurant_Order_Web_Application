@@ -1,0 +1,33 @@
+.input-box {
+    width: 75%;
+}
+
+.submit {
+    font-size: 18px;
+}
+
+.nav-css {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.aaaa {
+    font-size: 1000px;
+}
+
+ul {
+  white-space: pre;  
+}
+
+li {
+    text-size-adjust: 250px;
+}
+
+.bottom-buttons{
+    width:200px;
+    height:200px;
+    margin:auto;
+    padding:2%;
+    position: relative;
+    text-align: center;
+}
