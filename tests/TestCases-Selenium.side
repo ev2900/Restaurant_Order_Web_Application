@@ -2,7 +2,7 @@
   "id": "880a5d0d-397b-42c0-965e-a18efcb3bfcf",
   "version": "2.0",
   "name": "Restaurant Ordering",
-  "url": "http://70.37.77.126/cart.html",
+  "url": "http://onlinecafeteria.com/",
   "tests": [{
     "id": "b84c9c64-bc7b-4339-9c41-60060d88525e",
     "name": "TC1 - Login",
@@ -103,7 +103,7 @@
       "id": "e80d7dba-b589-42f8-92bc-387fd57e9043",
       "comment": "",
       "command": "open",
-      "target": "/cart.html",
+      "target": "/",
       "targets": [],
       "value": ""
     }, {
@@ -263,7 +263,7 @@
       "id": "8d3cdc72-274a-4ce3-8051-ddba92293f72",
       "comment": "",
       "command": "open",
-      "target": "http://70.37.77.126/cart.html",
+      "target": "/cart.html",
       "targets": [],
       "value": ""
     }, {
@@ -286,7 +286,7 @@
       "id": "7b0f5f87-bcd6-4260-8af5-49b1fd24cae5",
       "comment": "",
       "command": "open",
-      "target": "http://70.37.77.126/cart.html",
+      "target": "/cart.html",
       "targets": [],
       "value": ""
     }, {
@@ -333,11 +333,11 @@
       "id": "db0b0789-26c6-4e77-85ee-70a9ae523160",
       "comment": "",
       "command": "click",
-      "target": "id=228",
+      "target": "id=263",
       "targets": [
-        ["id=223", "id"],
-        ["css=#\\32 23", "css:finder"],
-        ["xpath=//input[@id='223']", "xpath:attributes"],
+        ["id=263", "id"],
+        ["css=#\\32 63", "css:finder"],
+        ["xpath=//input[@id='263']", "xpath:attributes"],
         ["xpath=//ul[@id='cart']/li/input", "xpath:idRelative"],
         ["xpath=//li/input", "xpath:position"]
       ],
@@ -362,7 +362,7 @@
       "id": "fa6262d6-a453-46fc-9e76-b2d936c1331f",
       "comment": "",
       "command": "open",
-      "target": "http://70.37.77.126/cart.html",
+      "target": "/cart.html",
       "targets": [],
       "value": ""
     }, {
@@ -396,6 +396,275 @@
       ],
       "value": "Item: Sushi\\nStatus: Cooking"
     }]
+  }, {
+    "id": "73108196-6402-4f99-8fc4-36889f48865f",
+    "name": "TC3.1 - Add pasta twice to cart",
+    "commands": [{
+      "id": "05a11b14-7c85-4136-957d-373c9d80b4bd",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "679ef3ad-2b01-4597-b285-3a92485337ae",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbe6670b-8fbc-4f6c-8e3c-b24685dbd998",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "108360a9-21b9-40b6-b437-361687e53d86",
+      "comment": "",
+      "command": "click",
+      "target": "id=pasta",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "732f99c7-fd47-482c-be58-c4613ab30585",
+      "comment": "",
+      "command": "type",
+      "target": "id=pasta",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "fadb65a8-c5b0-4d90-b21f-0ad62d16cf43",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d353b699-9ffb-4184-b35d-0cdd0b898c1e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=div:nth-child(4) > .col-sm-12 .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "709fe07e-d8b8-4143-81ab-ab471037581c",
+      "comment": "",
+      "command": "click",
+      "target": "id=pasta",
+      "targets": [
+        ["css=tr:nth-child(15) > td", "css:finder"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[15]/td", "xpath:idRelative"],
+        ["xpath=//tr[15]/td", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b7c57148-6662-4085-824c-2231a9d6a47e",
+      "comment": "",
+      "command": "type",
+      "target": "id=pasta",
+      "targets": [
+        ["id=pasta", "id"],
+        ["css=#pasta", "css:finder"],
+        ["xpath=//input[@id='pasta']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[15]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[15]/td/input", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "714ceede-05d1-42fd-bee0-3e2fc2fdea5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f63d570c-99e5-45b6-afd4-921abbbb0b7e",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=li:nth-child(2)",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Item: Pasta\nQuantity: 3\n\n')]", "xpath:innerText"]
+      ],
+      "value": "Item: Pasta\\nQuantity: 1"
+    }, {
+      "id": "6f0f193e-185e-4751-a4e9-46c28ec7b260",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=li:nth-child(3)",
+      "targets": [
+        ["id=347", "id"],
+        ["css=#\\33 47", "css:finder"],
+        ["xpath=//input[@id='347']", "xpath:attributes"],
+        ["xpath=//ul[@id='cart']/li/input", "xpath:idRelative"],
+        ["xpath=//li/input", "xpath:position"]
+      ],
+      "value": "Item: Pasta\\nQuantity: 3"
+    }]
+  }, {
+    "id": "f11b619e-37e1-4ece-afd1-0af1a836af24",
+    "name": "TC3.2 - Add invalid quantity",
+    "commands": [{
+      "id": "8f29d2d5-2910-4024-80ae-68d447144fe7",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f5580ae-9e2b-4118-9a81-5c6e1af99969",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e1085eb-d8e5-4682-9f12-b89ba5e01221",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4855d0c9-df64-4a40-b4e8-1684c87de379",
+      "comment": "",
+      "command": "click",
+      "target": "id=pasta",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2900ef2-e49b-40e4-90ab-fb60ffacd7e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=pasta",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "INVALID"
+    }, {
+      "id": "b43ad340-7730-4d39-9751-3c8b86110d12",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e69f554-2d42-418f-ad77-699dbb3f00df",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Place an order:"
+    }]
+  }, {
+    "id": "afa041b9-2914-48d9-b377-0fa58d7d3534",
+    "name": "TC3.3 - Add nothing to cart",
+    "commands": [{
+      "id": "aa4d4c44-55e3-4fa6-8e55-2bc3336577eb",
+      "comment": "",
+      "command": "open",
+      "target": "/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ea03022-83b8-4e45-8d30-b116cc72e9e7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7216f8ae-70b5-4408-95fa-1f42d9d4e337",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bbff6b0-bf2e-4d55-8060-0622cd56b8ef",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(3) .btn-default",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f6f24f8-65f8-47a9-b7fb-72cf1194c349",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Place an order:"
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
@@ -405,6 +674,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://70.37.77.126/", "http://70.37.77.126/cart.html"],
+  "urls": ["http://onlinecafeteria.com/", "http://onlinecafeteria.com/cart.html"],
   "plugins": []
 }
