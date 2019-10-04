@@ -17,15 +17,7 @@ describe('TC6 - Remove pizza from a cart', function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(3) .btn-default")).click()
-    {
-      const element = await driver.findElement(By.css("div:nth-child(4) input"))
-      await driver.actions({ bridge: true }).moveToElement(element).perform()
-    }
-    {
-      const element = await driver.findElement(By.CSS_SELECTOR, "body")
-      await driver.actions({ bridge: true }).moveToElement(element, 0, 0).perform()
-    }
-    await driver.findElement(By.id("263")).click()
+    await driver.findElement(By.xpath("//ul[@id=\'cart\']/li/input")).click()
     {
       const elements = await driver.findElements(By.xpath("//li[contains(.,\'Item: Pizza\nQuantity: 1\n\n\')]"))
       assert(!elements.length)

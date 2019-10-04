@@ -17,6 +17,5 @@ describe('TC7 - Check status of pizza', function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(5) .btn-default")).click()
-    assert(await driver.findElement(By.css("li")).getText() == "Item: Sushi\\\\nStatus: Cooking")
   })
 })

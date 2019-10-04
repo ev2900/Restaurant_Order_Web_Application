@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC4 - View order history', function() {
+describe('TC8.1 - Verify Total Price', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,9 +13,9 @@ describe('TC4 - View order history', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC4 - View order history', async function() {
+  it('TC8.1 - Verify Total Price', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
-    await driver.setRect(791, 824)
-    await driver.findElement(By.css("div:nth-child(6) .btn-default")).click()
+    await driver.findElement(By.xpath("//input[@value=\'Place order\']")).click()
+    assert(await driver.findElement(By.css("#cart > h2")).getText() == "Your order total is: $18")
   })
 })

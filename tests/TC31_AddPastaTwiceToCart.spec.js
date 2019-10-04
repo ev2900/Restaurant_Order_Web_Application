@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC3.1 - Add pasta twice to cart', function() {
+describe('TC6.1 - Add pasta twice to cart', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,18 +13,18 @@ describe('TC3.1 - Add pasta twice to cart', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC3.1 - Add pasta twice to cart', async function() {
+  it('TC6.1 - Add pasta twice to cart', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
     await driver.findElement(By.id("pasta")).click()
     await driver.findElement(By.id("pasta")).sendKeys("1")
-    await driver.findElement(By.css(".row:nth-child(3) .btn-default")).click()
+    await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
     await driver.findElement(By.id("pasta")).click()
     await driver.findElement(By.id("pasta")).sendKeys("3")
-    await driver.findElement(By.css(".row:nth-child(3) .btn-default")).click()
-    assert(await driver.findElement(By.css("li:nth-child(2)")).getText() == "Item: Pasta\\\\nQuantity: 1")
-    assert(await driver.findElement(By.css("li:nth-child(3)")).getText() == "Item: Pasta\\\\nQuantity: 3")
+    await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
+    assert(await driver.findElement(By.xpath("//li[contains(.,\'Item: Pasta\\nQuantity: 1\')]")).getText() == "Item: Pasta\\\\nQuantity: 1")
+    assert(await driver.findElement(By.xpath("//li[contains(.,\'Item: Pasta\\nQuantity: 3\')]")).getText() == "Item: Pasta\\\\nQuantity: 3")
   })
 })
