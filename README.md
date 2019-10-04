@@ -10,6 +10,7 @@ The front end of the application has the following page
 * order_status
 * place_order
 * edit_order
+* payment
 
 
 ## Middleware (Application Programming Interfaces)
@@ -186,6 +187,26 @@ Body (example):
 Response (example): 
 {
     "status": "success"
+}
+```
+
+### Get Order Total 
+```
+Http verb: POST
+Url: https://prod-10.centralus.logic.azure.com:443/workflows/06deabfdd9874a478922439c097a6ac5/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YTLC6ocCOCmjtFW_4OH67zob5Qfm0SDgUeIJQGCvmac
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "1 (912) 234 3456"
+}
+Response (example): 
+{
+    "Table1": [
+        {
+            "total": 45
+        }
+    ]
 }
 ```
 

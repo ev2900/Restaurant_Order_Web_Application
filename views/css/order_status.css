@@ -22,3 +22,7 @@ ul {
 li {
     text-size-adjust: 150px;
 }
+
+html {
+    overflow-x: hidden;   
+}
