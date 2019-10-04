@@ -8,25 +8,33 @@ $(function (){
     
     var email = $('#email');
 
+    var orderId = "";
+
     $('#send').on('click', function(ev) {
+
+        $(window).trigger('resize');
         
         ev.preventDefault();
 
         var receipt = "Thank you for your order from Online Cafeteria.<br><br>";
 
         // build receipt to email from receipt on page:
-        $('#receipt li').each( function() {
+        var set = $('#receipt li');
+        var length = set.length;
+        set.each( function(index) {
             receipt += $( this ).text() + "<br>";
+
+            if(index === length - 1) {
+                orderId = $( this ).text();
+            }
         });
 
         var receipt = receipt.concat("<br>Thank you for your purchase!<br><br>See you next time,<br><br>Online Cafeteria");
-        
-        var orderId = 99;
 
         // Can now make email JSON
         var email_receipt = JSON.stringify({
             "TO": email.val(),
-            "SUBJECT": "Email Receipt Order #" + orderId,
+            "SUBJECT": "Email Receipt " + orderId,
             "BODY": receipt
         });
 

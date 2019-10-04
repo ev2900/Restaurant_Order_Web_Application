@@ -38,6 +38,8 @@ $(function (){
 
             var $receiptTitle = $('<li> Your receipt: <br> </li>');
             $receiptList.append($receiptTitle);
+
+            var combinedOrderID = "";
             
             $.each(resp.Table1, function(i, each) {
 
@@ -48,6 +50,8 @@ $(function (){
                 var $receiptEntry = $('<li> ' + each.QUANTITY + " x " + each.ITEM + "...............$" + itemizedPrice.toFixed(2) + '<br> </li>');
                 
                 $receiptList.append($receiptEntry);
+
+                combinedOrderID += each.ORDER_ID;
             });
 
             var total = subTotal * tax;
@@ -61,6 +65,9 @@ $(function (){
             var $receiptTotal = $('<li> Total: $' + total.toFixed(2) +  '<br> </li>');
             
             $receiptList.append($receiptTotal);
+
+            var $orderIdBit = $('<li> Order ID: ' + combinedOrderID + '<br> </li>');
+            $receiptList.append($orderIdBit);
 
             console.log(resp);
         },
