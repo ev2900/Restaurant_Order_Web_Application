@@ -10,6 +10,7 @@ The front end of the application has the following page
 * order_status
 * place_order
 * edit_order
+* payment
 
 
 ## Middleware (Application Programming Interfaces)
