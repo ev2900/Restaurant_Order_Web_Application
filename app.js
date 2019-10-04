@@ -54,9 +54,7 @@ app.post('/process', parseUrlEnconded, function (request, response) {
         root: './views'
       });
     } else {
-      response.sendFile('error.html', {
-        root: './public'
-      });
+      response.render('payment');
     }
   });
 
