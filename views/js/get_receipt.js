@@ -62,7 +62,7 @@ $(function (){
             var $receiptSubtotal = $('<li> Subtotal: $' + subTotal.toFixed(2) + ' <br> </li>');
             $receiptList.append($receiptSubtotal);
 
-            var $receiptTotal = $('<li> Total: $' + total.toFixed(2) +  '<br> </li>');
+            var $receiptTotal = $('<li> Total: $' + subTotal.toFixed(2) +  '<br> </li>');
             
             $receiptList.append($receiptTotal);
 
