@@ -11,6 +11,7 @@ The front end of the application has the following page
 * place_order
 * edit_order
 * payment
+* order confirmation
 
 ## Middleware (Application Programming Interfaces)
 The following section provides an example(s) request for each API end point.
