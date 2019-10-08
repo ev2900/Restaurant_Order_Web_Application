@@ -47,7 +47,7 @@ $(function (){
 
                 subTotal = subTotal + itemizedPrice;
 
-                var $receiptEntry = $('<li> ' + each.QUANTITY + " x " + each.ITEM + "...............$" + itemizedPrice.toFixed(2) + '<br> </li>');
+                var $receiptEntry = $('<li id="' + each.ORDER_ID + '"> ' + each.QUANTITY + " x " + each.ITEM + "...............$" + itemizedPrice.toFixed(2) + '<br> </li>');
                 
                 $receiptList.append($receiptEntry);
 
@@ -62,7 +62,7 @@ $(function (){
             var $receiptSubtotal = $('<li> Subtotal: $' + subTotal.toFixed(2) + ' <br> </li>');
             $receiptList.append($receiptSubtotal);
 
-            var $receiptTotal = $('<li> Total: $' + subTotal.toFixed(2) +  '<br> </li>');
+            var $receiptTotal = $('<li> Total: $' + total.toFixed(2) +  '<br> </li>');
             
             $receiptList.append($receiptTotal);
 

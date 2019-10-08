@@ -29,29 +29,22 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="row justify-content-center align-self-center vertical-center">
-                    <div> 
-                        <br>
-                        <br> 
-                        <br>
-                        <div id="cart">
-                              
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="payment-card">
 
         <form class="pure-form pure-form-stacked " action="/process" method="post">
             <fieldset>
-                <div id="checkout"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row justify-content-center align-self-center vertical-center">
+        
+                                <ul id="receipt" class="list-unstyled"> </ul>
+        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="checkout"></div>                
                 <div id="delivery-info">
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
@@ -128,6 +121,10 @@
                             <input type="text" class="form-control" id="inputZip">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="user@example.com">
+                    </div>
                 </div>
                 <button type="submit" class="pure-button" id="pay-button"> Pay now </button>
 
@@ -149,6 +146,7 @@
     <script src="https://media3485.blob.core.windows.net/media/owl.carousel.min.js"></script>
     <script src="js/wow.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/get_receipt.js"></script>
     <script src="js/delivery.js"></script>
     <script src="js/payment.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -15,8 +15,29 @@ $('#pay-button').on('click', function(ev) {
     var city = $('#inputCity').val();
     var state = $( "#inputState option:selected" ).text();
     var zip = $('#inputZip').val();
+    var email = $('#inputEmail').val();
 
     // Grab order IDs from the receipt
+    var orderIds = new Array();
+    $('#receipt li').each(function(index, element) {
+
+         // Skip receipt items that do not have an ID
+        if (!$(this).attr('id')) {
+            return true;
+        }
+
+        var orderId = $(this).attr('id');
+
+        orderIds.push(orderId);
+
+    });
+
+    // Loop on order IDs to send each delivery 
+    // NOTE: This is a hack for now until a cart has its own order ID 
+    // instead of each cart item having an order ID.
+    $.each(orderIds, function(i, each) {
+        // alert(each);
+    });
 
     // Release hold for braintree / PayPal to kick off
     $.holdReady( false );
