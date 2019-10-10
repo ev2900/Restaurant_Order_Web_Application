@@ -265,7 +265,8 @@ Body (example):
     "CITY": "Rochester",
     "STATE": "NY",
     "ZIP": 11545,
-    "EMAIL": "email@email.com"
+    "EMAIL": "email@email.com",
+    "STATUS": "COOKING"
 }
 Response (example): 
 {
