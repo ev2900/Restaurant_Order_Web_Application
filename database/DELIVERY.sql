@@ -9,5 +9,6 @@ CREATE TABLE [dbo].[DELIVERY](
 	[CITY] [nvarchar](500) NULL,
 	[STATE] [nvarchar](500) NULL,
 	[ZIP] [int] NULL,
-	[EMAIL] [nvarchar](500) NULL
+	[EMAIL] [nvarchar](500) NULL,
+	[STATUS] [nvarchar](500) NULL
 );

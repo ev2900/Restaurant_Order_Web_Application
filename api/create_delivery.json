@@ -14,11 +14,12 @@
             "Insert_row_(V2)": {
                 "inputs": {
                     "body": {
-                        "ADDRESS": "@{triggerBody()?['ADDRESS']}",
-                        "CITY": "@{triggerBody()?['CITY']}",
+                        "ADDRESS": "@triggerBody()?['ADDRESS']",
+                        "CITY": "@triggerBody()?['CITY']",
                         "EMAIL": "@triggerBody()?['EMAIL']",
                         "ORDER_ID": "@triggerBody()?['ORDER_ID']",
                         "STATE": "@triggerBody()?['STATE']",
+                        "STATUS": "@triggerBody()?['STATE']",
                         "ZIP": "@triggerBody()?['ZIP']"
                     },
                     "host": {
@@ -75,6 +76,9 @@
                             },
                             "STATE": {
                                 "type": "string"
+                            },
+                            "STATUS": {
+                                "type": "number"
                             },
                             "ZIP": {
                                 "type": "number"
