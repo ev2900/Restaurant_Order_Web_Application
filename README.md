@@ -236,6 +236,23 @@ Response (example):
 }
 ```
 
+### Add an Item to the  Menu 
+```
+Http verb: POST
+Url: https://prod-01.centralus.logic.azure.com:443/workflows/d3de08d451b0408092d99588c50f77e9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dKf4p5azWX8523XzB0DxFldHUIZvBzJp0J_uoEj3mCI
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+	"PRICE": 24,
+	"NAME":"Lobster",
+	"IMG_URL":"img/lobster"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
