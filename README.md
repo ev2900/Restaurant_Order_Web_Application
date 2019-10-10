@@ -259,6 +259,7 @@ A Microsoft SQL database is the back end of the applicaiton. The database has ta
 ### Table
 * ORDER
 * MENU
+* DELIVERY
 
 ### View
 * CART
