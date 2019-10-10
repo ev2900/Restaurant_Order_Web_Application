@@ -272,6 +272,7 @@ Response (example):
 {
     "status": "success"
 }
+```
 
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
