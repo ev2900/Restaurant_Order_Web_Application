@@ -253,12 +253,32 @@ Response (example):
 }
 ```
 
+### Create a Delivery
+```
+Http verb: POST
+Url:https://prod-11.centralus.logic.azure.com:443/workflows/436606720c3e488585465e7aa718b9eb/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xRgjY9nM_7UBhPrHPMjUfAml3hcFkFTKPthR_yDf294
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+    "ORDER_ID": "123, 45, 22",
+    "ADDRESS": "1 Street Ln",
+    "CITY": "Rochester",
+    "STATE": "NY",
+    "ZIP": 11545,
+    "EMAIL": "email@email.com"
+}
+Response (example): 
+{
+    "status": "success"
+}
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
 ### Table
 * ORDER
 * MENU
+* DELIVERY
 
 ### View
 * CART
