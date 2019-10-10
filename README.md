@@ -265,12 +265,14 @@ Body (example):
     "CITY": "Rochester",
     "STATE": "NY",
     "ZIP": 11545,
-    "EMAIL": "email@email.com"
+    "EMAIL": "email@email.com",
+    "STATUS": "COOKING"
 }
 Response (example): 
 {
     "status": "success"
 }
+```
 
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
