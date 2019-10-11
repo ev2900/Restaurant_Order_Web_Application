@@ -173,7 +173,7 @@ Response (example):
 }
 ```
 
-### Email Recipt 
+### Email 
 ```
 Http verb: POST
 Url: https://prod-31.centralus.logic.azure.com:443/workflows/26c898759c6a4faeab672826ebb9f265/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=L01OFr7RI1bPta2kZG7fizRRqhIzQBAzjYq8GeqOiEM
@@ -210,11 +210,77 @@ Response (example):
 }
 ```
 
+### Get Menu 
+```
+Http verb: POST
+Url: https://prod-12.centralus.logic.azure.com:443/workflows/623fba687c8a4d9983b03c59c34df6a7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uWI99lT_66N06ix1sNPExq1WHqQ_VS4f57_msIQCSRA
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{}
+Response (example): 
+{
+    "Table1": [
+        {
+            "ITEM_ID": 1,
+            "NAME": "Pizza",
+            "PRICE": 12.0,
+            "IMG_URL": " "
+        },
+	{
+            "ITEM_ID": 5,
+            "NAME": "Soda",
+            "PRICE": 1.0,
+            "IMG_URL": " "
+        }
+    ]
+}
+```
+
+### Add an Item to the  Menu 
+```
+Http verb: POST
+Url: https://prod-01.centralus.logic.azure.com:443/workflows/d3de08d451b0408092d99588c50f77e9/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dKf4p5azWX8523XzB0DxFldHUIZvBzJp0J_uoEj3mCI
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+	"PRICE": 24,
+	"NAME":"Lobster",
+	"IMG_URL":"img/lobster"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
+### Create a Delivery
+```
+Http verb: POST
+Url:https://prod-11.centralus.logic.azure.com:443/workflows/436606720c3e488585465e7aa718b9eb/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xRgjY9nM_7UBhPrHPMjUfAml3hcFkFTKPthR_yDf294
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+    "ORDER_ID": "123, 45, 22",
+    "ADDRESS": "1 Street Ln",
+    "CITY": "Rochester",
+    "STATE": "NY",
+    "ZIP": 11545,
+    "EMAIL": "email@email.com",
+    "STATUS": "COOKING"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
 ### Table
 * ORDER
+* MENU
+* DELIVERY
 
 ### View
 * CART
