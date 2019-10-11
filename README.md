@@ -24,7 +24,7 @@ Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
-    "CONTACT_PHONE": "1 (912) 234 3456",
+    "CONTACT_PHONE": "912-234-3456",
     "ITEM": "Pineapple",
     "QUANTITY": 1,
     "STATUS": "In cart"
@@ -52,7 +52,7 @@ Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
-    "CONTACT_PHONE": "1 (912) 234 3456"
+    "CONTACT_PHONE": "912-234-3456"
 }
 Response (example):
 {
@@ -81,7 +81,7 @@ Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
-    "CONTACT_PHONE": "1 (912) 234 3456"
+    "CONTACT_PHONE": "912-234-3456"
 }
 Response (example):
 {
@@ -119,7 +119,7 @@ Headers:'Content-Type': 'application/json'
 Body (example):
 {
     "CONTACT_NAME": "William Smith",
-    "CONTACT_PHONE": "1 (912) 234 3456"
+    "CONTACT_PHONE": "912-234-3456"
 }
 Response (example):
 {
@@ -256,7 +256,7 @@ Response (example):
 ### Create a Delivery
 ```
 Http verb: POST
-Url:https://prod-11.centralus.logic.azure.com:443/workflows/436606720c3e488585465e7aa718b9eb/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xRgjY9nM_7UBhPrHPMjUfAml3hcFkFTKPthR_yDf294
+Url: https://prod-11.centralus.logic.azure.com:443/workflows/436606720c3e488585465e7aa718b9eb/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=xRgjY9nM_7UBhPrHPMjUfAml3hcFkFTKPthR_yDf294
 Headers:'Content-Type': 'application/json'
 Body (example): 
 {
@@ -267,6 +267,22 @@ Body (example):
     "ZIP": 11545,
     "EMAIL": "email@email.com",
     "STATUS": "COOKING"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
+### Update Cart Status
+```
+Http verb: POST
+Url: https://prod-07.centralus.logic.azure.com:443/workflows/8c248de2db134a2c92af65bd9a17b07f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Wd3S1SPqQp76ixecNkL-1MQ6BlTOud7ebaPMbmmrHWM
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{
+    "CONTACT_NAME": "William Smith",
+    "CONTACT_PHONE": "912-234-3456"
 }
 Response (example): 
 {
