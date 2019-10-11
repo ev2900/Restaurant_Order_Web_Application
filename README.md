@@ -289,3 +289,4 @@ A Microsoft SQL database is the back end of the applicaiton. The database has ta
 
 ### Stored Procedure
 * GET_CART_TOTAL
+* UPDATE_CART_STATUS
