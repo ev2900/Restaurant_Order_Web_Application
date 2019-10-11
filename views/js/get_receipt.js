@@ -28,6 +28,22 @@ $(function (){
         headers: { 
             'Content-Type': 'application/json'
         },
+        url: 'https://prod-07.centralus.logic.azure.com:443/workflows/8c248de2db134a2c92af65bd9a17b07f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Wd3S1SPqQp76ixecNkL-1MQ6BlTOud7ebaPMbmmrHWM',
+        data: person,
+        success: function(resp) {
+            console.log(resp);
+        },
+        error: function() {
+            alert('error');
+        }
+    });
+
+
+    $.ajax({
+        type: 'POST',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
         url: 'https://prod-28.centralus.logic.azure.com:443/workflows/dfc9c8d5d66f4de4bb624ee5a028313c/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8Ol6v5iRX72ZyaptoqnaDjw9A-QZk2vmC3LxoRusw2Q',
         data: person,
         success: function(resp){
