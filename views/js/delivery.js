@@ -14,6 +14,7 @@ $('#pay-button').on('click', function(ev) {
 
     if(address == '') {
         alert("Please enter an address");
+        onclick=window.location.href = '/payment'
         return;
     }
 
@@ -23,6 +24,7 @@ $('#pay-button').on('click', function(ev) {
 
     if(city == '') {
         alert("Please enter a city");
+        onclick=window.location.href = '/payment'
         return;
     }
 
@@ -30,6 +32,7 @@ $('#pay-button').on('click', function(ev) {
 
     if(state == 'Choose...') {
         alert("Please select a state");
+        onclick=window.location.href = '/payment'
         return;
     }
 
@@ -37,6 +40,7 @@ $('#pay-button').on('click', function(ev) {
 
     if(zip == '') {
         alert("Please enter a zip code");
+        onclick=window.location.href = '/payment'
         return;
     }
 
@@ -44,6 +48,7 @@ $('#pay-button').on('click', function(ev) {
 
     if(email == '') {
         alert("Please enter an email");
+        onclick=window.location.href = '/payment'
         return;
     }
 

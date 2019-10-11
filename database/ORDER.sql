@@ -21,10 +21,12 @@ INSERT INTO [ORDER]
 	) 
 	VALUES 
 	(
-		GETDATE(), 'Christopher Sharkey', '1 (516) 965 2497', 'Sushi', 1, 'Delivered'
+		GETDATE(), 'Christopher Sharkey', '516-965-2497', 'Sushi', 1, 'Delivered'
 	);
+
 -- example select
 SELECT * FROM [ORDER] WHERE CONTACT_PHONE='1 (123) 456 7891';
+
 -- example delete row
 DELETE FROM [ORDER] WHERE CONTACT_PHONE='1 (123) 456 7891'
 */

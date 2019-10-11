@@ -15,7 +15,7 @@
 
     <div class="nav-css">
         <nav class="navbar navbar-default navbar-expand-lg">
-            <div class="col-sm-11"> <h2> <a href="cart.html" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
+            <div class="col-sm-11"> <h2> <a href="/" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
             <div class="col-sm-1"> <input class="btn-default submit" type="submit" value="Log out" onclick="document.cookie = 'name= ;path=/';document.cookie = 'phone= ;path=/';window.location.href ='index.html'"> </div> </div>
         </nav>
     </div>
@@ -44,7 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="checkout"></div>                
+                <div id="checkout"></div>
+                
                 <div id="delivery-info">
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
@@ -62,7 +63,7 @@
                         <div class="form-group col-md-4">
                             <label for="inputState">State</label>
                             <select id="inputState" class="form-control" id="inputState">
-                                <option selected>Choose...</option>
+                                <option selected> </option>
                                 <option value="AL">AL</option>
                                 <option value="AK">AK</option>
                                 <option value="AR">AR</option>	
@@ -126,7 +127,8 @@
                         <input type="email" class="form-control" id="inputEmail" placeholder="user@example.com">
                     </div>
                 </div>
-                <button type="submit" class="pure-button" id="pay-button"> Pay now </button>
+                <br>
+                <button type="submit" class="pure-button" id="pay-button"> Submit </button>
 
                 <input class="pure-u-2-3" id="amount" class="pure-input-1" name="amount" type="hidden" placeholder="XX.XX" required>
 
