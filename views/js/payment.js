@@ -24,12 +24,12 @@ $(function (){
                 
                 $.each(resp.Table1, function(i, each) {
                                         
-                    var node = document.createElement("h2");
+                    // var node = document.createElement("h2");
                     
-                    var textnode = document.createTextNode("Your order total is: $" + each.total);
-                    node.appendChild(textnode);
+                    // var textnode = document.createTextNode("Your order total is: $" + each.total);
+                    // node.appendChild(textnode);
                     
-                    document.getElementById("cart").appendChild(node);
+                    // document.getElementById("cart").appendChild(node);
 
                     $(':hidden').val(each.total);
 
