@@ -2,7 +2,7 @@
   "id": "880a5d0d-397b-42c0-965e-a18efcb3bfcf",
   "version": "2.0",
   "name": "Restaurant Ordering",
-  "url": "http://onlinecafeteria.com/",
+  "url": "http://localhost/cart.html",
   "tests": [{
     "id": "b84c9c64-bc7b-4339-9c41-60060d88525e",
     "name": "TC1 - Login",
@@ -1249,6 +1249,151 @@
       "targets": [],
       "value": "null"
     }]
+  }, {
+    "id": "5237e036-d7fd-4b41-824c-fb5e9eb0d917",
+    "name": "TC12 - Admin adds item to menu",
+    "commands": [{
+      "id": "ee1eb6ed-1b22-4cd1-8fcb-b1a728225968",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/add_menu_item.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "270c2927-f395-40c4-82c7-0f99d3755807",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e23179d2-5287-480f-9e5f-c635d834c102",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Lobster"
+    }, {
+      "id": "9d8b8b55-e3d8-48c7-87b2-1b0d9d7f9f41",
+      "comment": "",
+      "command": "click",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74b99af6-1bdf-44e6-a6a4-2cbaa4ba1582",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "afe665a1-6947-42b3-9fd7-7270af8111b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10779a4a-f0a7-45f8-bc74-e314f902aca5",
+      "comment": "",
+      "command": "type",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "lobster.jpg"
+    }, {
+      "id": "46297009-88c9-42da-9552-b0b66955bf52",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitNewItemBtn",
+      "targets": [
+        ["css=div:nth-child(1) > .btn-default", "css:finder"],
+        ["xpath=//input[@value='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c3c483f-24eb-4c51-b7e4-1a844834433b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Online Cafeteria",
+      "targets": [
+        ["linkText=Online Cafeteria", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Online Cafeteria')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Online Cafeteria')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58c3a810-f5f5-40de-8046-c4e625eed0e1",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "049833be-c7e5-4a72-8011-1494b522b2fc",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e6e973c5-0780-4cc9-a285-8aa9987015cf",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(27) img",
+      "targets": [
+        ["css=tr:nth-child(27) img", "css:finder"],
+        ["xpath=(//img[@alt='Pizza'])[6]", "xpath:img"],
+        ["xpath=//table[@id='cart']/tbody/tr[27]/td/img", "xpath:idRelative"],
+        ["xpath=//tr[27]/td/img", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
@@ -1258,6 +1403,6 @@
     "timeout": 300,
     "tests": []
   }],
-  "urls": ["http://onlinecafeteria.com/", "http://onlinecafeteria.com/cart.html"],
+  "urls": ["http://onlinecafeteria.com/", "http://onlinecafeteria.com/cart.html", "http://localhost/cart.html"],
   "plugins": []
 }
