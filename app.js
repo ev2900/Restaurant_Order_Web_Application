@@ -1,6 +1,6 @@
-var express = require('express')
+var express = require('express');
 var path = require('path');
-var app = express()
+var app = express();
 var braintree = require('braintree');
 var bodyParser = require('body-parser');
 
@@ -63,9 +63,9 @@ app.post('/process', parseUrlEnconded, function (request, response) {
 // routes
 app.get('/', function (req, res) {
   res.sendFile("views/index.html");
-})
+});
 
 // open on port
 app.listen(80,function(){
-console.log("application is running ...")
-})
+console.log("application is running ...");
+});
