@@ -18,7 +18,8 @@ $(function (){
         "Sushi": 8,
         "Pasta": 9,
         "Sandwich": 7,
-        "Soda": 1
+        "Soda": 1,
+        "Lobster": 24
     };
 
     const tax = 1.07;
