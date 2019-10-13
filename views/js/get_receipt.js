@@ -13,32 +13,31 @@ $(function (){
         "CONTACT_PHONE": contact_phone
     });
 
-    var priceMap = {
-        "Pizza": 12,
-        "Sushi": 8,
-        "Pasta": 9,
-        "Sandwich": 7,
-        "Soda": 1,
-        "Lobster": 24
-    };
-
-    const tax = 1.07;
+    // build price map from get menu call
+    var priceMap = {};
 
     $.ajax({
         type: 'POST',
         headers: { 
             'Content-Type': 'application/json'
         },
-        url: 'https://prod-07.centralus.logic.azure.com:443/workflows/8c248de2db134a2c92af65bd9a17b07f/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Wd3S1SPqQp76ixecNkL-1MQ6BlTOud7ebaPMbmmrHWM',
+        url: 'https://prod-12.centralus.logic.azure.com:443/workflows/623fba687c8a4d9983b03c59c34df6a7/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=uWI99lT_66N06ix1sNPExq1WHqQ_VS4f57_msIQCSRA',
         data: person,
-        success: function(resp) {
-            console.log(resp);
+        success: function(resp){
+                   
+            $.each(resp.Table1, function(i, each) {
+
+                priceMap[each.NAME] = parseFloat(each.PRICE);
+
+            });
+                    
         },
         error: function() {
             alert('error');
         }
     });
 
+    const tax = 1.07;
 
     $.ajax({
         type: 'POST',
