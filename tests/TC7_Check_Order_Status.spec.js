@@ -16,6 +16,6 @@ describe('TC7 - Check status of pizza', function() {
   it('TC7 - Check status of pizza', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.setRect(791, 824)
-    await driver.findElement(By.css("div:nth-child(5) .btn-default")).click()
+    await driver.findElement(By.xpath("//input[@value=\'Check order(s) status\']")).click()
   })
 })

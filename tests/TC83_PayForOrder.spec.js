@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC8.3 - Pay For Order Valid Number', function() {
+describe('TC8.3 - Pay For Order', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,7 +13,7 @@ describe('TC8.3 - Pay For Order Valid Number', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC8.3 - Pay For Order Valid Number', async function() {
+  it('TC8.3 - Pay For Order', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.findElement(By.xpath("//input[@value=\'Place order\']")).click()
     await driver.switchTo().frame(0)
@@ -22,8 +22,19 @@ describe('TC8.3 - Pay For Order Valid Number', function() {
     await driver.findElement(By.id("expiration")).click()
     await driver.findElement(By.id("expiration")).sendKeys("01/23")
     await driver.switchTo().defaultContent()
-    await driver.findElement(By.css("fieldset")).click()
-    await driver.findElement(By.css(".pure-button")).click()
-    assert(await driver.findElement(By.css("h3")).getText() == "Your order is confirmed")
+    await driver.findElement(By.id("inputAddress")).click()
+    await driver.findElement(By.id("inputAddress")).sendKeys("1234 Main St")
+    await driver.findElement(By.id("inputCity")).click()
+    await driver.findElement(By.id("inputCity")).sendKeys("Philadelphia")
+    await driver.findElement(By.id("inputState")).click()
+    {
+      const dropdown = await driver.findElement(By.id("inputState"))
+      await dropdown.findElement(By.xpath("//option[. = 'PA']")).click()
+    }
+    await driver.findElement(By.id("inputZip")).click()
+    await driver.findElement(By.id("inputZip")).sendKeys("19147")
+    await driver.findElement(By.id("inputEmail")).click()
+    await driver.findElement(By.id("inputEmail")).sendKeys("rosa.ciummo3@gmail.com")
+    await driver.findElement(By.xpath("//button[contains(.,\'Submit\')]")).click()
   })
 })

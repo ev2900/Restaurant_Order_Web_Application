@@ -14,17 +14,7 @@ describe('TC9 - Email Receipt', function() {
     await driver.quit();
   })
   it('TC9 - Email Receipt', async function() {
-    await driver.get("http://onlinecafeteria.com/cart.html")
-    await driver.findElement(By.xpath("//input[@value=\'Place order\']")).click()
-    await driver.switchTo().frame(0)
-    await driver.findElement(By.id("credit-card-number")).click()
-    await driver.findElement(By.id("credit-card-number")).sendKeys("378282246310005")
-    await driver.findElement(By.id("expiration")).click()
-    await driver.findElement(By.id("expiration")).sendKeys("01/23")
-    await driver.switchTo().defaultContent()
-    await driver.findElement(By.css("fieldset")).click()
-    await driver.findElement(By.css(".pure-button")).click()
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("email"))), 30000)
+    await driver.get("http://onlinecafeteria.com/order_confirmation.html")
     await driver.findElement(By.id("email")).click()
     await driver.findElement(By.id("email")).sendKeys("rosa.ciummo3@gmail.com")
     await driver.findElement(By.id("send")).click()

@@ -16,6 +16,6 @@ describe('TC8.1 - Verify Total Price', function() {
   it('TC8.1 - Verify Total Price', async function() {
     await driver.get("http://onlinecafeteria.com//cart.html")
     await driver.findElement(By.xpath("//input[@value=\'Place order\']")).click()
-    assert(await driver.findElement(By.css("#cart > h2")).getText() == "Your order total is: $18")
+    assert(await driver.findElement(By.css("li:nth-child(5)")).getText() == " Subtotal: $36.00 ")
   })
 })

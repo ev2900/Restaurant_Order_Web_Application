@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC11 - Admin adds item to menu', function() {
+describe('TC12 - Admin adds item to menu', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,16 +13,16 @@ describe('TC11 - Admin adds item to menu', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC11 - Admin adds item to menu', async function() {
-    await driver.get("http://localhost/add_menu_item.html")
+  it('TC12 - Admin adds item to menu', async function() {
+    await driver.get("http://onlinecafeteria.com/add_menu_item.html")
     await driver.findElement(By.id("name")).click()
     await driver.findElement(By.id("name")).sendKeys("Lobster")
     await driver.findElement(By.id("price")).click()
     await driver.findElement(By.id("price")).sendKeys("20")
     await driver.findElement(By.id("img_url")).click()
     await driver.findElement(By.id("img_url")).sendKeys("lobster.jpg")
-    await driver.findElement(By.id("SubmitNewItemBtn")).click()
-    await driver.findElement(By.linkText("Online Cafeteria")).click()
+    await driver.findElement(By.xpath("//input[@value=\'Submit\']")).click()
+    await driver.get("http://onlinecafeteria.com/place_order.html")
     await driver.findElement(By.id("AddToCartBtn")).click()
     await driver.sleep(1000)
     {
