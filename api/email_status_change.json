@@ -1,0 +1,82 @@
+{
+    "$connections": {
+        "value": {
+            "gmail": {
+                "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/gmail",
+                "connectionName": "gmail",
+                "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/gmail"
+            },
+            "sql": {
+                "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/sql",
+                "connectionName": "sql",
+                "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/sql"
+            }
+        }
+    },
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Condition": {
+                "actions": {
+                    "Send_email": {
+                        "inputs": {
+                            "body": {
+                                "Body": "Your order status has changed to out for delivery",
+                                "Subject": "Order is out for delivery",
+                                "To": "ev2900@gmail.com"
+                            },
+                            "host": {
+                                "connection": {
+                                    "name": "@parameters('$connections')['gmail']['connectionId']"
+                                }
+                            },
+                            "method": "post",
+                            "path": "/Mail"
+                        },
+                        "runAfter": {},
+                        "type": "ApiConnection"
+                    }
+                },
+                "expression": {
+                    "and": [
+                        {
+                            "equals": [
+                                "@triggerBody()?['STATUS']",
+                                "Out for Delivered"
+                            ]
+                        }
+                    ]
+                },
+                "runAfter": {},
+                "type": "If"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "When_an_item_is_modified_(V2)": {
+                "inputs": {
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['sql']['connectionId']"
+                        }
+                    },
+                    "method": "get",
+                    "path": "/datasets/@{encodeURIComponent(encodeURIComponent('default'))},@{encodeURIComponent(encodeURIComponent('default'))}/tables/@{encodeURIComponent(encodeURIComponent('[dbo].[ORDER]'))}/onupdateditems"
+                },
+                "recurrence": {
+                    "frequency": "Second",
+                    "interval": 5
+                },
+                "splitOn": "@triggerBody()?['value']",
+                "type": "ApiConnection"
+            }
+        }
+    }
+}
