@@ -28,9 +28,10 @@ $(function (){
  
                 html += '<tr> <td> <br> </td> </tr>';
                 html += '<tr> <td> <img src="' + each.IMG_URL + '" alt="Pizza"> </td> </tr>';
-                html += '<tr> <td> ' + each.NAME + ' </td> </tr>';
-                html += '<tr> <td> Price: $' + each.PRICE + ' </td> </tr>'; 
-                html += '<tr> <td> <input id="edit" class="btn-default submit" type="submit" value="Edit"> </td> </tr>';
+                html += '<tr> <td> Image URL: <input id="menu_pic' + each.ITEM_ID + '" type="text" value="' + each.IMG_URL + '"> </td> </tr>';
+                html += '<tr> <td> Name: <input id="menu_name' + each.ITEM_ID + '" type="text" value="' + each.NAME + '"> </td> </tr>';
+                html += '<tr> <td> Price: $ <input id="menu_price' + each.ITEM_ID + '" type="number" min="0" max="1000" step="0.01" value="' + each.PRICE.toFixed(2) + '"> </td> </tr>'; 
+                html += '<tr> <td> <input id="edit' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Save"> </td> </tr>';
                 html += '<tr> <td> <input id="delete' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Delete"> </td> </tr>';
     
             });

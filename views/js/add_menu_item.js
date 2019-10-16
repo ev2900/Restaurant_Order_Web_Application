@@ -43,7 +43,7 @@ $(function (){
             success: function(resp){
             console.log('success');
                 // setTimeout(6000);
-                window.location.href ='add_menu_item.html';
+                window.location.href ='edit_menu_item.html';
             },
             error: function() {
                 console.log('error');
