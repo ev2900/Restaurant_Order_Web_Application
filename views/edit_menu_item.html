@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title> Edit menu </title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/place_order.css">
+    </head>
+
+    <body>
+        <div class="nav-css">
+            <nav class="navbar navbar-default navbar-expand-lg">
+                <div class="col-sm-11"> <h2> <a href="/" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
+                <div class="col-sm-1"> <input class="btn-default submit" type="submit" value="Log out" onclick="document.cookie = 'name= ;path=/';document.cookie = 'phone= ;path=/';window.location.href ='index.html'"> </div>
+            </nav>
+        </div>
+
+        
+        <div class="container">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                                
+                        <h1> Edit or remove menu items: </h1>
+                                
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                    
+                        <table class="center" id="cart"> </table>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <input class="btn-default submit" type="submit" value="Add menu item" onclick="window.location.href ='add_menu_item.html'"> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <input class="btn-default submit" type="submit" value="View cart" onclick="window.location.href ='cart.html'"> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <input class="btn-default submit" type="submit" value="Place an order" onclick="window.location.href ='place_order.html'"> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <input class="btn-default submit" type="submit" value="Check order(s) status" onclick="window.location.href ='order_status.html'"> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row justify-content-center align-self-center vertical-center">
+                        <div> <input class="btn-default submit" type="submit" value="View past order(s)" onclick="window.location.href ='order_history.html'"> <br><br> </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="https://media3485.blob.core.windows.net/media/owl.carousel.min.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/edit_menu_item_display.js"></script>
+        <script src="js/delete_menu_item.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
