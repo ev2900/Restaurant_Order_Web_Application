@@ -13,6 +13,8 @@ $(function (){
             "CONTACT_PHONE": contact_phone
         });
 
+        var cartItemList = [];
+
         $.ajax({
             type: 'POST',
             headers: { 
@@ -22,6 +24,11 @@ $(function (){
             data: person,
             success: function(resp){
                 
+                // Move on if our cart table does not exist
+                if(resp.Table1 === undefined) {
+                    return;
+                }
+
                 $.each(resp.Table1, function(i, each) {
                                         
                     var node = document.createElement("li");
@@ -31,12 +38,36 @@ $(function (){
                     
                     document.getElementById("cart").appendChild(node);
 
+                    cartItemList.push(each.ITEM);
+
                 });
                 
                 console.log(resp);
+
             },
             error: function() {
                 alert('error');
+            }
+        }).then(function() {
+
+            var placeOrderButton = $('#PlaceOrderBtn');
+            var editCartButton = $('#EditCartBtn');
+            
+            if(cartItemList.length == 0) {
+                
+                // Hide the place order and edit cart buttons
+                placeOrderButton.hide();
+                editCartButton.hide();
+
+                // Change header
+                var cartLabel = $('#cart_label');
+                cartLabel.text("Your cart is currently empty!");
+
+            } else {
+                
+                placeOrderButton.show();
+                editCartButton.show();
+
             }
         });
 
