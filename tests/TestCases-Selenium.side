@@ -432,14 +432,10 @@
     }, {
       "id": "63c5235e-06e4-4baa-9406-9c24015706d8",
       "comment": "",
-      "command": "waitForElementPresent",
-      "target": "css=h1",
-      "targets": [
-        ["css=h1", "css:finder"],
-        ["xpath=//h1", "xpath:position"],
-        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
-      ],
-      "value": "Your cart currently has:"
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
     }, {
       "id": "d353b699-9ffb-4184-b35d-0cdd0b898c1e",
       "comment": "",
@@ -663,7 +659,7 @@
         ["xpath=//ul[@id='receipt']/li[4]", "xpath:idRelative"],
         ["xpath=//li[4]", "xpath:position"]
       ],
-      "value": " Subtotal: $36.00 "
+      "value": " Subtotal: $36.04"
     }]
   }, {
     "id": "cef0d71b-4c4f-443f-ad09-22b42ec6d82c",
@@ -1070,151 +1066,6 @@
       "value": "3000"
     }]
   }, {
-    "id": "667fbf9c-e05b-4a32-b782-7dfe19c6c479",
-    "name": "TC9.1 - Enter invalid email",
-    "commands": [{
-      "id": "3fcac61b-a164-43c2-a9b7-b9a03de7128c",
-      "comment": "",
-      "command": "open",
-      "target": "cart.html",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "a7ffbaf0-87b9-490a-9783-a3cb2f59bc21",
-      "comment": "",
-      "command": "click",
-      "target": "xpath=//input[@value='Place order']",
-      "targets": [
-        ["css=div:nth-child(7) .btn-default", "css:finder"],
-        ["xpath=//input[@value='Place order']", "xpath:attributes"],
-        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "73ac7db6-ca6e-4c5b-a621-ed7dc7bfa757",
-      "comment": "",
-      "command": "selectFrame",
-      "target": "index=0",
-      "targets": [
-        ["index=0"]
-      ],
-      "value": ""
-    }, {
-      "id": "344d04c8-ea1b-48b2-bbc1-59c4632c943b",
-      "comment": "",
-      "command": "click",
-      "target": "id=credit-card-number",
-      "targets": [
-        ["id=credit-card-number", "id"],
-        ["name=credit-card-number", "name"],
-        ["css=#credit-card-number", "css:finder"],
-        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
-        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "b7db23c3-9585-420c-8cb0-4a7345c46edd",
-      "comment": "",
-      "command": "type",
-      "target": "id=credit-card-number",
-      "targets": [
-        ["id=credit-card-number", "id"],
-        ["name=credit-card-number", "name"],
-        ["css=#credit-card-number", "css:finder"],
-        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
-        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "378282246310005"
-    }, {
-      "id": "b9889456-0e25-4541-ba57-beb601bdb223",
-      "comment": "",
-      "command": "click",
-      "target": "id=expiration",
-      "targets": [
-        ["id=expiration", "id"],
-        ["name=expiration", "name"],
-        ["css=#expiration", "css:finder"],
-        ["xpath=//input[@id='expiration']", "xpath:attributes"],
-        ["xpath=//div[@id='container']/div/div/div[2]/div/form/div/div/label/input", "xpath:idRelative"],
-        ["xpath=//div/label/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "c3c05632-6db7-4c6d-a75d-8405c4fefa2d",
-      "comment": "",
-      "command": "type",
-      "target": "id=expiration",
-      "targets": [
-        ["id=credit-card-number", "id"],
-        ["name=credit-card-number", "name"],
-        ["css=#credit-card-number", "css:finder"],
-        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
-        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "01/23"
-    }, {
-      "id": "60679e7e-88f5-49f3-91b8-9dec337e9345",
-      "comment": "",
-      "command": "selectFrame",
-      "target": "relative=parent",
-      "targets": [
-        ["relative=parent"]
-      ],
-      "value": ""
-    }, {
-      "id": "ed577123-87fd-472d-8169-7cade25e6baf",
-      "comment": "",
-      "command": "click",
-      "target": "id=inputEmail",
-      "targets": [
-        ["id=inputEmail", "id"],
-        ["css=#inputEmail", "css:finder"],
-        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
-        ["xpath=//div[@id='delivery-info']/div[4]/input", "xpath:idRelative"],
-        ["xpath=//div[4]/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "baac10a2-ce1c-406c-b98b-dc30bb21703b",
-      "comment": "",
-      "command": "type",
-      "target": "id=inputEmail",
-      "targets": [
-        ["id=email", "id"],
-        ["css=#email", "css:finder"],
-        ["xpath=//input[@id='email']", "xpath:attributes"],
-        ["xpath=//h5/input", "xpath:position"]
-      ],
-      "value": "ThisIsAFake"
-    }, {
-      "id": "0f23047c-5c5b-4fe4-80ba-a385c1ac7635",
-      "comment": "",
-      "command": "click",
-      "target": "id=pay-button",
-      "targets": [
-        ["id=pay-button", "id"],
-        ["css=#pay-button", "css:finder"],
-        ["xpath=//button[@id='pay-button']", "xpath:attributes"],
-        ["xpath=//button", "xpath:position"],
-        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "33af24af-b405-48c7-91dd-c7071a84563b",
-      "comment": "",
-      "command": "verifyText",
-      "target": "css=h1",
-      "targets": [
-        ["css=h1", "css:finder"],
-        ["xpath=//h1", "xpath:position"],
-        ["xpath=//h1[contains(.,'Pay for your order:')]", "xpath:innerText"]
-      ],
-      "value": "Pay for your order:"
-    }]
-  }, {
     "id": "5237e036-d7fd-4b41-824c-fb5e9eb0d917",
     "name": "TC12 - Admin adds item to menu",
     "commands": [{
@@ -1322,17 +1173,6 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "58c3a810-f5f5-40de-8046-c4e625eed0e1",
-      "comment": "",
-      "command": "click",
-      "target": "id=AddToCartBtn",
-      "targets": [
-        ["css=.row:nth-child(4) .btn-default", "css:finder"],
-        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
-        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
       "id": "049833be-c7e5-4a72-8011-1494b522b2fc",
       "comment": "",
       "command": "pause",
@@ -1340,17 +1180,24 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "25b41836-670d-4056-b76a-0666e894b77a",
+      "comment": "",
+      "command": "assertText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[3]/td",
+      "targets": [],
+      "value": "Lobster"
+    }, {
       "id": "e6e973c5-0780-4cc9-a285-8aa9987015cf",
       "comment": "",
-      "command": "assertElementPresent",
-      "target": "css=tr:nth-child(27) img",
+      "command": "assertText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[4]/td",
       "targets": [
-        ["css=tr:nth-child(27) img", "css:finder"],
-        ["xpath=(//img[@alt='Pizza'])[6]", "xpath:img"],
-        ["xpath=//table[@id='cart']/tbody/tr[27]/td/img", "xpath:idRelative"],
-        ["xpath=//tr[27]/td/img", "xpath:position"]
+        ["css=tr:nth-child(4) > td", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td", "xpath:idRelative"],
+        ["xpath=//tr[4]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Price: $20')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "Price: $20"
     }]
   }, {
     "id": "53d89290-5983-4f44-a92c-069be380628f",
@@ -1408,6 +1255,247 @@
         ["xpath=//h1", "xpath:position"]
       ],
       "value": "Success!"
+    }]
+  }, {
+    "id": "6c8651a5-ab5e-4fa4-8add-e27306270131",
+    "name": "TC15 - Add/Delete Menu Item",
+    "commands": [{
+      "id": "1dce76c8-93ad-4e8b-ab5d-9c493392806d",
+      "comment": "",
+      "command": "open",
+      "target": "place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4e02221-3642-4a11-96ef-9ac1534b2f79",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8172533b-560b-4825-85f4-0c368c4b7098",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add menu item']",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add menu item']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a4186be7-7958-415f-af48-1e41be765c45",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fa3b5c67-84fc-4a06-9295-423b25b21f90",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "ItemToDelete"
+    }, {
+      "id": "49ad4cad-13e3-42da-8740-8949d79edbb8",
+      "comment": "",
+      "command": "click",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78f13517-b677-49c3-8a13-253a5d5d4038",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [],
+      "value": "20"
+    }, {
+      "id": "fad5a487-3838-4a89-aa97-26fa2745d32b",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitNewItemBtn",
+      "targets": [
+        ["id=SubmitNewItemBtn", "id"],
+        ["css=#SubmitNewItemBtn", "css:finder"],
+        ["xpath=//input[@id='SubmitNewItemBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06f5a47a-17b7-4e52-bfa5-979a64759916",
+      "comment": "",
+      "command": "click",
+      "target": "id=delete50",
+      "targets": [
+        ["id=delete48", "id"],
+        ["css=#delete48", "css:finder"],
+        ["xpath=//input[@id='delete48']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[49]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[49]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d84ec75-b65e-41d7-804a-5825c680706d",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7f71507-0b51-4984-817b-f4e77698a4c0",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "id=delete50",
+      "targets": [
+        ["id=delete44", "id"],
+        ["css=#delete44", "css:finder"],
+        ["xpath=//input[@id='delete44']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[7]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[7]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "26ef4879-63c1-4c27-9f5a-a85683244103",
+    "name": "TC16 - Edit Menu Item ",
+    "commands": [{
+      "id": "0d94d8d2-8a07-4082-807f-bdc816cd91c8",
+      "comment": "",
+      "command": "open",
+      "target": "place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55239d32-b881-4f3c-b5ed-fc24e50e547b",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "469e13dd-404a-445d-87e0-63e3f103554d",
+      "comment": "",
+      "command": "click",
+      "target": "id=menu_price4",
+      "targets": [
+        ["id=menu_price4", "id"],
+        ["css=#menu_price4", "css:finder"],
+        ["xpath=//input[@id='menu_price4']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[12]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[12]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0a08690-e4a0-48c4-b21f-ff27e434533d",
+      "comment": "",
+      "command": "type",
+      "target": "id=menu_price4",
+      "targets": [],
+      "value": "100.00"
+    }, {
+      "id": "8aaa9daa-d90a-4488-8db5-bc1361b8d778",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit4",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b8a97add-673e-47ba-8c46-1b67b3e46bf5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Place an order']",
+      "targets": [
+        ["css=.row:nth-child(6) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef093087-0e5f-489d-8625-beaa40a4ada9",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[9]/td",
+      "targets": [
+        ["css=tr:nth-child(9) > td", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[9]/td", "xpath:idRelative"],
+        ["xpath=//tr[9]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Price: $7')]", "xpath:innerText"]
+      ],
+      "value": "Price: $100"
+    }, {
+      "id": "fe814c8b-ca21-41cc-be63-32fd7c06d31f",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9e0248d-8d77-4ecf-a8ab-7b9f2444bcc8",
+      "comment": "",
+      "command": "click",
+      "target": "id=menu_price4",
+      "targets": [
+        ["id=menu_price4", "id"],
+        ["css=#menu_price4", "css:finder"],
+        ["xpath=//input[@id='menu_price4']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[12]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[12]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37394525-7628-4c99-8fa1-1be2aa4eb772",
+      "comment": "",
+      "command": "type",
+      "target": "id=menu_price4",
+      "targets": [],
+      "value": "7.00"
+    }, {
+      "id": "b3fff225-171b-4e1b-8e10-796325875c75",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit4",
+      "targets": [
+        ["id=edit4", "id"],
+        ["css=#edit4", "css:finder"],
+        ["xpath=//input[@id='edit4']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[13]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[13]/td/input", "xpath:position"]
+      ],
+      "value": ""
     }]
   }],
   "suites": [{
