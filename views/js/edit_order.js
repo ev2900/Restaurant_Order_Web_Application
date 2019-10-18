@@ -60,6 +60,7 @@ $(function (){
 
                     // Create delete button to be next to cart item
                     var delButton = document.createElement("input");
+                    delButton.className = "btn-default submit";
                     delButton.type = "submit";
                     delButton.value = "Delete";
                     delButton.id = each.ORDER_ID;
