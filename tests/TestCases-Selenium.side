@@ -1497,6 +1497,135 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "5f0452b4-0643-4119-95ef-21ba7efee816",
+    "name": "TC14 - Change Order Status",
+    "commands": [{
+      "id": "a7e73a12-9714-41c3-969d-2d834a196e8c",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/all_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76cd789e-eba5-4bc7-aff7-58f9f9703f24",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .fa",
+      "targets": [
+        ["css=tr:nth-child(1) .fa", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[8]/a/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f91e04d2-792a-441a-adc7-1f57c1ace5e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69851838-4488-4f19-acbe-7aeda5bafb3d",
+      "comment": "",
+      "command": "select",
+      "target": "id=Editstatus",
+      "targets": [],
+      "value": "label=Out for Delivery"
+    }, {
+      "id": "43030bdf-5b3d-4451-90a0-8f08eca9c08f",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f53ed538-6d05-481a-a61e-1393b47da0f4",
+      "comment": "",
+      "command": "click",
+      "target": "id=UpdateStatusBtn",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='EditOrderModal']/div/div/div[2]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update Status')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c75ac188-6d58-4709-a185-2de6df65a15e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(7)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(7)", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[7]", "xpath:idRelative"],
+        ["xpath=//td[7]", "xpath:position"],
+        ["xpath=//td[contains(.,'Out for Delivery')]", "xpath:innerText"]
+      ],
+      "value": "label = Out for Delivery"
+    }]
+  }, {
+    "id": "a2a232ba-be5a-4714-9a07-a573087df352",
+    "name": "TC13 - Email Notification When Delivered",
+    "commands": [{
+      "id": "77754fd6-3480-4257-97d8-a3baefa1377d",
+      "comment": "",
+      "command": "open",
+      "target": "http://www.onlinecafeteria.com/all_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c33978c2-7b67-41bd-8235-80ef49fcd2b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .fa",
+      "targets": [
+        ["css=tr:nth-child(1) .fa", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[8]/a/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab8abdab-58b6-4660-b5c0-815e20123749",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58da0c10-17b6-476b-8e61-dd7cf5f8d219",
+      "comment": "",
+      "command": "select",
+      "target": "id=Editstatus",
+      "targets": [],
+      "value": "label=Delivered"
+    }, {
+      "id": "8c27809c-f1b8-433d-b22a-7a488ba0725a",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "",
+      "targets": [],
+      "value": "\"Success\""
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
