@@ -6,13 +6,13 @@
         <title> Add to menu </title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/place_order.css">
+        <link rel="stylesheet" href="css/add_menu_item.css">
     </head>
 
-    <body>
+    <body style="background-image: url('img/cafeteria.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
         <div class="nav-css">
             <nav class="navbar navbar-default navbar-expand-lg">
-                <div class="col-sm-11"> <h2> <a href="/" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
+                <div class="col-sm-11"> <h2> <a class="nametag" href="/"> Online Cafeteria </a> </h2> </div>
                 <div class="col-sm-1"> <input class="btn-default submit" type="submit" value="Log out" onclick="document.cookie = 'name= ;path=/';document.cookie = 'phone= ;path=/';window.location.href ='index.html'"> </div>
             </nav>
         </div>
@@ -39,15 +39,15 @@
                                 </tr>
 
                                 <tr>   
-                                    <td> <h5> Name: </h5> <input class="form-control input-box" type="text" id="name" autocomplete="off"> <br> </td>
+                                    <td> <h5> <label> Name: </label> </h5> <input class="form-control input-box" type="text" id="name" autocomplete="off"> <br> </td>
                                 </tr>
 
                                 <tr>
-                                    <td> <h5> Price: </h5> <input class="form-control input-box" type="number" id="price" autocomplete="off"> <br> </td>
+                                    <td> <h5> <label> Price: </label> </h5> <input class="form-control input-box" type="number" id="price" autocomplete="off"> <br> </td>
                                 </tr>
 
                                 <tr>
-                                    <td> <h5> Image URL: </h5> <input class="form-control input-box" type="text" id="img_url" autocomplete="off"> <br> </td>
+                                    <td> <h5> <label> Image URL: </label> </h5> <input class="form-control input-box" type="text" id="img_url" autocomplete="off"> <br> </td>
                                 </tr>
                     
                                 <tr>

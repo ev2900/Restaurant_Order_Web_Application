@@ -1,0 +1,83 @@
+.input-box {
+    width: 75%;
+}
+
+/* Remove controls from Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+ }
+  
+/* Re-applies the controls on :hover and :focus */
+input[type="number"]:hover,
+input[type="number"]:focus {
+    -moz-appearance: number-input;
+}
+
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
+
+.submit {
+    font-size: 18px;
+}
+
+.nav-css {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.aaaa {
+    font-size: 1000px;
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
+
+ul {
+    white-space: pre;  
+  }
+
+  li {
+      color: rgb(255, 239, 213);
+      text-shadow: currentColor;
+      text-size-adjust: 150px;
+  }
+
+td {
+    text-align: left;
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+}
+
+label {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+  
+  h1 {
+      color: rgb(255, 239, 213);
+      text-shadow: currentColor;
+      background-color: rgb(97, 71, 6);
+  }
+  
+  .nametag {
+      color: rgb(255, 239, 213);
+      text-shadow: currentColor;
+      background-color: rgb(97, 71, 6);
+      text-decoration: none;
+  }
+  
+  .control-label {
+      color: rgb(255, 239, 213);
+      text-shadow: currentColor;
+      background-color: rgb(97, 71, 6);
+  }
+  
+  input[class="btn-default submit"] {
+      color: black;
+      background-color: antiquewhite;
+  }
