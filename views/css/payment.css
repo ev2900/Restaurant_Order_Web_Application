@@ -16,13 +16,19 @@
 }
 
 ul {
-  white-space: pre;  
+  white-space: pre;
 }
 
 li {
     color: rgb(255, 239, 213);
     text-shadow: currentColor;
     text-size-adjust: 150px;
+}
+
+h1 {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
 }
 
 label {
@@ -47,13 +53,4 @@ label {
 input[class="btn-default submit"] {
     color: black;
     background-color: antiquewhite;
-}
-
-.bottom-buttons{
-    width:200px;
-    height:200px;
-    margin:auto;
-    padding:2%;
-    position: relative;
-    text-align: center;
 }

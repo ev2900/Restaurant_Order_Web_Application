@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="css/order_confirmation.css">
 </head>
 
-<body>
+<body style="background-image: url('img/cafeteria.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
     <div class="nav-css">
         <nav class="navbar navbar-default navbar-expand-lg">
-            <div class="col-sm-11"> <h2> <a href="/" style="text-decoration: none; color:black"> Online Cafeteria </a> </h2> </div>
+            <div class="col-sm-11"> <h2> <a class="nametag" href="/"> Online Cafeteria </a> </h2> </div>
             <div class="col-sm-1"> <input class="btn-default submit" type="submit" value="Log out" onclick="document.cookie = 'name= ;path=/';document.cookie = 'phone= ;path=/';window.location.href ='index.html'"> </div>
         </nav>
     </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="row justify-content-center align-self-center vertical-center">
-                    <h1> Success! <img src="img/checkmark.PNG" alt='Success' width="60" height="60"> <br> <br> </h1>
+                    <h1> <label> Success! </label> <img src="img/checkmark.PNG" alt='Success' width="60" height="60"> <br> <br> </h1>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="col-sm-12">
                 <div class="row justify-content-center align-self-center vertical-center">
 
-                    <h3> Your order is confirmed <br></h3>
+                    <h3> <label> Your order is confirmed </label> <br></h3>
 
                 </div>
             </div>
@@ -39,7 +39,7 @@
         <form id="receipt-form">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="row justify-content-center align-self-center vertical-center">
+                    <div class="row justify-content-center align-self-center vertical-center" style="background-image: url('img/cafeteria-tray.png'); background-repeat: no-repeat; background-size: contain; background-position: center center; padding: 40px;">
 
                         <ul id="receipt" class="list-unstyled"> </ul>
 
@@ -52,7 +52,7 @@
             <div class="col-sm-12">
                 <div class="row justify-content-center align-self-center vertical-center">
 
-                    <h4> Want an emailed receipt? <br><br></h4>
+                    <h4> <br> <label> Want an emailed receipt? </label> <br><br></h4>
 
                 </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="col-sm-12">
                 <div class="row justify-content-center align-self-center vertical-center">
 
-                    <div> <h5> Email: <input type="email" id="email"/> <input type="submit" value="Send" id="send"/> </h5> </div>
+                    <div> <h5> <label> Email: </label> <input type="email" id="email"/> <input type="submit" value="Send" id="send"/> </h5> </div>
 
                 </div>
             </div>
