@@ -31,6 +31,12 @@ h1 {
     background-color: rgb(97, 71, 6);
 }
 
+th, td {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
 .nametag {
     color: rgb(255, 239, 213);
     text-shadow: currentColor;

@@ -24,17 +24,77 @@ $(function (){
             
             var html = "";
 
+            // $.each(resp.Table1, function(i, each) {
+ 
+            //     html += '<tr> <td> <br> </td> </tr>';
+            //     html += '<tr> <td> <img src="' + each.IMG_URL + '" alt="Pizza"> </td> </tr>';
+            //     html += '<tr> <td> Image URL: <input id="menu_pic' + each.ITEM_ID + '" type="text" value="' + each.IMG_URL + '"> </td> </tr>';
+            //     html += '<tr> <td> Name: <input id="menu_name' + each.ITEM_ID + '" type="text" value="' + each.NAME + '"> </td> </tr>';
+            //     html += '<tr> <td> Price: $ <input id="menu_price' + each.ITEM_ID + '" type="number" min="0" max="1000" step="0.01" value="' + each.PRICE.toFixed(2) + '"> </td> </tr>'; 
+            //     html += '<tr> <td> <input id="edit' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Save"> </td> </tr>';
+            //     html += '<tr> <td> <input id="delete' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Delete"> </td> </tr>';
+    
+            // });
+
+            html += "<tr>";
+
             $.each(resp.Table1, function(i, each) {
  
-                html += '<tr> <td> <br> </td> </tr>';
-                html += '<tr> <td> <img src="' + each.IMG_URL + '" alt="Pizza"> </td> </tr>';
-                html += '<tr> <td> Image URL: <input id="menu_pic' + each.ITEM_ID + '" type="text" value="' + each.IMG_URL + '"> </td> </tr>';
-                html += '<tr> <td> Name: <input id="menu_name' + each.ITEM_ID + '" type="text" value="' + each.NAME + '"> </td> </tr>';
-                html += '<tr> <td> Price: $ <input id="menu_price' + each.ITEM_ID + '" type="number" min="0" max="1000" step="0.01" value="' + each.PRICE.toFixed(2) + '"> </td> </tr>'; 
-                html += '<tr> <td> <input id="edit' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Save"> </td> </tr>';
-                html += '<tr> <td> <input id="delete' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Delete"> </td> </tr>';
-    
+                html += '   <td style="padding: 250px 0 auto; min-width: 200px;"> <img src="' + each.IMG_URL + '" alt="Pizza"> </td>';
+
             });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Image URL: <input id="menu_pic' + each.ITEM_ID + '" type="text" value="' + each.IMG_URL + '"> </label> </td>';
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Name: <input id="menu_name' + each.ITEM_ID + '" type="text" value="' + each.NAME + '"> </label> </td>';
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Price: $ <input id="menu_price' + each.ITEM_ID + '" type="number" min="0" max="1000" step="0.01" value="' + each.PRICE.toFixed(2) + '"> </label> </td>'; 
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <input id="edit' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Save"> </td>';
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <input id="delete' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Delete"> </td>';
+
+            });
+
+            html += '</tr>';
 
             // console.log(html);
             $cart.html(html);

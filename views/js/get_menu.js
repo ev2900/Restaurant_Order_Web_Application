@@ -22,19 +22,50 @@ $(function (){
         data: person,
         success: function(resp){
             
+            // Build a horizontal menu for the user to scroll through
+
             var html = "";
+
+            html += "<tr>";
 
             $.each(resp.Table1, function(i, each) {
  
-                html += '<tr> <td> <br> </td> </tr>';
-                html += '<tr> <td> <img src="' + each.IMG_URL + '" alt="Pizza"> </td> </tr>';
-                html += '<tr> <td> ' + each.NAME + ' </td> </tr>';
-                html += '<tr> <td> Price: $' + each.PRICE + ' </td> </tr>'; 
-                html += '<tr> <td> Choose quantity: <input type="number" id="' + each.NAME + '" min="0" max="25" step="1" value="0" </td> </tr>';
-    
+                html += '   <td style="padding: 250px 0 auto; min-width: 200px;"> <img src="' + each.IMG_URL + '" alt="Pizza"> </td>';
+
             });
 
-            // console.log(html);
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> ' + each.NAME + '</label> </td>';
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Price: $' + each.PRICE + '</label> </td>'; 
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Choose quantity: <input type="number" id="' + each.NAME + '" min="0" max="25" step="1" value="0"> </label> </td>';
+
+            });
+
+            html += '</tr>';
+            
             $cart.html(html);
 
         },

@@ -47,8 +47,8 @@ $(function (){
         if(cartItemList.length == 0) {
             
             // Hide the place order and edit cart buttons
-            placeOrderButton.prop('disabled', true);
-            editCartButton.prop('disabled', true);
+            placeOrderButton.prop('disabled', true).css('opacity',0.5);;
+            editCartButton.prop('disabled', true).css('opacity',0.5);;
 
         } else {
             
