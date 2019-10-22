@@ -92,7 +92,7 @@ $(function (){
                 
                 $receiptList.append($receiptTotal);
     
-                var $orderIdBit = $('<li> Order ID: ' + combinedOrderID + '<br> </li>');
+                var $orderIdBit = $('<li style="display:none;"> Order ID: ' + combinedOrderID + '<br> </li>');
                 $receiptList.append($orderIdBit);
     
                 console.log(resp);
