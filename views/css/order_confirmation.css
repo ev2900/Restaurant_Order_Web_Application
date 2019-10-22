@@ -20,7 +20,33 @@ ul {
 }
 
 li {
-    text-size-adjust: 250px;
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    text-size-adjust: 150px;
+}
+
+label {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
+.nametag {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+    text-decoration: none;
+}
+
+.control-label {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
+input[class="btn-default submit"] {
+    color: black;
+    background-color: antiquewhite;
 }
 
 .bottom-buttons{

@@ -13,13 +13,10 @@ input[type="number"]:focus {
     -moz-appearance: number-input;
 }
 
-/* table {
-    table-layout: fixed;
-    margin:40px auto 0px auto;
-    border-collapse: collapse;
-    border-spacing: 0;
-    max-width: 500px;
-} */
+table {
+    margin-left:auto; 
+    margin-right:auto;
+}
 
 .submit {
     font-size: 18px;
@@ -54,6 +51,12 @@ td {
     color: rgb(255, 239, 213);
     text-shadow: currentColor;
 }
+
+label {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
   
   h1 {
       color: rgb(255, 239, 213);
@@ -78,27 +81,3 @@ td {
       color: black;
       background-color: antiquewhite;
   }
-
-.search-table {
-    table-layout: fixed; margin:40px auto 0px auto;
-}
-
-.search-table, td, th {
-    padding: 15px 0;
-}
-
-th {
-    padding:20px 7px; font-size:15px;
-}
-
-td {
-    padding:5px 10px; height:25px;
-}
-
-.search-table-outter { 
-    overflow-x: scroll; 
-}
-
-th, td { 
-    min-width: 200px; 
-}

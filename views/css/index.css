@@ -13,3 +13,20 @@
 .submit {
     font-size: 18px;
 }
+
+h1 {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
+.control-label {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
+input[class="btn-default submit"] {
+    color: black;
+    background-color: antiquewhite;
+}
