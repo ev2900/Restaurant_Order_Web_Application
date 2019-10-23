@@ -6,13 +6,16 @@ $(function (){
     var contact_name = ca[0].replace("name=","")
     var contact_phone = ca[1].replace(" phone=","") 
 
-    var button = $('#admin');
+    var editMenuButton = $('#admin');
+    var seeAllOrdersButton = $('#SeeAllOrdersBtn');
 
     function checkIfAdmin() {
         if(contact_name === "admin" && contact_phone === "999-999-9999") {
-            button.show();
+            editMenuButton.show();
+            seeAllOrdersButton.show();
         } else {
-            button.hide();
+            editMenuButton.hide();
+            seeAllOrdersButton.hide();
         }
     }
 
