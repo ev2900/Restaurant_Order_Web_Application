@@ -1626,6 +1626,102 @@
       "targets": [],
       "value": "\"Success\""
     }]
+  }, {
+    "id": "8d54b0f5-4b18-4ff7-bd6c-5d8d04166428",
+    "name": "TC17 - See all orders being cooked",
+    "commands": [{
+      "id": "f908cd33-a12a-46ca-b990-01fe4e6f4379",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c7d886c-9900-4240-8138-3892c5715dde",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cooking_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5196d49-defb-40f6-8cf8-8db3108c259b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89650201-dba3-4787-a212-3b8d56ecab3a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Cooking')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "10cf1cd9-7bd5-4e9f-a9fe-0a27631a2322",
+    "name": "TC18 - See all orders being delivered",
+    "commands": [{
+      "id": "83362616-3975-49bc-a9fb-332607c8c3c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ce46ba8-f7dd-465a-8c1f-58db4fd44fcd",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/all_out_for_delivery_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56dcdabf-e397-4c7a-8c8f-1f7ad5e5d2b4",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "259c9228-930f-4e5b-96dd-b36114a5a94e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Out for Delivery')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f1fa0be9-b467-423f-91ca-2d3ef8c80772",
+    "name": "TC19 - See all delivered orders",
+    "commands": [{
+      "id": "17d48934-b115-4f15-851f-4b40e4983b9d",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d59a4b3-3dd1-4a4d-ae27-d39604d7154c",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/delivered_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00445144-180d-4069-8adc-5e7208fb92ac",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c185941c-7782-4520-b63b-2e926e0a6a80",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Delivered')]",
+      "targets": [],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
