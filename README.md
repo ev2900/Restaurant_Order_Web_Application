@@ -449,6 +449,44 @@ Response (example):
 	    ...
 ```
 
+### Get Reviews
+```
+Http verb: POST
+Url: https://prod-19.centralus.logic.azure.com:443/workflows/0ec8ed020ef841f98e0d9e65357925dd/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4wAhTUTvXQBPt9vqaS9o2xHLLaLMZ7mFp88ZThIdiO8
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{}
+Response (example): 
+{
+    "Table1": [
+        {
+            "ITEM_ID": 55,
+            "NAME": "Chris",
+            "DESCRIPTION": "Best Ice Cream!"
+        }
+    ] 
+    ...
+```
+
+### Create Review
+```
+Http verb: POST
+Url: https://prod-16.centralus.logic.azure.com:443/workflows/9acc3323898f41c0847066d2f7e3f34d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vQ54kgaP1p3938cpIqiCtNnDfoqmD8EoW67eRafn-kU
+Headers:'Content-Type': 'application/json' 
+Body (example): 
+{
+    "ITEM_ID": "55",
+    "NAME": "Chirs",
+    "DESCRIPTION": "Great ice cream!"
+}
+
+Response (example): 
+Response (example): 
+{
+    "status": "success"
+}
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
