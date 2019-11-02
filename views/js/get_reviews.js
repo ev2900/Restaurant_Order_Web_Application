@@ -191,6 +191,7 @@ $(document).on("click", "[id*='review']", function() {
                 modal.style.display = "block";
 
                 var reviewList = document.getElementById("reviews");
+                reviewList.innerHTML = "";
 
                 for (var i = 0; i < itemReviews.length; i++) {
                     
