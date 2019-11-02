@@ -109,6 +109,67 @@
             </div>
         </form>
 
+        <!-- The Modal for no review case -->
+        <div id="myModalNoReviews" class="modal">
+
+            <!-- Modal content (No Reviews) -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h4> No reviews are available :( <a id="add-review" href="#"> Be the first to review! </a></h4>
+                <table id="no-review">
+                    <tr>
+                        <td id="image-no-review"></td>
+                    </tr>
+                    <tr id="add0" class="add-review-display">
+                        <td class="list-unstyled"> <h5> What'd you think? </h5> </td>
+                    </tr>
+                    <tr id="add1" class="add-review-display">
+                        <td><input id="no-review-input-name" type="text" placeholder="Your name"></td>
+                    </tr>
+                    <tr id="add2" class="add-review-display">
+                        <!-- Explore textarea element -->
+                        <td ><textarea id="no-review-input-review" rows="4" cols="50" placeholder="Your review."></textarea> </td>
+                    </tr>
+                    <tr id="add3" class="add-review-display">
+                        <td><input id="create-review" type="submit" value="Submit review"></td>
+                    </tr>
+                </table>
+            </div>
+      
+        </div>
+
+        <!-- The Modal for review case -->
+        <div id="myModalReviews" class="modal">
+
+            <!-- Modal content (Reviews!) -->
+            <div class="modal-content">
+                    <span class="close2">&times;</span>
+                    <h4> The following reviews are available - <a id="add-review2" href="#"> Add another one! </a></h4>
+                    <table id="review">
+                        <tr>
+                            <td id="image-review"></td>
+                        </tr>
+                        <tr>
+                            <td class="list-unstyled"> <ul id="reviews"></ul> </td>
+                        </tr>
+                        <tr id="add7" class="add-review-display">
+                            <td class="list-unstyled"> <h5> What'd you think? </h5> </td>
+                        </tr>
+                        <tr id="add4" class="add-review-display">
+                            <td><input id="review-input-name" type="text" placeholder="Your name"></td>
+                        </tr>
+                        <tr id="add5" class="add-review-display">
+                            <!-- Explore textarea element -->
+                            <td ><textarea id="review-input-review" rows="4" cols="50" placeholder="Your review."></textarea> </td>
+                        </tr>
+                        <tr id="add6" class="add-review-display">
+                            <td><input id="create-review-with-reviews" type="submit" value="Submit review"></td>
+                        </tr>
+                    </table>
+                </div>
+          
+            </div>
+
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="https://media3485.blob.core.windows.net/media/owl.carousel.min.js"></script>
@@ -117,6 +178,7 @@
         <script src="js/get_menu.js"></script>
         <script src="js/place_order.js"></script>
         <script src="js/empty_cart.js"></script>
+        <script src="js/get_reviews.js"></script>
         <script src="js/hide_admin_button.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
