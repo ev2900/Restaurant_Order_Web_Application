@@ -65,6 +65,16 @@ $(function (){
             });
 
             html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> <a id="review ' + each.ITEM_ID + '" href="#"> See review(s) </a> </label> </td>';
+
+            });
+
+            html += '</tr>';
             
             $cart.html(html);
 
