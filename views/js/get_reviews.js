@@ -88,6 +88,8 @@ $(document).on("click", "[id*='review']", function() {
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
                     modal.style.display = "none";
+                    var newReviewTitle = document.getElementById("add0");
+                    newReviewTitle.style.display = "none";
                     var noReviewInputName = document.getElementById("add1");
                     noReviewInputName.style.display = "none";
                     var noReviewInputReview = document.getElementById("add2");
@@ -100,6 +102,8 @@ $(document).on("click", "[id*='review']", function() {
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
+                        var newReviewTitle = document.getElementById("add0");
+                        newReviewTitle.style.display = "none";
                         var noReviewInputName = document.getElementById("add1");
                         noReviewInputName.style.display = "none";
                         var noReviewInputReview = document.getElementById("add2");
@@ -113,6 +117,8 @@ $(document).on("click", "[id*='review']", function() {
                 // TODO make this work
                 var addReviewLink = document.getElementById("add-review");
                 addReviewLink.onclick = function() {
+                    var newReviewTitle = document.getElementById("add0");
+                    newReviewTitle.style.display = "block";
                     var noReviewInputName = document.getElementById("add1");
                     noReviewInputName.style.display = "block";
                     var noReviewInputReview = document.getElementById("add2");
@@ -123,7 +129,18 @@ $(document).on("click", "[id*='review']", function() {
             
                 $('#create-review').on('click', function(ev) {
                     var nameInput = $('#no-review-input-name').val();
+
+                    if(nameInput == '') {
+                        alert("Please enter your name");
+                        return;
+                    }
+
                     var reviewInput = $('#no-review-input-review').val();
+
+                    if(reviewInput == '') {
+                        alert("Please enter a review");
+                        return;
+                    }
 
                     var createReviewBody = JSON.stringify({
                         "ITEM_ID": itemId,
@@ -159,7 +176,7 @@ $(document).on("click", "[id*='review']", function() {
                 var modal = document.getElementById("myModalReviews");
 
                 // Get the <span> element that closes the modal
-                var span = document.getElementsByClassName("close")[0];
+                var span = document.getElementsByClassName("close2")[0];
                 
                 var imgTd = document.getElementById("image-review");
                 while(imgTd.firstChild) imgTd.removeChild(imgTd.firstChild)
@@ -172,15 +189,42 @@ $(document).on("click", "[id*='review']", function() {
                 imgTd.appendChild(img);
 
                 modal.style.display = "block";
+
+                var reviewList = document.getElementById("reviews");
+
+                for (var i = 0; i < itemReviews.length; i++) {
+                    
+                    var itemReview = itemReviews[i];
+
+                    var nameListItem = document.createElement("li");
+                    var nameTextNode = document.createTextNode(itemReview.NAME + " says,");
+                    nameListItem.appendChild(nameTextNode);
+
+                    reviewList.appendChild(nameListItem);
+                    
+                    var reviewListItem = document.createElement("li");
+                    var reviewTextNode = document.createTextNode("\"" + itemReview.DESCRIPTION + "\"");
+                    reviewListItem.appendChild(reviewTextNode);
+
+                    reviewList.appendChild(reviewListItem);
+
+                    var lineBreak = document.createElement("li");
+                    var breakIt = document.createElement("br");
+                    lineBreak.appendChild(breakIt);
+                    reviewList.appendChild(lineBreak);
+
+                }
                 
                 // When the user clicks on <span> (x), close the modal
                 span.onclick = function() {
                     modal.style.display = "none";
-                    var noReviewInputName = document.getElementById("add1");
+                    var newReviewTitle = document.getElementById("add7");
+                    newReviewTitle.style.display = "none";
+                    var noReviewInputName = document.getElementById("add4");
                     noReviewInputName.style.display = "none";
-                    var noReviewInputReview = document.getElementById("add2");
+                    var noReviewInputReview = document.getElementById("add5");
                     noReviewInputReview.style.display = "none";
-                    var noReviewInputSubmit = document.getElementById("add3");
+                    var noReviewInputSubmit = document.getElementById("add6");
                     noReviewInputSubmit.style.display = "none";
                 }
 
@@ -188,32 +232,47 @@ $(document).on("click", "[id*='review']", function() {
                 window.onclick = function(event) {
                     if (event.target == modal) {
                         modal.style.display = "none";
-                        var noReviewInputName = document.getElementById("add1");
+                        var newReviewTitle = document.getElementById("add7");
+                        newReviewTitle.style.display = "none";
+                        var noReviewInputName = document.getElementById("add4");
                         noReviewInputName.style.display = "none";
-                        var noReviewInputReview = document.getElementById("add2");
+                        var noReviewInputReview = document.getElementById("add5");
                         noReviewInputReview.style.display = "none";
-                        var noReviewInputSubmit = document.getElementById("add3");
+                        var noReviewInputSubmit = document.getElementById("add6");
                         noReviewInputSubmit.style.display = "none";
                     }
                 }
 
                 // If add a review link is clicked, show inputs for add review
                 // TODO make this work
-                var addReviewLink = document.getElementById("add-review");
+                var addReviewLink = document.getElementById("add-review2");
                 addReviewLink.onclick = function() {
-                    var noReviewInputName = document.getElementById("add1");
+                    var newReviewTitle = document.getElementById("add7");
+                    newReviewTitle.style.display = "block";
+                    var noReviewInputName = document.getElementById("add4");
                     noReviewInputName.style.display = "block";
-                    var noReviewInputReview = document.getElementById("add2");
+                    var noReviewInputReview = document.getElementById("add5");
                     noReviewInputReview.style.display = "block";
-                    var noReviewInputSubmit = document.getElementById("add3");
+                    var noReviewInputSubmit = document.getElementById("add6");
                     noReviewInputSubmit.style.display = "block";
                 }
             
                 $('#create-review-with-reviews').on('click', function(ev) {
                     var nameInput = $('#review-input-name').val();
+
+                    if(nameInput == '') {
+                        alert("Please enter your name");
+                        return;
+                    }
+
                     var reviewInput = $('#review-input-review').val();
 
-                    var createReviewBody = JSON.stringify({
+                    if(reviewInput == '') {
+                        alert("Please enter a review");
+                        return;
+                    }
+
+                    var createReviewBodyThisTime = JSON.stringify({
                         "ITEM_ID": itemId,
                         "NAME": nameInput,
                         "DESCRIPTION": reviewInput
@@ -225,7 +284,7 @@ $(document).on("click", "[id*='review']", function() {
                             'Content-Type': 'application/json'
                         },
                         url: 'https://prod-16.centralus.logic.azure.com:443/workflows/9acc3323898f41c0847066d2f7e3f34d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vQ54kgaP1p3938cpIqiCtNnDfoqmD8EoW67eRafn-kU',
-                        data: createReviewBody,
+                        data: createReviewBodyThisTime,
                         success: function(resp){
                             console.log('success');
             
