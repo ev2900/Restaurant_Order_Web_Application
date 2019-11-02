@@ -47,7 +47,9 @@ $(document).on("click", "[id*='review']", function() {
 
                 $.each(resp.Table1, function(i, review) {
 
-                    if(itemId == review.ITEM_ID) {
+                    var reviewItemId = parseInt(itemId);
+                    
+                    if(reviewItemId == review.ITEM_ID) {
                         itemReviews.push(review);
                     }
 
@@ -57,56 +59,188 @@ $(document).on("click", "[id*='review']", function() {
             error: function() {
                 console.log('error');
             }
-        });
+        }).then(function() {
 
-        if(itemReviews.length == 0) {
-            
-            itemId = parseInt(itemId);
-            var item = menuMap[itemId];
+            if(itemReviews.length == 0) {
+                
+                itemId = parseInt(itemId);
+                var item = menuMap[itemId];
 
-            // Get the modal
-            var modal = document.getElementById("myModalNoReviews");
+                // Get the modal
+                var modal = document.getElementById("myModalNoReviews");
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
 
-            var imgTd = document.getElementById("image-no-review");
-            while(imgTd.firstChild) imgTd.removeChild(imgTd.firstChild)
-            imgTd = document.getElementById("image-no-review");
+                var imgTd = document.getElementById("image-no-review");
+                while(imgTd.firstChild) imgTd.removeChild(imgTd.firstChild)
+                imgTd = document.getElementById("image-no-review");
 
-            var img = document.createElement("img");
-            img.src = item.IMG_URL;
-            img.alt = "Image not available";
+                var img = document.createElement("img");
+                img.src = item.IMG_URL;
+                img.alt = "Image not available";
 
-            imgTd.appendChild(img);
+                imgTd.appendChild(img);
 
-            modal.style.display = "block";
-            
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
+                modal.style.display = "block";
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
                     modal.style.display = "none";
+                    var noReviewInputName = document.getElementById("add1");
+                    noReviewInputName.style.display = "none";
+                    var noReviewInputReview = document.getElementById("add2");
+                    noReviewInputReview.style.display = "none";
+                    var noReviewInputSubmit = document.getElementById("add3");
+                    noReviewInputSubmit.style.display = "none";
                 }
-            }
 
-            // If add a review link is clicked, show inputs for add review
-            // TODO make this work
-            var addReviewLink = document.getElementById("add-review");
-            addReviewLink.onclick = function() {
-                var noReviewInputName = document.getElementById("add1");
-                noReviewInputName.style.display = "block";
-                var noReviewInputReview = document.getElementById("add2");
-                noReviewInputReview.style.display = "block";
-                var noReviewInputSubmit = document.getElementById("add3");
-                noReviewInputSubmit.style.display = "block";
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        var noReviewInputName = document.getElementById("add1");
+                        noReviewInputName.style.display = "none";
+                        var noReviewInputReview = document.getElementById("add2");
+                        noReviewInputReview.style.display = "none";
+                        var noReviewInputSubmit = document.getElementById("add3");
+                        noReviewInputSubmit.style.display = "none";
+                    }
+                }
+
+                // If add a review link is clicked, show inputs for add review
+                // TODO make this work
+                var addReviewLink = document.getElementById("add-review");
+                addReviewLink.onclick = function() {
+                    var noReviewInputName = document.getElementById("add1");
+                    noReviewInputName.style.display = "block";
+                    var noReviewInputReview = document.getElementById("add2");
+                    noReviewInputReview.style.display = "block";
+                    var noReviewInputSubmit = document.getElementById("add3");
+                    noReviewInputSubmit.style.display = "block";
+                }
+            
+                $('#create-review').on('click', function(ev) {
+                    var nameInput = $('#no-review-input-name').val();
+                    var reviewInput = $('#no-review-input-review').val();
+
+                    var createReviewBody = JSON.stringify({
+                        "ITEM_ID": itemId,
+                        "NAME": nameInput,
+                        "DESCRIPTION": reviewInput
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        url: 'https://prod-16.centralus.logic.azure.com:443/workflows/9acc3323898f41c0847066d2f7e3f34d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vQ54kgaP1p3938cpIqiCtNnDfoqmD8EoW67eRafn-kU',
+                        data: createReviewBody,
+                        success: function(resp){
+                            console.log('success');
+            
+                            // route to add to cart (refresh)
+                            window.location.href ='place_order.html';
+            
+                        },
+                        error: function() {
+                            console.log('error');
+                        }
+                    });
+                });
+            } else {
+                
+                itemId = parseInt(itemId);
+                var item = menuMap[itemId];
+
+                // Get the modal
+                var modal = document.getElementById("myModalReviews");
+
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+                
+                var imgTd = document.getElementById("image-review");
+                while(imgTd.firstChild) imgTd.removeChild(imgTd.firstChild)
+                imgTd = document.getElementById("image-review");
+
+                var img = document.createElement("img");
+                img.src = item.IMG_URL;
+                img.alt = "Image not available";
+
+                imgTd.appendChild(img);
+
+                modal.style.display = "block";
+                
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function() {
+                    modal.style.display = "none";
+                    var noReviewInputName = document.getElementById("add1");
+                    noReviewInputName.style.display = "none";
+                    var noReviewInputReview = document.getElementById("add2");
+                    noReviewInputReview.style.display = "none";
+                    var noReviewInputSubmit = document.getElementById("add3");
+                    noReviewInputSubmit.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                        var noReviewInputName = document.getElementById("add1");
+                        noReviewInputName.style.display = "none";
+                        var noReviewInputReview = document.getElementById("add2");
+                        noReviewInputReview.style.display = "none";
+                        var noReviewInputSubmit = document.getElementById("add3");
+                        noReviewInputSubmit.style.display = "none";
+                    }
+                }
+
+                // If add a review link is clicked, show inputs for add review
+                // TODO make this work
+                var addReviewLink = document.getElementById("add-review");
+                addReviewLink.onclick = function() {
+                    var noReviewInputName = document.getElementById("add1");
+                    noReviewInputName.style.display = "block";
+                    var noReviewInputReview = document.getElementById("add2");
+                    noReviewInputReview.style.display = "block";
+                    var noReviewInputSubmit = document.getElementById("add3");
+                    noReviewInputSubmit.style.display = "block";
+                }
+            
+                $('#create-review-with-reviews').on('click', function(ev) {
+                    var nameInput = $('#review-input-name').val();
+                    var reviewInput = $('#review-input-review').val();
+
+                    var createReviewBody = JSON.stringify({
+                        "ITEM_ID": itemId,
+                        "NAME": nameInput,
+                        "DESCRIPTION": reviewInput
+                    });
+
+                    $.ajax({
+                        type: 'POST',
+                        headers: { 
+                            'Content-Type': 'application/json'
+                        },
+                        url: 'https://prod-16.centralus.logic.azure.com:443/workflows/9acc3323898f41c0847066d2f7e3f34d/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vQ54kgaP1p3938cpIqiCtNnDfoqmD8EoW67eRafn-kU',
+                        data: createReviewBody,
+                        success: function(resp){
+                            console.log('success');
+            
+                            // route to add to cart (refresh)
+                            window.location.href ='place_order.html';
+            
+                        },
+                        error: function() {
+                            console.log('error');
+                        }
+                    });
+                });
             }
-        }
+        });
+    
     });
 
  });
