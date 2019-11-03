@@ -1722,6 +1722,225 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "3b2be408-c1fb-49e4-9196-4b15362d6fba",
+    "name": "TC21 - Can see nutrition info",
+    "commands": [{
+      "id": "5f16467c-f109-4e7e-8cf9-b3197f50e4e5",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47488610-fdc7-430c-8956-d77200f16efa",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80a64c49-a322-48a6-add0-3117dbd8f8b7",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ddf6706-b262-44b0-a66d-44df28959aac",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]",
+      "targets": [
+        ["css=tr:nth-child(6) > td:nth-child(1) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[6]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "caa68e4a-4e79-4628-9a79-e3ea5de32017",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Calories: 300')]",
+      "targets": [
+        ["css=#cart tr:nth-child(4) > td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td", "xpath:idRelative"],
+        ["xpath=//tr[4]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Calories: 300')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58a72ad8-4e25-4faa-86fe-fd0e9a942164",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]",
+      "targets": [
+        ["css=tr:nth-child(5) > td:nth-child(1) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "af6bc507-6ace-427b-be93-233da71cb348",
+    "name": "TC22 - User can review item",
+    "commands": [{
+      "id": "6bac189e-437d-462a-b31b-38942be1e585",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec1aead9-e005-4f0b-b8bf-5a97b82a0f5c",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "061a5bc2-1656-448d-afa1-583e1a81e5ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-review2",
+      "targets": [
+        ["id=add-review2", "id"],
+        ["linkText=Add another one!", "linkText"],
+        ["css=#add-review2", "css:finder"],
+        ["xpath=//a[contains(text(),'Add another one!')]", "xpath:link"],
+        ["xpath=//a[@id='add-review2']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalReviews']/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[8]", "xpath:href"],
+        ["xpath=//div[3]/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add another one!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce5df90d-6401-4eaf-85c0-5649bc99a368",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9de73e10-ee9c-418b-a559-bbb48d522b4c",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "test "
+    }, {
+      "id": "f262e72a-2af2-4284-8a59-8845137c996f",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dcc7e5d-e7a1-46f2-97f1-46e55542294b",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": "test review"
+    }, {
+      "id": "8c243952-e4e3-4152-8bd8-dc96d9ecb22a",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-review-with-reviews",
+      "targets": [
+        ["id=create-review-with-reviews", "id"],
+        ["css=#create-review-with-reviews", "css:finder"],
+        ["xpath=//input[@id='create-review-with-reviews']", "xpath:attributes"],
+        ["xpath=//tr[@id='add6']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4195abf1-c3e3-413d-ade9-a1ec05f90ec9",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78c3ddb9-2b3f-42c7-9105-9257c0bf05f3",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bdb010d-2c99-4888-b9d6-e11d8892cf68",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a86ee8f-fbb5-4612-a09a-d6cbdc698087",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"test review\"')]",
+      "targets": [
+        ["css=li:nth-child(14)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[14]", "xpath:idRelative"],
+        ["xpath=//li[14]", "xpath:position"],
+        ["xpath=//li[contains(.,'\"test review\"')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
