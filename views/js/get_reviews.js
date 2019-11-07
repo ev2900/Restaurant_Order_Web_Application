@@ -198,8 +198,21 @@ $(document).on("click", "[id*='review']", function() {
                     var itemReview = itemReviews[i];
 
                     var nameListItem = document.createElement("li");
-                    var nameTextNode = document.createTextNode(itemReview.NAME + " says,");
-                    nameListItem.appendChild(nameTextNode);
+
+                    // if name is Online Cafeteria, bold it
+                    if (itemReview.NAME == "Online Cafeteria") {
+                        var spanner = document.createElement("span");
+                        var bold = document.createElement("strong");
+                        var nameBoldText = document.createTextNode(itemReview.NAME);
+                        bold.appendChild(nameBoldText);
+                        var says = document.createTextNode(" says,");
+                        spanner.appendChild(bold);
+                        spanner.appendChild(says);
+                        nameListItem.appendChild(spanner);
+                    } else {
+                        var nameTextNode = document.createTextNode(itemReview.NAME + " says,");
+                        nameListItem.appendChild(nameTextNode);
+                    }
 
                     reviewList.appendChild(nameListItem);
                     
@@ -245,7 +258,6 @@ $(document).on("click", "[id*='review']", function() {
                 }
 
                 // If add a review link is clicked, show inputs for add review
-                // TODO make this work
                 var addReviewLink = document.getElementById("add-review2");
                 addReviewLink.onclick = function() {
                     var newReviewTitle = document.getElementById("add7");
@@ -271,6 +283,17 @@ $(document).on("click", "[id*='review']", function() {
                     if(reviewInput == '') {
                         alert("Please enter a review");
                         return;
+                    }
+
+                    // parse cookie so you can id the user
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    var contact_name = ca[0].replace("name=","")
+                    var contact_phone = ca[1].replace(" phone=","")
+                    
+                    // if admin, replace name with Online Cafeteria
+                    if(contact_name === "admin" && contact_phone === "999-999-9999") {
+                        nameInput = "Online Cafeteria";
                     }
 
                     var createReviewBodyThisTime = JSON.stringify({
