@@ -1948,6 +1948,602 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "a862d849-1254-40bd-8ce8-4f3f2b4f5ffc",
+    "name": "TC23 - Respond To User Review",
+    "commands": [{
+      "id": "23acddc7-92a5-49b7-bc48-b4c0cfcceaec",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "80865733-0923-46a2-84bb-8395a98af9b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d4d8aaa-591a-43d6-9801-e6973720c6a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "2705500c-a495-413b-9698-4a894c6a10a8",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "999-999-9999"
+    }, {
+      "id": "083ecc84-eda3-44f6-a041-9d14327d151b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34364c2b-746f-4d7f-a400-47c200213521",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2048bea-5ce2-4698-8597-cccfb0ed2f1d",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6f9c623-1f7b-4353-aecf-b7869fc22608",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-review2",
+      "targets": [
+        ["id=add-review2", "id"],
+        ["linkText=Add another one!", "linkText"],
+        ["css=#add-review2", "css:finder"],
+        ["xpath=//a[contains(text(),'Add another one!')]", "xpath:link"],
+        ["xpath=//a[@id='add-review2']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalReviews']/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[8]", "xpath:href"],
+        ["xpath=//div[3]/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add another one!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f3b345d-f6c4-4bed-b6aa-ea2aea91e758",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dc578cc-836e-4239-85e8-7d751c2f4bd7",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Admin"
+    }, {
+      "id": "34fd93a2-b177-4334-856b-1490861b787b",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d297cdfe-d0d0-4312-8bd9-200ff1af1e4d",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": "Thanks for the review"
+    }, {
+      "id": "acef1515-f0e0-40bb-91d7-bc7680416e9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-review-with-reviews",
+      "targets": [
+        ["id=create-review-with-reviews", "id"],
+        ["css=#create-review-with-reviews", "css:finder"],
+        ["xpath=//input[@id='create-review-with-reviews']", "xpath:attributes"],
+        ["xpath=//tr[@id='add6']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd66144e-5cff-4842-9e43-90ebc19c0a75",
+      "comment": "",
+      "command": "pause",
+      "target": "4000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "868f9aef-00d2-464e-8486-a0702c70e475",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0a798e5-f91c-42f2-b2c8-c253e27ef378",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9853f23-e185-4868-867e-11ab7375fe77",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"Thanks for the review\"')]",
+      "targets": [
+        ["css=li:nth-child(44)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[44]", "xpath:idRelative"],
+        ["xpath=//li[44]", "xpath:position"],
+        ["xpath=//li[contains(.,'\"Thanks for the review\"')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "694bf7ee-5500-4e19-8d81-e56fc4f07e10",
+    "name": "TC21.1 - Nutrition Info Contains Calorie Count",
+    "commands": [{
+      "id": "321eb2a0-ece8-41de-a262-1669e4739fa2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b5825dd-95d8-48c7-9d77-259fe4f4b01c",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b362864-7240-4ca5-a916-171246abb432",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40981c0b-c68c-4f1a-b17f-9e4eaa0a592b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Calories: 300')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d01625e2-bf06-4858-bd78-e7143f681c2b",
+    "name": "TC21.2 - Nutrition Info Contains Ingredients ",
+    "commands": [{
+      "id": "a638401a-543b-44b1-bd9c-e7a573fad6d4",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99478ad3-160a-4b26-ac7f-ed86525b7080",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c8d22c4-1dfa-4ae3-9dde-5286343d2346",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c16032e-2809-4b95-9e63-232bdc0cca3b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "79ed1676-b602-493a-995a-e9aeac05ee0e",
+    "name": "TC21.3 Nutrition Guidance Is Available",
+    "commands": [{
+      "id": "07853c48-b1cd-421a-b596-3a7b369db4d8",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3f86d49-60c2-4698-bb56-6091a2fcd058",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f6c35cc-3447-403a-a4ba-450c95bc57d0",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89f236b6-9655-4a8e-a24a-a98ab5270754",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "935c20a6-8d2c-4056-a1a7-d10b255d3093",
+    "name": "TC22.1 - User review is displayed",
+    "commands": [{
+      "id": "4eee9004-1e09-41fa-be40-cb500e171ccc",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c5ce890-61c2-4a8b-b9a3-8f6322e409db",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f717670c-496d-4320-baa1-b5fb148df15b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3174b412-a166-41bb-9742-2e44cce3e439",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"test review\"')]",
+      "targets": [
+        ["css=li:nth-child(10)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[10]", "xpath:idRelative"],
+        ["xpath=//li[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5b5918d2-b952-4284-a1d1-a963f2da2729",
+    "name": "TC22.2 - Option To Add Review Is Present",
+    "commands": [{
+      "id": "c68f561c-b307-42ec-9081-32b3f3d87907",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1928547-7efd-4da6-8072-b630106b52f6",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d102cfc0-708a-4f63-bb5e-7ba2949d7090",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ee3aa654-46ac-4455-9f8b-6f64f02d8135",
+    "name": "TC22.3 - No Reviews Available Is Indicated",
+    "commands": [{
+      "id": "997b5b7b-c772-4143-9732-9d43922ad55b",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dc6f9fb-e326-47e8-973c-c1e629a065c4",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 36",
+      "targets": [
+        ["id=review 36", "id"],
+        ["css=#review\\ 36", "css:finder"],
+        ["xpath=(//a[contains(text(),'See review(s)')])[6]", "xpath:link"],
+        ["xpath=//a[@id='review 36']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td[6]/label/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[6]", "xpath:href"],
+        ["xpath=//td[6]/label/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b033364d-202f-4dfd-9452-a9da7524345a",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dbcfdd4-1469-45d6-b5aa-be1ffd71e8e1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#myModalNoReviews h4",
+      "targets": [
+        ["css=#myModalNoReviews h4", "css:finder"],
+        ["xpath=//div[@id='myModalNoReviews']/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "06c981dd-a29c-4760-8113-272c377f5175",
+    "name": "TC22.4 - Users name is next to review",
+    "commands": [{
+      "id": "77248187-20e8-441f-b7d1-1a65ddb7e5c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49f9614f-9fdf-43fa-9cd1-7d5a1b641632",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc4d7c67-a27c-44dd-a58a-0a74b4711ad7",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e56d60b-4d51-4074-9138-961b63d78491",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'Vanilla Ice says,')]",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Vanilla Ice says,')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9bc0dee9-da6a-47e4-bf81-411fb6a15a75",
+    "name": "TC23.1 - Admin has option to review ",
+    "commands": [{
+      "id": "73bed701-1e30-4ff6-a5c6-82157ae04400",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a392fcd0-cf2e-4287-926d-75227cc61a9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53ae34ce-06e5-4fa6-938c-261eb4195e81",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "d74b0ff1-b951-4c6f-b374-8710c3fa7ac7",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "76169e2a-3b37-4f00-a553-74c598a99c55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d9af21f-dd51-4c55-8d9c-d1dec6ee853f",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c162bf29-9341-46d9-86aa-8ff32c415a87",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "62669ecf-3d09-495b-88f5-ca16d43d0fbf",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=review 57",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2347bced-4998-4547-9df5-0aeb2a41771c",
+    "name": "TC23.2 - Review Indicates It Is From Admin",
+    "commands": [{
+      "id": "dd2305e9-d126-422d-b56d-c3fe20215c79",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc07ae37-75bd-40fc-91a0-fe7fde9b54f9",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c3cc2ea-a95f-42d2-81ba-5a6f93d9c5d3",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "37eda35a-574f-4a1f-957a-d121f48cad6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "823e75b4-68cf-4150-b97a-80a6b98dd395",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d01c2e75-5b66-49c6-aeb1-9c379efd040c",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14d661e8-4c97-4085-968a-02dc2f115856",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "515d7780-38b4-4df8-9664-f00db9c90391",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a90bbc07-395f-45e7-80fe-78af9a5e4533",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//strong",
+      "targets": [
+        ["css=li:nth-child(22) strong", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[22]/span/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Online Cafeteria')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
