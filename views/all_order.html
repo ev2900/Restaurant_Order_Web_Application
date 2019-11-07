@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
         <meta charset="UTF-8">
         <title> Show All Orders </title>
@@ -11,7 +11,7 @@
     </head>
 
     <body style="background-image: url('img/cafeteria.jpeg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
-        
+
         <div class="nav-css">
             <nav class="navbar navbar-default navbar-expand-lg">
                 <div class="col-sm-11"> <h2> <a class="nametag" href="/"> Online Cafeteria </a> </h2> </div>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="container">
-    
+
             <div class="row">
                     <div class="col-sm-12">
                     <div class="row justify-content-center align-self-center vertical-center">
@@ -28,14 +28,14 @@
                     </div>
                 </div>
             </div>
-    
+
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row justify-content-center align-self-center vertical-center" style="padding: 10px">
-                        <h3> 
+                        <h3>
                             <input id="view_cooking" class="btn-default submit" type="submit" value="View Orders That Are Cooking" onclick="window.location.href ='cooking_orders.html'"/>
                             <input id="view_out_for_delivery" class="btn-default submit" type="submit" value="View Out For Delivery Orders" onclick="window.location.href ='all_out_for_delivery_orders.html'"/>
-                            <input id="view_delivered" class="btn-default submit" type="submit" value="View Delivered Orders" onclick="window.location.href ='delivered_orders.html'"/> 
+                            <input id="view_delivered" class="btn-default submit" type="submit" value="View Delivered Orders" onclick="window.location.href ='delivered_orders.html'"/>
                         </h3>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="justify-content-center align-self-center vertical-center" style="max-height: 800px; max-width: 2000px; overflow-y: auto;">
-                        <table id="Tableorders" class="table"> 
+                        <table id="Tableorders" class="table">
                             <thead>
                                 <tr>
                                     <th>Order ID</th>
@@ -107,6 +107,27 @@
                 </div>
             </div>
         </div>
+      </div>
+
+        <div class="modal fade" id="ViewOrderModal" tabindex="-1" role="dialog" aria-labelledby="ViewOrderModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">ORDER ID : <span id="orderID"></span></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="ord-details"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
