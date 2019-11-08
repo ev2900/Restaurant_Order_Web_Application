@@ -66,6 +66,6 @@ app.get('/', function (req, res) {
 });
 
 // open on port
-app.listen(8000,function(){
+app.listen(80,function(){
 console.log("application is running ...");
 });
