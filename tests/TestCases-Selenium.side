@@ -366,7 +366,7 @@
     }]
   }, {
     "id": "73108196-6402-4f99-8fc4-36889f48865f",
-    "name": "TC6.1 - Add item twice to cart",
+    "name": "TC6.1 - Add pasta twice to cart",
     "commands": [{
       "id": "05a11b14-7c85-4136-957d-373c9d80b4bd",
       "comment": "",
@@ -396,7 +396,7 @@
       "id": "108360a9-21b9-40b6-b437-361687e53d86",
       "comment": "",
       "command": "click",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
         ["id=pizza", "id"],
         ["css=#pizza", "css:finder"],
@@ -409,7 +409,7 @@
       "id": "732f99c7-fd47-482c-be58-c4613ab30585",
       "comment": "",
       "command": "type",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
         ["id=pizza", "id"],
         ["css=#pizza", "css:finder"],
@@ -451,7 +451,7 @@
       "id": "709fe07e-d8b8-4143-81ab-ab471037581c",
       "comment": "",
       "command": "click",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
         ["css=tr:nth-child(15) > td", "css:finder"],
         ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[15]/td", "xpath:idRelative"],
@@ -462,7 +462,7 @@
       "id": "b7c57148-6662-4085-824c-2231a9d6a47e",
       "comment": "",
       "command": "type",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
         ["id=pasta", "id"],
         ["css=#pasta", "css:finder"],
@@ -487,26 +487,16 @@
       "id": "637271e3-cad1-46b0-ad79-8f3f341cce45",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//li[contains(.,'Item: Icecream\nQuantity: 1\n\n')]",
-      "targets": [
-        ["css=li:nth-child(1)", "css:finder"],
-        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
-        ["xpath=//li", "xpath:position"],
-        ["xpath=//li[contains(.,'Item: Icecream\nQuantity: 1\n\n')]", "xpath:innerText"]
-      ],
-      "value": "Item: Icecream\\nQuantity: 1"
+      "target": "xpath=//li[contains(.,'Item: Pasta\\nQuantity: 1')]",
+      "targets": [],
+      "value": "Item: Pasta\\nQuantity: 1"
     }, {
       "id": "f63d570c-99e5-45b6-afd4-921abbbb0b7e",
       "comment": "",
       "command": "verifyText",
-      "target": "xpath=//li[contains(.,'Item: Icecream\nQuantity: 3\n\n')]",
-      "targets": [
-        ["css=li:nth-child(2)", "css:finder"],
-        ["xpath=//ul[@id='cart']/li[2]", "xpath:idRelative"],
-        ["xpath=//li[2]", "xpath:position"],
-        ["xpath=//li[contains(.,'Item: Icecream\nQuantity: 3\n\n')]", "xpath:innerText"]
-      ],
-      "value": "Item: Icecream\\nQuantity: 3"
+      "target": "xpath=//li[contains(.,'Item: Pasta\\nQuantity: 3')]",
+      "targets": [],
+      "value": "Item: Pasta\\nQuantity: 3"
     }]
   }, {
     "id": "f11b619e-37e1-4ece-afd1-0af1a836af24",
@@ -540,20 +530,20 @@
       "id": "4855d0c9-df64-4a40-b4e8-1684c87de379",
       "comment": "",
       "command": "click",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
-        ["id=Icecream", "id"],
-        ["css=#Icecream", "css:finder"],
-        ["xpath=//input[@id='Icecream']", "xpath:attributes"],
-        ["xpath=//table[@id='cart']/tbody/tr[7]/td/label/input", "xpath:idRelative"],
-        ["xpath=//label/input", "xpath:position"]
+        ["id=Pasta", "id"],
+        ["css=#Pasta", "css:finder"],
+        ["xpath=//input[@id='Pasta']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[15]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[15]/td/input", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "e2900ef2-e49b-40e4-90ab-fb60ffacd7e0",
       "comment": "",
       "command": "type",
-      "target": "id=Icecream",
+      "target": "id=Pasta",
       "targets": [
         ["id=pizza", "id"],
         ["css=#pizza", "css:finder"],
@@ -669,7 +659,7 @@
         ["xpath=//ul[@id='receipt']/li[4]", "xpath:idRelative"],
         ["xpath=//li[4]", "xpath:position"]
       ],
-      "value": " Subtotal: $8.00"
+      "value": " Subtotal: $36.04"
     }]
   }, {
     "id": "cef0d71b-4c4f-443f-ad09-22b42ec6d82c",
@@ -1192,16 +1182,21 @@
     }, {
       "id": "25b41836-670d-4056-b76a-0666e894b77a",
       "comment": "",
-      "command": "//assertText",
-      "target": "css=tr:nth-child(2) > td:nth-child(6) > label",
+      "command": "assertText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[3]/td",
       "targets": [],
       "value": "Lobster"
     }, {
       "id": "e6e973c5-0780-4cc9-a285-8aa9987015cf",
       "comment": "",
-      "command": "//assertText",
+      "command": "assertText",
       "target": "xpath=//table[@id='cart']/tbody/tr[4]/td",
-      "targets": [],
+      "targets": [
+        ["css=tr:nth-child(4) > td", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td", "xpath:idRelative"],
+        ["xpath=//tr[4]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Price: $20')]", "xpath:innerText"]
+      ],
       "value": "Price: $20"
     }]
   }, {
@@ -1351,23 +1346,35 @@
     }, {
       "id": "06f5a47a-17b7-4e52-bfa5-979a64759916",
       "comment": "",
-      "command": "//click",
+      "command": "click",
       "target": "id=delete50",
-      "targets": [],
+      "targets": [
+        ["id=delete48", "id"],
+        ["css=#delete48", "css:finder"],
+        ["xpath=//input[@id='delete48']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[49]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[49]/td/input", "xpath:position"]
+      ],
       "value": ""
     }, {
       "id": "2d84ec75-b65e-41d7-804a-5825c680706d",
       "comment": "",
-      "command": "//pause",
+      "command": "pause",
       "target": "2000",
       "targets": [],
       "value": ""
     }, {
       "id": "c7f71507-0b51-4984-817b-f4e77698a4c0",
       "comment": "",
-      "command": "//assertElementNotPresent",
+      "command": "assertElementNotPresent",
       "target": "id=delete50",
-      "targets": [],
+      "targets": [
+        ["id=delete44", "id"],
+        ["css=#delete44", "css:finder"],
+        ["xpath=//input[@id='delete44']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[7]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[7]/td/input", "xpath:position"]
+      ],
       "value": ""
     }]
   }, {
@@ -1434,9 +1441,14 @@
     }, {
       "id": "ef093087-0e5f-489d-8625-beaa40a4ada9",
       "comment": "",
-      "command": "//verifyText",
+      "command": "verifyText",
       "target": "xpath=//table[@id='cart']/tbody/tr[9]/td",
-      "targets": [],
+      "targets": [
+        ["css=tr:nth-child(9) > td", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[9]/td", "xpath:idRelative"],
+        ["xpath=//tr[9]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Price: $7')]", "xpath:innerText"]
+      ],
       "value": "Price: $100"
     }, {
       "id": "fe814c8b-ca21-41cc-be63-32fd7c06d31f",
@@ -1492,7 +1504,7 @@
       "id": "a7e73a12-9714-41c3-969d-2d834a196e8c",
       "comment": "",
       "command": "open",
-      "target": "all_order.html",
+      "target": "http://localhost/all_order.html",
       "targets": [],
       "value": ""
     }, {
@@ -1607,31 +1619,12 @@
       "targets": [],
       "value": "label=Delivered"
     }, {
-      "id": "8310b4c4-02f6-496f-924b-43e8e22ed341",
-      "comment": "",
-      "command": "click",
-      "target": "id=UpdateStatusBtn",
-      "targets": [
-        ["id=UpdateStatusBtn", "id"],
-        ["css=#UpdateStatusBtn", "css:finder"],
-        ["xpath=//button[@id='UpdateStatusBtn']", "xpath:attributes"],
-        ["xpath=//div[@id='EditOrderModal']/div/div/div[2]/div/button[2]", "xpath:idRelative"],
-        ["xpath=//button[2]", "xpath:position"],
-        ["xpath=//button[contains(.,'Update Status')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
       "id": "8c27809c-f1b8-433d-b22a-7a488ba0725a",
       "comment": "",
-      "command": "verifyText",
-      "target": "css=tr:nth-child(1) > td:nth-child(7)",
-      "targets": [
-        ["css=tr:nth-child(1) > td:nth-child(7)", "css:finder"],
-        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[7]", "xpath:idRelative"],
-        ["xpath=//td[7]", "xpath:position"],
-        ["xpath=//td[contains(.,'Delivered')]", "xpath:innerText"]
-      ],
-      "value": "Delivered"
+      "command": "assertAlert",
+      "target": "",
+      "targets": [],
+      "value": "\"Success\""
     }]
   }, {
     "id": "8d54b0f5-4b18-4ff7-bd6c-5d8d04166428",
@@ -1729,6 +1722,7 @@
       "targets": [],
       "value": ""
     }]
+<<<<<<< HEAD
   }, {
     "id": "3b2be408-c1fb-49e4-9196-4b15362d6fba",
     "name": "TC21 - Can see nutrition info",
@@ -2544,6 +2538,8 @@
       ],
       "value": ""
     }]
+=======
+>>>>>>> ba4309e4c19110b0bb7a5ea542c6079eae0955e4
   }],
   "suites": [{
     "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",

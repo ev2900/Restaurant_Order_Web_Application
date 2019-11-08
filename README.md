@@ -494,7 +494,6 @@ Url: https://prod-19.centralus.logic.azure.com:443/workflows/f53c282ca9c64f0d90c
 Headers:'Content-Type': 'application/json' 
 Body (example): 
 {}
-
 Response (example): 
 Response (example): 
 {

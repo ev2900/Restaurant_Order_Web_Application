@@ -35,7 +35,7 @@ $(function (){
                 c = r.insertCell(6);
                 c.innerHTML = each.STATUS;
                 c = r.insertCell(7);
-                c.innerHTML = '<a href="javascript:void(0);" class="openDialog" data-id="'+each.ORDER_ID+'" data-toggle="modal" data-target="#EditOrderModal"><i class="fa fa-edit"></i></a>';
+                c.innerHTML = '<a class="openDialog1" data-cname="'+each.CONTACT_NAME+'" data-cphone="'+each.CONTACT_PHONE+'" data-toggle="modal" data-target="#ViewOrderModal">View Order</a><a href="javascript:void(0);" class="openDialog" data-id="'+each.ORDER_ID+'" data-toggle="modal" data-target="#EditOrderModal"><i class="fa fa-edit"></i></a>';
             });
             document.getElementById("Tableorders").appendChild(node);
 
@@ -51,6 +51,67 @@ $(function (){
         // console.log(orderId)
         $(".modal-header #orderID").html(orderId);
     });
+
+
+	$(document).on("click", ".openDialog1", function () {
+        var cname = $(this).data('cname');
+          var cphone= $(this).data('cphone');
+        // console.log(orderId)
+        //$(".modal-header #orderID").html(orderId);
+
+		var order = JSON.stringify({
+      "CONTACT_NAME": cname,
+      "CONTACT_PHONE": cphone
+
+        });
+
+        // submit AJAX call
+        $.ajax({
+            type: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            url: 'https://prod-00.centralus.logic.azure.com:443/workflows/0274b0815d154d7ba8d196cf673d6f52/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=XOQgBWSe8M78klr0B51omcpP1fwlCND-z2lvaiLMdG8',
+
+            data: order,
+            success: function(resp){
+                console.log('success');
+                console.log(resp);
+				 // $(".modal-header #ord-details").html(resp);
+  var c = '', r;
+            $.each(resp.Table1, function(i, each) {
+
+
+
+
+                c  = "<b>Contact Name:</b> "+each.CONTACT_NAME;
+
+                c += "<br/> <b>Contact Phone:</b> "+each.CONTACT_PHONE;
+
+              c += "<br/><b> Item:</b> "+each.ITEM;
+
+                c += "<br/> <b> Quantity:</b> "+each.QUANTITY;
+
+                c +="<br/> <b>Create Time:</b> "+each.CREATE_TIME;
+
+                c += "<br/><b>Status: </b> "+each.STATUS;
+                console.log(c);
+                  $(".modal-header #orderID").html(each.ORDER_ID);
+                  });
+             $(".modal-body #ord-details").html(c);
+
+                //window.location.href = window.location.href;
+            },
+            error: function() {
+                console.log('error');
+            }
+
+
+
+    });
+    });
+
+
 
     $('#EditOrderStatus').on('submit', function(ev) {
 
