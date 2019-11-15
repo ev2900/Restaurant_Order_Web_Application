@@ -251,7 +251,8 @@ Body (example):
 {
 	"PRICE": 24,
 	"NAME":"Lobster",
-	"IMG_URL":"img/lobster"
+	"IMG_URL":"img/lobster",
+	"TYPE": "Sea food"
 }
 Response (example): 
 {
