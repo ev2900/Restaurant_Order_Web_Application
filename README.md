@@ -495,7 +495,6 @@ Headers:'Content-Type': 'application/json'
 Body (example): 
 {}
 Response (example): 
-Response (example): 
 {
     "Table1": [
         {
@@ -518,6 +517,25 @@ Response (example):
             "DELIVERY_ID": 16, ...
 ```
 
+### Set User Preference
+```
+Http verb: POST
+Url: https://prod-29.centralus.logic.azure.com:443/workflows/22e7ea130d444a849dc02b971833a068/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=lEWXV42r_15vm7wECTlKgih_kpoIfa9Y3YBSvtPDaog
+Headers:'Content-Type': 'application/json' 
+Body (example): 
+{
+    "NAME": "Chris",
+    "PHONE_NUMBER": "123-456-7891",
+    "PREFERENCE_1": "Italian",
+    "PREFERENCE_2": "Japense",
+    "PREFERENCE_3": "Chinese"
+}
+Response (example): 
+{
+    "status": "success"
+}
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
@@ -525,6 +543,7 @@ A Microsoft SQL database is the back end of the applicaiton. The database has ta
 * ORDER
 * MENU
 * DELIVERY
+* USER_PREFERENCE
 
 ### View
 * CART
