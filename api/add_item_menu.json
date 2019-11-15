@@ -1,22 +1,14 @@
 {
-    "$connections": {
-        "value": {
-            "sql": {
-                "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/sql",
-                "connectionName": "sql",
-                "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/sql"
-            }
-        }
-    },
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
             "Insert_row_(V2)": {
                 "inputs": {
                     "body": {
-                        "IMG_URL": "@{triggerBody()?['IMG_URL']}",
+                        "IMG_URL": "@triggerBody()?['IMG_URL']",
                         "NAME": "@triggerBody()?['NAME']",
-                        "PRICE": "@triggerBody()?['PRICE']"
+                        "PRICE": "@triggerBody()?['PRICE']",
+                        "TYPE": "@triggerBody()?['TYPE']"
                     },
                     "host": {
                         "connection": {
@@ -31,12 +23,12 @@
             },
             "Response": {
                 "inputs": {
-                    "schema": {
+                    "body": {
                         "status": "success"
                     },
                     "statusCode": 200
                 },
-                "kind": "http",
+                "kind": "Http",
                 "runAfter": {
                     "Insert_row_(V2)": [
                         "Succeeded"
@@ -66,6 +58,9 @@
                             },
                             "PRICE": {
                                 "type": "number"
+                            },
+                            "TYPE": {
+                                "type": "string"
                             }
                         },
                         "type": "object"
@@ -73,6 +68,17 @@
                 },
                 "kind": "Http",
                 "type": "Request"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "sql": {
+                    "connectionId": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/resourceGroups/web_app/providers/Microsoft.Web/connections/sql",
+                    "connectionName": "sql",
+                    "id": "/subscriptions/60c4e16f-1b86-45cf-a961-035631ee2924/providers/Microsoft.Web/locations/centralus/managedApis/sql"
+                }
             }
         }
     }
