@@ -19,17 +19,15 @@ $(function (){
         var name = document.getElementById("name").value;
         var price = document.getElementById("price").value;
         var img_url = document.getElementById("img_url").value;
-
-        console.log(name);
-        console.log(price);
-        console.log(img_url);
+        var type = document.getElementById("type").value;
 
         //setTimeout(6000);
 
         var menu_item = JSON.stringify({
             "PRICE": price,
             "NAME": name,
-            "IMG_URL": img_url
+            "IMG_URL": img_url,
+            "TYPE": type
         });
 
         // submit AJAX call

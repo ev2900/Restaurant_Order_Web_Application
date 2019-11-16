@@ -80,6 +80,16 @@ $(function (){
 
             $.each(resp.Table1, function(i, each) {
 
+                html += '   <td> <label style="padding: 100px 0 auto; background-color: rgb(97, 71, 6);"> Type: <input id="menu_type' + each.ITEM_ID + '" type="text" value="' + each.TYPE + '"> </label> </td>'; 
+
+            });
+
+            html += '</tr>';
+
+            html += '<tr>';
+
+            $.each(resp.Table1, function(i, each) {
+
                 html += '   <td> <input id="edit' + each.ITEM_ID + '" class="btn-default submit" type="submit" value="Save"> </td>';
 
             });
