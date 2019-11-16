@@ -17,6 +17,7 @@
 
 ul {
   white-space: pre;
+  list-style-type: none;
 }
 
 li {
@@ -29,6 +30,19 @@ h1 {
     color: rgb(255, 239, 213);
     text-shadow: currentColor;
     background-color: rgb(97, 71, 6);
+}
+
+.bogus-title {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
+
+h3 {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+    display: inline-block;
 }
 
 .nametag {
