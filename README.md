@@ -537,6 +537,30 @@ Response (example):
 }
 ```
 
+### Get User Preferences
+```
+Http verb: POST
+Url: https://prod-28.centralus.logic.azure.com:443/workflows/5094a195e6c2461ba11d79963be01e22/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=ZlkhUXMtwWoJi3A31RdA_icTEFs3SCHIUBtlXQqgy7E
+Headers:'Content-Type': 'application/json'
+Body (example): 
+{}
+Response (example): 
+{
+    "@odata.context": "https://logic-apis-centralus.azure-apim.net/apim/sql/ede7fc2903e748b69af3ec808e981cd8/$metadata#datasets('default%2Cdefault')/tables('%5Bdbo%5D.%5BUSER_PREFERENCE%5D')/items",
+    "value": [
+        {
+            "@odata.etag": "",
+            "ItemInternalId": "4e34ffbc-49b6-4ef7-bde6-8067d42c039f",
+            "NAME": "",
+            "PHONE_NUMBER": "",
+            "PREFERENCE_1": "",
+            "PREFERENCE_2": "",
+            "PREFERENCE_3": ""
+        },
+        {
+            "@oda ...
+```
+
 ## Back End (Database)
 A Microsoft SQL database is the back end of the applicaiton. The database has tables and view. 
 
