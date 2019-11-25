@@ -68,6 +68,12 @@ td.list-unstyled {
       text-shadow: currentColor;
       background-color: rgb(97, 71, 6);
   }
+
+  .page-title {
+    color: rgb(255, 239, 213);
+    text-shadow: currentColor;
+    background-color: rgb(97, 71, 6);
+}
   
   .nametag {
       color: rgb(255, 239, 213);

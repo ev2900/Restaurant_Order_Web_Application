@@ -1,54 +1,52 @@
-$(function() {
-    $('#SavePreferencesBtn').on('click', function(ev) {
-            
-        // parse cookie
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        var contact_name = ca[0].replace("name=","")
-        var contact_phone = ca[1].replace(" phone=","")
+$('#SavePreferencesBtn').on('click', function(ev) {
         
-        var checkboxValues = [];
-        var getOut = false;
+    // parse cookie
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    var contact_name = ca[0].replace("name=","")
+    var contact_phone = ca[1].replace(" phone=","")
+    
+    var checkboxValues = [];
+    var getOut = false;
 
-        var preference1 = "";
-        var preference2 = "";
-        var preference3 = "";
+    var preference1 = "";
+    var preference2 = "";
+    var preference3 = "";
+    
+    $('input[type="checkbox"]:checked').each(function(index, elem) {
         
-        $('input[type="checkbox"]:checked').each(function(index, elem) {
-            
-            var runningLen = checkboxValues.length;
+        var runningLen = checkboxValues.length;
 
-            if(runningLen == 3) {
-                alert('You can only select up to 3 preferences');
-                getOut = true;
-                return;
-            }
-
-            switch(index) {
-                case 0:
-                    preference1 = $(elem).attr('name');
-                    break;
-                case 1:
-                    preference2 = $(elem).attr('name');
-                    break;
-                case 2:
-                    preference3 = $(elem).attr('name');
-                    break;
-                default:
-                    break;
-            }
-            
-            checkboxValues.push($(elem).attr('name'));
-        
-        });
-
-        if(getOut) {
-            return false;
-        } else if (checkboxValues === undefined || checkboxValues.length == 0) {
-            alert('Please select a preference');
-            return false;
+        if(runningLen == 3) {
+            alert('You can only select up to 3 preferences');
+            getOut = true;
+            return;
         }
 
+        switch(index) {
+            case 0:
+                preference1 = $(elem).attr('name');
+                break;
+            case 1:
+                preference2 = $(elem).attr('name');
+                break;
+            case 2:
+                preference3 = $(elem).attr('name');
+                break;
+            default:
+                break;
+        }
+        
+        checkboxValues.push($(elem).attr('name'));
+    
+    });
+
+    if(getOut) {
+        return false;
+    } else if (checkboxValues === undefined || checkboxValues.length == 0) {
+        alert('Please select a preference');
+        return false;
+    } else {
         var preferencesToSave = JSON.stringify({
             "NAME": contact_name,
             "PHONE_NUMBER": contact_phone,
@@ -56,7 +54,7 @@ $(function() {
             "PREFERENCE_2": preference2,
             "PREFERENCE_3": preference3
         });
-
+    
         // Post to set preferences API:
         $.ajax({
             type: 'POST',
@@ -67,12 +65,12 @@ $(function() {
             data: preferencesToSave,
             success: function() {
                 console.log('success');
-                window.location.href = 'cart.html';
+                window.location.href = 'place_order.html';
             },
             error: function() {
-                console.log('error');
+                alert('error');
             }
-        }).error(alert('Success!'));
+        });
+    }
 
-    });
 });
