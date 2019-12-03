@@ -1,0 +1,4028 @@
+{
+  "id": "880a5d0d-397b-42c0-965e-a18efcb3bfcf",
+  "version": "2.0",
+  "name": "Restaurant Ordering",
+  "url": "http://localhost/cart.html",
+  "tests": [{
+    "id": "b84c9c64-bc7b-4339-9c41-60060d88525e",
+    "name": "TC1 - Login",
+    "commands": [{
+      "id": "afe4697e-3ff3-477e-a62f-b324fbcc05e5",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a46bfa6-78e8-4bdc-9afb-93a02c37d368",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Test User"
+    }, {
+      "id": "c30e13be-ceaa-4ecc-8a35-ad5c1d018e69",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "123-456-7891"
+    }, {
+      "id": "a8a87c74-f19c-4340-822f-12699eb977d2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Log in']",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "536ec05d-02fb-4fef-bc43-65140df6bf40",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[@id='cart_label']",
+      "targets": [
+        ["id=cart_label", "id"],
+        ["css=#cart_label", "css:finder"],
+        ["xpath=//h1[@id='cart_label']", "xpath:attributes"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart is currently empty!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "7929df16-406d-47a3-b194-97324d1ba609",
+    "name": "TC2 - Logout",
+    "commands": [{
+      "id": "e80d7dba-b589-42f8-92bc-387fd57e9043",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bfc1de0-a85d-4733-b5b6-4443fff47a2e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "930x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d4732ee-9b59-4466-9689-1d4a22da7e5e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Log out']",
+      "targets": [
+        ["css=.col-sm-1 > .btn-default", "css:finder"],
+        ["xpath=//input[@value='Log out']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44a3633c-99d5-4c6d-8cfb-92b34ab3165d",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Online Cafeteria')]", "xpath:innerText"]
+      ],
+      "value": "Online Cafeteria"
+    }]
+  }, {
+    "id": "a71097b1-59f6-445a-8adf-bc249a4d5a96",
+    "name": "TC3 - Add a pizza to cart",
+    "commands": [{
+      "id": "1a2463fb-0d9b-4c05-8b5e-bedfeb09cfbd",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "11feb99d-10a3-471c-92f5-49bc6eb6e955",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "Test User"
+    }, {
+      "id": "f25a0267-dcce-42cd-9ab4-7cfd948e3b57",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "123-456-7891"
+    }, {
+      "id": "724f54fe-6ef3-412d-8d0f-586f4bf510cd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1caab94a-44db-4ea3-bb34-35ede3dd26e1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3af9a062-827d-441f-80cb-56d067e7322d",
+      "comment": "",
+      "command": "type",
+      "target": "id=Pizza",
+      "targets": [
+        ["id=Pizza", "id"],
+        ["css=#Pizza", "css:finder"],
+        ["xpath=//input[@id='Pizza']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "3898c84e-b328-4015-9316-3c609ff25a17",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[4]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "551317ca-f08f-4c39-bf5e-3abb9f175d19",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=li:nth-child(1)",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Item: Icecream\nQuantity: 2\n\n')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9168e7da-0b46-4a5d-922c-a8b0aed3090f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=li:nth-child(1)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "8f65294c-2b98-4af4-a8d5-34c1df716192",
+    "name": "TC4 - View order history",
+    "commands": [{
+      "id": "0c748947-dd8e-4a3a-90bf-8bfc0b845408",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e017ce8a-6493-4470-8746-aeccef67740b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "625a4476-5e17-476f-bb23-9aa86d5747bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(6) .btn-default",
+      "targets": [
+        ["css=div:nth-child(6) .btn-default", "css:finder"],
+        ["xpath=//input[@value='View past order(s)']", "xpath:attributes"],
+        ["xpath=//div[6]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8247edc9-0a8c-496c-bd76-e67fdc685d8a",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "css=li",
+      "targets": [],
+      "value": "Item: Sushi\\nQuantity: 1\\nDate/time: 2019-09-29T14:31:27.35"
+    }]
+  }, {
+    "id": "3280a401-1b9e-4214-a139-bd7d3fff5682",
+    "name": "TC5 - View cart",
+    "commands": [{
+      "id": "8d3cdc72-274a-4ce3-8051-ddba92293f72",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c41835e-e095-40ad-8732-8be4d38d32d3",
+      "comment": "",
+      "command": "verifyText",
+      "target": "id=cart_label",
+      "targets": [
+        ["id=cart_label", "id"],
+        ["css=#cart_label", "css:finder"],
+        ["xpath=//h1[@id='cart_label']", "xpath:attributes"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Your cart currently has:"
+    }]
+  }, {
+    "id": "2b84318f-db1a-42d4-8d68-3521964e629f",
+    "name": "TC6 - Remove pizza from a cart",
+    "commands": [{
+      "id": "7b0f5f87-bcd6-4260-8af5-49b1fd24cae5",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c08e436b-e741-4976-b4ed-a8d08143cd6b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25350dc1-6738-4204-8a99-21e17d5133c8",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Edit cart']",
+      "targets": [
+        ["css=div:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Edit cart']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db0b0789-26c6-4e77-85ee-70a9ae523160",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//ul[@id='cart']/li/input",
+      "targets": [
+        ["id=427", "id"],
+        ["css=#\\34 27", "css:finder"],
+        ["xpath=//input[@id='427']", "xpath:attributes"],
+        ["xpath=//ul[@id='cart']/li/input", "xpath:idRelative"],
+        ["xpath=//li/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "55541deb-d2e5-4561-b63d-be19c987f69e",
+      "comment": "",
+      "command": "verifyElementNotPresent",
+      "target": "xpath=//li[contains(.,'Item: Pizza\nQuantity: 1\n\n')]",
+      "targets": [
+        ["css=li", "css:finder"],
+        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Item: Pizza\nQuantity: 1\n\n')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c5c9a735-8d0b-431d-abf6-22c6d503aba2",
+    "name": "TC7 - Check status of pizza",
+    "commands": [{
+      "id": "fa6262d6-a453-46fc-9e76-b2d936c1331f",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "877ebbaa-daf9-4421-a68d-06b3f7ef39f6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0ff83e7-bb98-4b97-9e6d-d2f183c52d48",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Check order(s) status']",
+      "targets": [
+        ["css=div:nth-child(5) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Check order(s) status']", "xpath:attributes"],
+        ["xpath=//div[5]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a33058c-03f8-4b55-ac99-8ca1746ea738",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "css=li",
+      "targets": [],
+      "value": "Item: Sushi\\nStatus: Cooking"
+    }]
+  }, {
+    "id": "73108196-6402-4f99-8fc4-36889f48865f",
+    "name": "TC6a - Add item twice to cart",
+    "commands": [{
+      "id": "05a11b14-7c85-4136-957d-373c9d80b4bd",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "679ef3ad-2b01-4597-b285-3a92485337ae",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dbe6670b-8fbc-4f6c-8e3c-b24685dbd998",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "732f99c7-fd47-482c-be58-c4613ab30585",
+      "comment": "",
+      "command": "type",
+      "target": "id=Icecream",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "45c1f508-425b-4105-9043-4ff54b1fb7f2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=div:nth-child(4) > .col-sm-12 .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58719a19-dd6c-4e2f-80b4-69be50bdb092",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=li",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "637271e3-cad1-46b0-ad79-8f3f341cce45",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=li",
+      "targets": [
+        ["css=li", "css:finder"],
+        ["xpath=//ul[@id='cart']/li", "xpath:idRelative"],
+        ["xpath=//li", "xpath:position"]
+      ],
+      "value": "Item: Icecream\\nQuantity: 2"
+    }]
+  }, {
+    "id": "f11b619e-37e1-4ece-afd1-0af1a836af24",
+    "name": "TC3a - Add invalid quantity",
+    "commands": [{
+      "id": "8f29d2d5-2910-4024-80ae-68d447144fe7",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f5580ae-9e2b-4118-9a81-5c6e1af99969",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4e1085eb-d8e5-4682-9f12-b89ba5e01221",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) .btn-default",
+      "targets": [
+        ["css=div:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place an order']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4855d0c9-df64-4a40-b4e8-1684c87de379",
+      "comment": "",
+      "command": "click",
+      "target": "id=Icecream",
+      "targets": [
+        ["id=Icecream", "id"],
+        ["css=#Icecream", "css:finder"],
+        ["xpath=//input[@id='Icecream']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[7]/td/label/input", "xpath:idRelative"],
+        ["xpath=//label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2900ef2-e49b-40e4-90ab-fb60ffacd7e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=Icecream",
+      "targets": [
+        ["id=pizza", "id"],
+        ["css=#pizza", "css:finder"],
+        ["xpath=//input[@id='pizza']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "INVALID"
+    }, {
+      "id": "b43ad340-7730-4d39-9751-3c8b86110d12",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e69f554-2d42-418f-ad77-699dbb3f00df",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Place an order:"
+    }]
+  }, {
+    "id": "afa041b9-2914-48d9-b377-0fa58d7d3534",
+    "name": "TC3b - Add nothing to cart",
+    "commands": [{
+      "id": "aa4d4c44-55e3-4fa6-8e55-2bc3336577eb",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ea03022-83b8-4e45-8d30-b116cc72e9e7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "791x824",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7216f8ae-70b5-4408-95fa-1f42d9d4e337",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4bbff6b0-bf2e-4d55-8060-0622cd56b8ef",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["css=.row:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add to cart']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f6f24f8-65f8-47a9-b7fb-72cf1194c349",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Place an order:"
+    }]
+  }, {
+    "id": "70214a88-06cc-4543-b8b0-7c46bdc21f63",
+    "name": "TC8a - Verify Total Price",
+    "commands": [{
+      "id": "03e8c448-724e-45e8-9efd-36e05dbd9afc",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02e9a343-e747-4c9e-8310-a4dfab5cf24f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add to cart']",
+      "targets": [
+        ["id=EditCartBtn", "id"],
+        ["css=#EditCartBtn", "css:finder"],
+        ["xpath=//input[@id='EditCartBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d6bb41b-3d23-4063-a68e-13b72d870b5a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "900x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3d89bfac-b23f-4d80-9c8d-ca1e607ac702",
+      "comment": "",
+      "command": "click",
+      "target": "id=PlaceOrderBtn",
+      "targets": [
+        ["id=PlaceOrderBtn", "id"],
+        ["css=#PlaceOrderBtn", "css:finder"],
+        ["xpath=//input[@id='PlaceOrderBtn']", "xpath:attributes"],
+        ["xpath=//div[8]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69008b6e-a434-4d0f-81ac-54ae3189a543",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "8db39153-38fb-4d66-b9c2-94bfd0e81225",
+      "comment": "",
+      "command": "click",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abd21793-3af1-4233-b671-275516e3d352",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "76d59a2c-8e6b-4fdd-b40e-f9b22b562414",
+      "comment": "",
+      "command": "type",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "4111 1111 1111 1111"
+    }, {
+      "id": "d9edc02a-e7b2-4529-bf41-787435d537b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=expiration",
+      "targets": [],
+      "value": "02/22"
+    }, {
+      "id": "4c651add-ee19-4ae5-95a4-a4902a59a510",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "279ad31d-23de-4d47-b68a-d2d4b6bc8176",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputAddress",
+      "targets": [
+        ["id=inputAddress", "id"],
+        ["css=#inputAddress", "css:finder"],
+        ["xpath=//input[@id='inputAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "530 ellwood beach drive"
+    }, {
+      "id": "02bc5d53-31e5-4b19-90f9-aadd3ed15c6e",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCity",
+      "targets": [
+        ["id=inputCity", "id"],
+        ["css=#inputCity", "css:finder"],
+        ["xpath=//input[@id='inputCity']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "Goleta"
+    }, {
+      "id": "5dd1c5eb-b4eb-4296-ba7d-e549cd332445",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputZip",
+      "targets": [
+        ["id=inputZip", "id"],
+        ["css=#inputZip", "css:finder"],
+        ["xpath=//input[@id='inputZip']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[3]/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "93117"
+    }, {
+      "id": "63888a62-7679-436d-aeba-80cc0b69b4bc",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "aklytwyn2@yahoo.com"
+    }, {
+      "id": "849c0dd1-9356-4794-944a-c58f56ef6c48",
+      "comment": "",
+      "command": "select",
+      "target": "id=inputState",
+      "targets": [],
+      "value": "label=CA"
+    }, {
+      "id": "398073d0-0def-470d-bf32-df24f41cad2c",
+      "comment": "",
+      "command": "click",
+      "target": "id=pay-button",
+      "targets": [
+        ["id=pay-button", "id"],
+        ["css=#pay-button", "css:finder"],
+        ["xpath=//button[@id='pay-button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eaf32a27-14a5-446a-b006-5280242739a2",
+      "comment": "",
+      "command": "//wait for element present",
+      "target": "css=li:nth-child(5)",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8e4eb3b1-3450-4331-829e-2c623a87fd62",
+      "comment": "",
+      "command": "//assert element present",
+      "target": "css=li:nth-child(5)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "cef0d71b-4c4f-443f-ad09-22b42ec6d82c",
+    "name": "TC8b - Pay For Order Invalid Number",
+    "commands": [{
+      "id": "46a2be77-974a-4d02-906e-1f50dc001990",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "634cf0cb-6fed-4654-baca-95f4077c3a9b",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d72b4368-63f6-4700-9eb2-809cb3f94056",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "id=PlaceOrderBtn",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8ca53572-2fbe-4dcc-971e-d4e5aa62d2b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=PlaceOrderBtn",
+      "targets": [
+        ["id=PlaceOrderBtn", "id"],
+        ["css=#PlaceOrderBtn", "css:finder"],
+        ["xpath=//input[@id='PlaceOrderBtn']", "xpath:attributes"],
+        ["xpath=//div[8]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b80286f-fb07-43e9-ae00-d4ae50f040e5",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "6ede24ac-a709-4e30-bcaa-6efd7307fe4f",
+      "comment": "",
+      "command": "click",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49db4851-adfc-4896-bec9-a6506699c194",
+      "comment": "",
+      "command": "type",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1111222233334444"
+    }, {
+      "id": "e2e5878d-e058-417f-8f0f-78bfe4e8ad36",
+      "comment": "",
+      "command": "click",
+      "target": "id=expiration",
+      "targets": [
+        ["id=expiration", "id"],
+        ["name=expiration", "name"],
+        ["css=#expiration", "css:finder"],
+        ["xpath=//input[@id='expiration']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/div/div/label/input", "xpath:idRelative"],
+        ["xpath=//div/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ccd5181e-b49a-4891-acaf-b7ae30604024",
+      "comment": "",
+      "command": "type",
+      "target": "id=expiration",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "01/23"
+    }, {
+      "id": "1a55464c-b500-450c-a923-8eb943839043",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "0785c1ec-35a2-4fec-8332-914e998e463b",
+      "comment": "",
+      "command": "click",
+      "target": "css=fieldset",
+      "targets": [
+        ["css=fieldset", "css:finder"],
+        ["xpath=//fieldset", "xpath:position"],
+        ["xpath=//fieldset[contains(.,'Pay now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb8bf13f-3cdf-4619-a986-30b3421d2f5e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.pure-button",
+      "targets": [
+        ["css=.pure-button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pay now')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d45bed1-c31b-4c21-acc0-04d64c440d97",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Your cart currently has:')]", "xpath:innerText"]
+      ],
+      "value": "Pay for your order:"
+    }]
+  }, {
+    "id": "fac1ae93-7b3b-4f8b-a420-5ce5a886d892",
+    "name": "TC8c - Pay For Order",
+    "commands": [{
+      "id": "02aa3344-0729-4e7d-939e-4bf15bb2ab38",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a83b2979-1567-4392-8cad-e8bfe677f727",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Place order']",
+      "targets": [
+        ["css=div:nth-child(7) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Place order']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58211ca2-449f-454c-b217-d89e852bb2fc",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "index=0",
+      "targets": [
+        ["index=0"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5d71a9c-9dfc-4f8a-9c7d-1c44dd5735ae",
+      "comment": "",
+      "command": "click",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38d50171-d9e5-471f-82d2-ff5f385ecc5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=credit-card-number",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "378282246310005"
+    }, {
+      "id": "01c867ec-95a0-47aa-aeb4-51d5beeea6b2",
+      "comment": "",
+      "command": "click",
+      "target": "id=expiration",
+      "targets": [
+        ["id=expiration", "id"],
+        ["name=expiration", "name"],
+        ["css=#expiration", "css:finder"],
+        ["xpath=//input[@id='expiration']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/div/div/label/input", "xpath:idRelative"],
+        ["xpath=//div/label/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1680de5-c8cb-48c4-9790-17adad0fdc3c",
+      "comment": "",
+      "command": "type",
+      "target": "id=expiration",
+      "targets": [
+        ["id=credit-card-number", "id"],
+        ["name=credit-card-number", "name"],
+        ["css=#credit-card-number", "css:finder"],
+        ["xpath=//input[@id='credit-card-number']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/form/label/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "01/23"
+    }, {
+      "id": "8bce041b-7ea0-49f4-9a56-8a4889c7f618",
+      "comment": "",
+      "command": "selectFrame",
+      "target": "relative=parent",
+      "targets": [
+        ["relative=parent"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2f130ca-4ae7-4db8-955a-adf601b0bac7",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputAddress",
+      "targets": [
+        ["id=inputAddress", "id"],
+        ["css=#inputAddress", "css:finder"],
+        ["xpath=//input[@id='inputAddress']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e491f9a2-ebd3-484c-9130-a817effee75c",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputAddress",
+      "targets": [],
+      "value": "1234 Main St"
+    }, {
+      "id": "a3329334-4844-4d0f-98c1-915c9e23d8f9",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputCity",
+      "targets": [
+        ["id=inputCity", "id"],
+        ["css=#inputCity", "css:finder"],
+        ["xpath=//input[@id='inputCity']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abe21488-cfc3-4c19-bf97-b7a800879fcb",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputCity",
+      "targets": [],
+      "value": "Philadelphia"
+    }, {
+      "id": "cd034986-ebf0-4f84-a041-37c325c5e255",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputState",
+      "targets": [
+        ["id=inputState", "id"],
+        ["css=#inputState", "css:finder"],
+        ["xpath=//select[@id='inputState']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[3]/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "71bfa910-ae15-4294-bf3d-14a915c7edf5",
+      "comment": "",
+      "command": "select",
+      "target": "id=inputState",
+      "targets": [],
+      "value": "label=PA"
+    }, {
+      "id": "076d1449-3a95-4f66-9821-fabf8348a46c",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputZip",
+      "targets": [
+        ["id=inputZip", "id"],
+        ["css=#inputZip", "css:finder"],
+        ["xpath=//input[@id='inputZip']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[3]/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "601b516d-a8f7-46c0-b6a8-172630c84b84",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputZip",
+      "targets": [],
+      "value": "19147"
+    }, {
+      "id": "c7d9b04c-89db-436a-93aa-19c978c7b43a",
+      "comment": "",
+      "command": "click",
+      "target": "id=inputEmail",
+      "targets": [
+        ["id=inputEmail", "id"],
+        ["css=#inputEmail", "css:finder"],
+        ["xpath=//input[@id='inputEmail']", "xpath:attributes"],
+        ["xpath=//div[@id='delivery-info']/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "779d8716-cc7b-45e4-9b67-fd2646d98ee7",
+      "comment": "",
+      "command": "type",
+      "target": "id=inputEmail",
+      "targets": [],
+      "value": "rosa.ciummo3@gmail.com"
+    }, {
+      "id": "3c3f2dcc-0a8b-4651-a222-23588ba81e86",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Submit')]",
+      "targets": [
+        ["id=pay-button", "id"],
+        ["css=#pay-button", "css:finder"],
+        ["xpath=//button[@id='pay-button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "21fe26dd-9c88-43cb-8497-3d284cb1c124",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "css=h3",
+      "targets": [],
+      "value": "Your order is confirmed"
+    }]
+  }, {
+    "id": "fd3f59e5-f661-4ee5-a3c7-690f284230a0",
+    "name": "TC9 - Email Receipt",
+    "commands": [{
+      "id": "7eb42495-8e23-4341-aac8-a9982d4daf43",
+      "comment": "",
+      "command": "open",
+      "target": "order_confirmation.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b6515d6-05eb-4ed3-ad50-7aaebac3e23b",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//h5/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60a7b812-f310-4e97-8ec1-94d6fcc31503",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//h5/input", "xpath:position"]
+      ],
+      "value": "rosa.ciummo3@gmail.com"
+    }, {
+      "id": "c7228ab8-8b69-459d-bf10-08e5d9024cea",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//input[@id='send']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a44250c-2e3a-467a-ac46-0595de421414",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//input[@value='Edit cart']",
+      "targets": [
+        ["css=div:nth-child(3) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Edit cart']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "3000"
+    }]
+  }, {
+    "id": "5237e036-d7fd-4b41-824c-fb5e9eb0d917",
+    "name": "TC12 - Admin adds item to menu",
+    "commands": [{
+      "id": "ee1eb6ed-1b22-4cd1-8fcb-b1a728225968",
+      "comment": "",
+      "command": "open",
+      "target": "add_menu_item.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "270c2927-f395-40c4-82c7-0f99d3755807",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e23179d2-5287-480f-9e5f-c635d834c102",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "Lobster"
+    }, {
+      "id": "9d8b8b55-e3d8-48c7-87b2-1b0d9d7f9f41",
+      "comment": "",
+      "command": "click",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74b99af6-1bdf-44e6-a6a4-2cbaa4ba1582",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "20"
+    }, {
+      "id": "afe665a1-6947-42b3-9fd7-7270af8111b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10779a4a-f0a7-45f8-bc74-e314f902aca5",
+      "comment": "",
+      "command": "type",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "lobster.jpg"
+    }, {
+      "id": "46297009-88c9-42da-9552-b0b66955bf52",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Submit']",
+      "targets": [
+        ["css=div:nth-child(1) > .btn-default", "css:finder"],
+        ["xpath=//input[@value='Submit']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c3c483f-24eb-4c51-b7e4-1a844834433b",
+      "comment": "",
+      "command": "open",
+      "target": "place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "049833be-c7e5-4a72-8011-1494b522b2fc",
+      "comment": "",
+      "command": "pause",
+      "target": "1000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "25b41836-670d-4056-b76a-0666e894b77a",
+      "comment": "",
+      "command": "//assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(6) > label",
+      "targets": [],
+      "value": "Lobster"
+    }, {
+      "id": "e6e973c5-0780-4cc9-a285-8aa9987015cf",
+      "comment": "",
+      "command": "//assertText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[4]/td",
+      "targets": [],
+      "value": "Price: $20"
+    }]
+  }, {
+    "id": "53d89290-5983-4f44-a92c-069be380628f",
+    "name": "TC9a - Email Receipt - Invalid",
+    "commands": [{
+      "id": "51f3dfd7-e143-46be-8ea0-691112e38cb8",
+      "comment": "",
+      "command": "open",
+      "target": "order_confirmation.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b859f4c-1f27-4830-a453-b6e4e04c1a9b",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//h5/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c582d54c-4fea-4f4a-8ec8-d49150244027",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//h5/input", "xpath:position"]
+      ],
+      "value": "ThisIsAFake"
+    }, {
+      "id": "443bd66a-5fe0-4c2a-b740-926338af6766",
+      "comment": "",
+      "command": "click",
+      "target": "id=send",
+      "targets": [
+        ["id=send", "id"],
+        ["css=#send", "css:finder"],
+        ["xpath=//input[@id='send']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ebbcf393-1de9-41f8-a5b8-046176d1d52c",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"]
+      ],
+      "value": "Success!"
+    }]
+  }, {
+    "id": "6c8651a5-ab5e-4fa4-8add-e27306270131",
+    "name": "TC15 - Add/Delete Menu Item",
+    "commands": [{
+      "id": "82eff49b-4cae-48b6-8c37-2dbf47f668eb",
+      "comment": "",
+      "command": "open",
+      "target": "http://www.onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cb0ad859-391c-4f60-b6e0-14443633c01a",
+      "comment": "",
+      "command": "//click",
+      "target": "xpath=//input[@value='Log out']",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5454062b-dbfc-40e3-aee7-3a5b0ca05c2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "269bf8b9-dfb3-4d0a-a91f-c505d0e8314c",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "086e314f-a49f-42f7-911f-06e261dd95f0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c31b26fa-db2d-490b-b2e8-8f0c94005a1f",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff1dd592-5b8c-4f76-bc87-57be5802387b",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[15]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[15]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "57f985df-0274-43da-9dfe-651fc60ff434",
+      "comment": "",
+      "command": "click",
+      "target": "id=delete97",
+      "targets": [
+        ["id=delete97", "id"],
+        ["css=#delete97", "css:finder"],
+        ["xpath=//input[@id='delete97']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[7]/td[6]/input", "xpath:idRelative"],
+        ["xpath=//tr[7]/td[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec12080a-e5bd-4208-9073-7c63014268ff",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//input[@value='Add menu item']",
+      "targets": [
+        ["css=.row:nth-child(4) .btn-default", "css:finder"],
+        ["xpath=//input[@value='Add menu item']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfa32b5b-9ae2-46f1-ae85-039bbc2f9306",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "soda"
+    }, {
+      "id": "5e95e07b-97e8-4bcb-99d7-fabe178f36c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "948350f0-9cf7-4a2b-9550-31e0415be77d",
+      "comment": "",
+      "command": "type",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "img/soda.jpg"
+    }, {
+      "id": "e2f1f781-43fb-4004-befb-a15822785e90",
+      "comment": "",
+      "command": "select",
+      "target": "id=type",
+      "targets": [],
+      "value": "label=Beverage"
+    }, {
+      "id": "49da07d2-100a-4029-ada7-34d709c4f765",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitNewItemBtn",
+      "targets": [
+        ["id=SubmitNewItemBtn", "id"],
+        ["css=#SubmitNewItemBtn", "css:finder"],
+        ["xpath=//input[@id='SubmitNewItemBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3aeebfcd-cc74-469e-a161-16e9425af1ea",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=tr:nth-child(3) > td:nth-child(6) > label",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(6) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[3]/td[6]/label", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[6]/label", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d8d0778a-35bf-4f11-8402-f420c21e3907",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(3) > td:nth-child(6) > label",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(6) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[3]/td[6]/label", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[6]/label", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "26ef4879-63c1-4c27-9f5a-a85683244103",
+    "name": "TC16 - Edit Menu Item ",
+    "commands": [{
+      "id": "0d94d8d2-8a07-4082-807f-bdc816cd91c8",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55239d32-b881-4f3c-b5ed-fc24e50e547b",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0a08690-e4a0-48c4-b21f-ff27e434533d",
+      "comment": "",
+      "command": "type",
+      "target": "id=menu_price67",
+      "targets": [
+        ["id=menu_price67", "id"],
+        ["css=#menu_price67", "css:finder"],
+        ["xpath=//input[@id='menu_price67']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td[5]/label/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td[5]/label/input", "xpath:position"]
+      ],
+      "value": "100.00"
+    }, {
+      "id": "b8a97add-673e-47ba-8c46-1b67b3e46bf5",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit67",
+      "targets": [
+        ["id=edit64", "id"],
+        ["css=#edit64", "css:finder"],
+        ["xpath=//input[@id='edit64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef093087-0e5f-489d-8625-beaa40a4ada9",
+      "comment": "",
+      "command": "//verifyText",
+      "target": "xpath=//table[@id='cart']/tbody/tr[9]/td",
+      "targets": [],
+      "value": "Price: $100"
+    }, {
+      "id": "e9e0248d-8d77-4ecf-a8ab-7b9f2444bcc8",
+      "comment": "",
+      "command": "click",
+      "target": "id=menu_price67",
+      "targets": [
+        ["id=menu_price4", "id"],
+        ["css=#menu_price4", "css:finder"],
+        ["xpath=//input[@id='menu_price4']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[12]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[12]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "37394525-7628-4c99-8fa1-1be2aa4eb772",
+      "comment": "",
+      "command": "type",
+      "target": "id=menu_price67",
+      "targets": [],
+      "value": "7.00"
+    }, {
+      "id": "b3fff225-171b-4e1b-8e10-796325875c75",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit67",
+      "targets": [
+        ["id=edit4", "id"],
+        ["css=#edit4", "css:finder"],
+        ["xpath=//input[@id='edit4']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[13]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[13]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fff4de07-df0f-4bce-94ef-9485cdbac68f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=menu_price67",
+      "targets": [
+        ["id=menu_price64", "id"],
+        ["css=#menu_price64", "css:finder"],
+        ["xpath=//input[@id='menu_price64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td/label/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/label/input", "xpath:position"]
+      ],
+      "value": "7.00"
+    }]
+  }, {
+    "id": "5f0452b4-0643-4119-95ef-21ba7efee816",
+    "name": "TC14 - Change Order Status",
+    "commands": [{
+      "id": "a7e73a12-9714-41c3-969d-2d834a196e8c",
+      "comment": "",
+      "command": "open",
+      "target": "http://www.onlinecafeteria.com/all_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76cd789e-eba5-4bc7-aff7-58f9f9703f24",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .fa",
+      "targets": [
+        ["css=tr:nth-child(1) .fa", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[8]/a/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f91e04d2-792a-441a-adc7-1f57c1ace5e2",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69851838-4488-4f19-acbe-7aeda5bafb3d",
+      "comment": "",
+      "command": "select",
+      "target": "id=Editstatus",
+      "targets": [],
+      "value": "label=Out for Delivery"
+    }, {
+      "id": "43030bdf-5b3d-4451-90a0-8f08eca9c08f",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f53ed538-6d05-481a-a61e-1393b47da0f4",
+      "comment": "",
+      "command": "click",
+      "target": "id=UpdateStatusBtn",
+      "targets": [
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='EditOrderModal']/div/div/div[2]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update Status')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c733988-9819-454b-ab5b-20e19725a9e0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(7)",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "c75ac188-6d58-4709-a185-2de6df65a15e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(1) > td:nth-child(7)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(7)", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[7]", "xpath:idRelative"],
+        ["xpath=//td[7]", "xpath:position"],
+        ["xpath=//td[contains(.,'Out for Delivery')]", "xpath:innerText"]
+      ],
+      "value": "label = Out for Delivery"
+    }]
+  }, {
+    "id": "a2a232ba-be5a-4714-9a07-a573087df352",
+    "name": "TC13 - Email Notification When Delivered",
+    "commands": [{
+      "id": "77754fd6-3480-4257-97d8-a3baefa1377d",
+      "comment": "",
+      "command": "open",
+      "target": "http://www.onlinecafeteria.com/all_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c33978c2-7b67-41bd-8235-80ef49fcd2b9",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(1) .fa",
+      "targets": [
+        ["css=tr:nth-child(1) .fa", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[8]/a/i", "xpath:idRelative"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab8abdab-58b6-4660-b5c0-815e20123749",
+      "comment": "",
+      "command": "click",
+      "target": "id=Editstatus",
+      "targets": [
+        ["id=Editstatus", "id"],
+        ["css=#Editstatus", "css:finder"],
+        ["xpath=//select[@id='Editstatus']", "xpath:attributes"],
+        ["xpath=//form[@id='EditOrderStatus']/div/div/div/div/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "58da0c10-17b6-476b-8e61-dd7cf5f8d219",
+      "comment": "",
+      "command": "select",
+      "target": "id=Editstatus",
+      "targets": [],
+      "value": "label=Delivered"
+    }, {
+      "id": "8310b4c4-02f6-496f-924b-43e8e22ed341",
+      "comment": "",
+      "command": "click",
+      "target": "id=UpdateStatusBtn",
+      "targets": [
+        ["id=UpdateStatusBtn", "id"],
+        ["css=#UpdateStatusBtn", "css:finder"],
+        ["xpath=//button[@id='UpdateStatusBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='EditOrderModal']/div/div/div[2]/div/button[2]", "xpath:idRelative"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Update Status')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c27809c-f1b8-433d-b22a-7a488ba0725a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=tr:nth-child(1) > td:nth-child(7)",
+      "targets": [
+        ["css=tr:nth-child(1) > td:nth-child(7)", "css:finder"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[7]", "xpath:idRelative"],
+        ["xpath=//td[7]", "xpath:position"],
+        ["xpath=//td[contains(.,'Delivered')]", "xpath:innerText"]
+      ],
+      "value": "Delivered"
+    }]
+  }, {
+    "id": "8d54b0f5-4b18-4ff7-bd6c-5d8d04166428",
+    "name": "TC17 - See all orders being cooked",
+    "commands": [{
+      "id": "f908cd33-a12a-46ca-b990-01fe4e6f4379",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c7d886c-9900-4240-8138-3892c5715dde",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cooking_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b5196d49-defb-40f6-8cf8-8db3108c259b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89650201-dba3-4787-a212-3b8d56ecab3a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Cooking')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "10cf1cd9-7bd5-4e9f-a9fe-0a27631a2322",
+    "name": "TC18 - See all orders being delivered",
+    "commands": [{
+      "id": "83362616-3975-49bc-a9fb-332607c8c3c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ce46ba8-f7dd-465a-8c1f-58db4fd44fcd",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/all_out_for_delivery_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56dcdabf-e397-4c7a-8c8f-1f7ad5e5d2b4",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "259c9228-930f-4e5b-96dd-b36114a5a94e",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Out for Delivery')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f1fa0be9-b467-423f-91ca-2d3ef8c80772",
+    "name": "TC19 - See all delivered orders",
+    "commands": [{
+      "id": "17d48934-b115-4f15-851f-4b40e4983b9d",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d59a4b3-3dd1-4a4d-ae27-d39604d7154c",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/delivered_orders.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "00445144-180d-4069-8adc-5e7208fb92ac",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c185941c-7782-4520-b63b-2e926e0a6a80",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Delivered')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "3b2be408-c1fb-49e4-9196-4b15362d6fba",
+    "name": "TC21 - Can see nutrition info",
+    "commands": [{
+      "id": "5f16467c-f109-4e7e-8cf9-b3197f50e4e5",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "47488610-fdc7-430c-8956-d77200f16efa",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80a64c49-a322-48a6-add0-3117dbd8f8b7",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ddf6706-b262-44b0-a66d-44df28959aac",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]",
+      "targets": [
+        ["css=tr:nth-child(6) > td:nth-child(1) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[6]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "caa68e4a-4e79-4628-9a79-e3ea5de32017",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Calories: 300')]",
+      "targets": [
+        ["css=#cart tr:nth-child(4) > td:nth-child(1)", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td", "xpath:idRelative"],
+        ["xpath=//tr[4]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Calories: 300')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "58a72ad8-4e25-4faa-86fe-fd0e9a942164",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]",
+      "targets": [
+        ["css=tr:nth-child(5) > td:nth-child(1) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "af6bc507-6ace-427b-be93-233da71cb348",
+    "name": "TC22 - User can review item",
+    "commands": [{
+      "id": "6bac189e-437d-462a-b31b-38942be1e585",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ec1aead9-e005-4f0b-b8bf-5a97b82a0f5c",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "061a5bc2-1656-448d-afa1-583e1a81e5ef",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-review2",
+      "targets": [
+        ["id=add-review2", "id"],
+        ["linkText=Add another one!", "linkText"],
+        ["css=#add-review2", "css:finder"],
+        ["xpath=//a[contains(text(),'Add another one!')]", "xpath:link"],
+        ["xpath=//a[@id='add-review2']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalReviews']/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[8]", "xpath:href"],
+        ["xpath=//div[3]/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add another one!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce5df90d-6401-4eaf-85c0-5649bc99a368",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9de73e10-ee9c-418b-a559-bbb48d522b4c",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "test "
+    }, {
+      "id": "f262e72a-2af2-4284-8a59-8845137c996f",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dcc7e5d-e7a1-46f2-97f1-46e55542294b",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": "test review"
+    }, {
+      "id": "8c243952-e4e3-4152-8bd8-dc96d9ecb22a",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-review-with-reviews",
+      "targets": [
+        ["id=create-review-with-reviews", "id"],
+        ["css=#create-review-with-reviews", "css:finder"],
+        ["xpath=//input[@id='create-review-with-reviews']", "xpath:attributes"],
+        ["xpath=//tr[@id='add6']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4195abf1-c3e3-413d-ade9-a1ec05f90ec9",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "78c3ddb9-2b3f-42c7-9105-9257c0bf05f3",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7bdb010d-2c99-4888-b9d6-e11d8892cf68",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a86ee8f-fbb5-4612-a09a-d6cbdc698087",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"test review\"')]",
+      "targets": [
+        ["css=li:nth-child(14)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[14]", "xpath:idRelative"],
+        ["xpath=//li[14]", "xpath:position"],
+        ["xpath=//li[contains(.,'\"test review\"')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a862d849-1254-40bd-8ce8-4f3f2b4f5ffc",
+    "name": "TC23 - Respond To User Review",
+    "commands": [{
+      "id": "23acddc7-92a5-49b7-bc48-b4c0cfcceaec",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "80865733-0923-46a2-84bb-8395a98af9b5",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d4d8aaa-591a-43d6-9801-e6973720c6a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "2705500c-a495-413b-9698-4a894c6a10a8",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[2]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "999-999-9999"
+    }, {
+      "id": "083ecc84-eda3-44f6-a041-9d14327d151b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [
+        ["css=.btn-default", "css:finder"],
+        ["xpath=//input[@value='Log in']", "xpath:attributes"],
+        ["xpath=//form[@id='log-in']/div/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "34364c2b-746f-4d7f-a400-47c200213521",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2048bea-5ce2-4698-8597-cccfb0ed2f1d",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d6f9c623-1f7b-4353-aecf-b7869fc22608",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-review2",
+      "targets": [
+        ["id=add-review2", "id"],
+        ["linkText=Add another one!", "linkText"],
+        ["css=#add-review2", "css:finder"],
+        ["xpath=//a[contains(text(),'Add another one!')]", "xpath:link"],
+        ["xpath=//a[@id='add-review2']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalReviews']/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[8]", "xpath:href"],
+        ["xpath=//div[3]/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add another one!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f3b345d-f6c4-4bed-b6aa-ea2aea91e758",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9dc578cc-836e-4239-85e8-7d751c2f4bd7",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "Admin"
+    }, {
+      "id": "34fd93a2-b177-4334-856b-1490861b787b",
+      "comment": "",
+      "command": "click",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d297cdfe-d0d0-4312-8bd9-200ff1af1e4d",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": "Thanks for the review"
+    }, {
+      "id": "acef1515-f0e0-40bb-91d7-bc7680416e9a",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-review-with-reviews",
+      "targets": [
+        ["id=create-review-with-reviews", "id"],
+        ["css=#create-review-with-reviews", "css:finder"],
+        ["xpath=//input[@id='create-review-with-reviews']", "xpath:attributes"],
+        ["xpath=//tr[@id='add6']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cd66144e-5cff-4842-9e43-90ebc19c0a75",
+      "comment": "",
+      "command": "pause",
+      "target": "4000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "868f9aef-00d2-464e-8486-a0702c70e475",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0a798e5-f91c-42f2-b2c8-c253e27ef378",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c9853f23-e185-4868-867e-11ab7375fe77",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"Thanks for the review\"')]",
+      "targets": [
+        ["css=li:nth-child(44)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[44]", "xpath:idRelative"],
+        ["xpath=//li[44]", "xpath:position"],
+        ["xpath=//li[contains(.,'\"Thanks for the review\"')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "694bf7ee-5500-4e19-8d81-e56fc4f07e10",
+    "name": "TC21a - Nutrition Info Contains Calorie Count",
+    "commands": [{
+      "id": "321eb2a0-ece8-41de-a262-1669e4739fa2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b5825dd-95d8-48c7-9d77-259fe4f4b01c",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b362864-7240-4ca5-a916-171246abb432",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//td[contains(.,'Calories: 300')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "40981c0b-c68c-4f1a-b17f-9e4eaa0a592b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Calories: 300')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "d01625e2-bf06-4858-bd78-e7143f681c2b",
+    "name": "TC21b - Nutrition Info Contains Ingredients ",
+    "commands": [{
+      "id": "a638401a-543b-44b1-bd9c-e7a573fad6d4",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99478ad3-160a-4b26-ac7f-ed86525b7080",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c8d22c4-1dfa-4ae3-9dde-5286343d2346",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "2c16032e-2809-4b95-9e63-232bdc0cca3b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Ingredients: Eggs, Sugar, Cream, Vanila')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "79ed1676-b602-493a-995a-e9aeac05ee0e",
+    "name": "TC21c Nutrition Guidance Is Available",
+    "commands": [{
+      "id": "07853c48-b1cd-421a-b596-3a7b369db4d8",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d3f86d49-60c2-4698-bb56-6091a2fcd058",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0f6c35cc-3447-403a-a4ba-450c95bc57d0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "89f236b6-9655-4a8e-a24a-a98ab5270754",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Guidance: diet is based on 2,000 calories a day')]",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "935c20a6-8d2c-4056-a1a7-d10b255d3093",
+    "name": "TC22a - User review is displayed",
+    "commands": [{
+      "id": "4eee9004-1e09-41fa-be40-cb500e171ccc",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c5ce890-61c2-4a8b-b9a3-8f6322e409db",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f717670c-496d-4320-baa1-b5fb148df15b",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3174b412-a166-41bb-9742-2e44cce3e439",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//li[contains(.,'\"test review\"')]",
+      "targets": [
+        ["css=li:nth-child(10)", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[10]", "xpath:idRelative"],
+        ["xpath=//li[10]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "5b5918d2-b952-4284-a1d1-a963f2da2729",
+    "name": "TC22b - Option To Add Review Is Present",
+    "commands": [{
+      "id": "c68f561c-b307-42ec-9081-32b3f3d87907",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1928547-7efd-4da6-8072-b630106b52f6",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d102cfc0-708a-4f63-bb5e-7ba2949d7090",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=review 57",
+      "targets": [
+        ["id=review 57", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 57", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 57']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ee3aa654-46ac-4455-9f8b-6f64f02d8135",
+    "name": "TC22c - No Reviews Available Is Indicated",
+    "commands": [{
+      "id": "997b5b7b-c772-4143-9732-9d43922ad55b",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dc6f9fb-e326-47e8-973c-c1e629a065c4",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 63",
+      "targets": [
+        ["id=review 63", "id"],
+        ["css=#review\\ 63", "css:finder"],
+        ["xpath=(//a[contains(text(),'See review(s)')])[2]", "xpath:link"],
+        ["xpath=//a[@id='review 63']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td[2]/label/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[2]", "xpath:href"],
+        ["xpath=//td[2]/label/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b033364d-202f-4dfd-9452-a9da7524345a",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "3000",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "2dbcfdd4-1469-45d6-b5aa-be1ffd71e8e1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#myModalNoReviews h4",
+      "targets": [
+        ["css=#myModalNoReviews h4", "css:finder"],
+        ["xpath=//div[@id='myModalNoReviews']/div/h4", "xpath:idRelative"],
+        ["xpath=//h4", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "06c981dd-a29c-4760-8113-272c377f5175",
+    "name": "TC22d - Users name is next to review",
+    "commands": [{
+      "id": "77248187-20e8-441f-b7d1-1a65ddb7e5c2",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/place_order.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49f9614f-9fdf-43fa-9cd1-7d5a1b641632",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc4d7c67-a27c-44dd-a58a-0a74b4711ad7",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e56d60b-4d51-4074-9138-961b63d78491",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//ul[@id='reviews']/li[10]/span/strong",
+      "targets": [
+        ["css=li:nth-child(10) strong", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[10]/span/strong", "xpath:idRelative"],
+        ["xpath=//li[10]/span/strong", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "9bc0dee9-da6a-47e4-bf81-411fb6a15a75",
+    "name": "TC23a - Admin has option to review ",
+    "commands": [{
+      "id": "73bed701-1e30-4ff6-a5c6-82157ae04400",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a392fcd0-cf2e-4287-926d-75227cc61a9e",
+      "comment": "",
+      "command": "click",
+      "target": "id=name",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "53ae34ce-06e5-4fa6-938c-261eb4195e81",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "d74b0ff1-b951-4c6f-b374-8710c3fa7ac7",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "76169e2a-3b37-4f00-a553-74c598a99c55",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d9af21f-dd51-4c55-8d9c-d1dec6ee853f",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c162bf29-9341-46d9-86aa-8ff32c415a87",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c91e025-5909-46c6-9318-b851417403ad",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d6092bf-ef8f-4aae-9b38-5089f2085db0",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-review2",
+      "targets": [
+        ["id=add-review2", "id"],
+        ["linkText=Add another one!", "linkText"],
+        ["css=#add-review2", "css:finder"],
+        ["xpath=//a[contains(text(),'Add another one!')]", "xpath:link"],
+        ["xpath=//a[@id='add-review2']", "xpath:attributes"],
+        ["xpath=//div[@id='myModalReviews']/div/h4/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '#')])[8]", "xpath:href"],
+        ["xpath=//div[7]/div/h4/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Add another one!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "149d83b6-e4fc-48f6-8ba4-f1892870dfc9",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-name",
+      "targets": [
+        ["id=review-input-name", "id"],
+        ["css=#review-input-name", "css:finder"],
+        ["xpath=//input[@id='review-input-name']", "xpath:attributes"],
+        ["xpath=//tr[@id='add4']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "admin"
+    }, {
+      "id": "3501b758-df7e-451c-92b8-042c2f02e96b",
+      "comment": "",
+      "command": "type",
+      "target": "id=review-input-review",
+      "targets": [
+        ["id=review-input-review", "id"],
+        ["css=#review-input-review", "css:finder"],
+        ["xpath=//textarea[@id='review-input-review']", "xpath:attributes"],
+        ["xpath=//tr[@id='add5']/td/textarea", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/textarea", "xpath:position"]
+      ],
+      "value": "test admin review"
+    }, {
+      "id": "1fc088e0-6fb1-47d4-8836-4e507975c19d",
+      "comment": "",
+      "command": "click",
+      "target": "id=create-review-with-reviews",
+      "targets": [
+        ["id=create-review-with-reviews", "id"],
+        ["css=#create-review-with-reviews", "css:finder"],
+        ["xpath=//input[@id='create-review-with-reviews']", "xpath:attributes"],
+        ["xpath=//tr[@id='add6']/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2347bced-4998-4547-9df5-0aeb2a41771c",
+    "name": "TC23b - Review Indicates It Is From Admin",
+    "commands": [{
+      "id": "dd2305e9-d126-422d-b56d-c3fe20215c79",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c3cc2ea-a95f-42d2-81ba-5a6f93d9c5d3",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "37eda35a-574f-4a1f-957a-d121f48cad6c",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "823e75b4-68cf-4150-b97a-80a6b98dd395",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d01c2e75-5b66-49c6-aeb1-9c379efd040c",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "14d661e8-4c97-4085-968a-02dc2f115856",
+      "comment": "",
+      "command": "click",
+      "target": "id=review 64",
+      "targets": [
+        ["id=review 64", "id"],
+        ["linkText=See review(s)", "linkText"],
+        ["css=#review\\ 64", "css:finder"],
+        ["xpath=//a[contains(text(),'See review(s)')]", "xpath:link"],
+        ["xpath=//a[@id='review 64']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[8]/td/label/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//label/a", "xpath:position"],
+        ["xpath=//a[contains(.,'See review(s)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "515d7780-38b4-4df8-9664-f00db9c90391",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "xpath=//strong",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "a90bbc07-395f-45e7-80fe-78af9a5e4533",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//strong",
+      "targets": [
+        ["css=li:nth-child(22) strong", "css:finder"],
+        ["xpath=//ul[@id='reviews']/li[22]/span/strong", "xpath:idRelative"],
+        ["xpath=//strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Online Cafeteria')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ca9b748e-83fe-445a-a537-f4a5965bb552",
+    "name": "TC20 - Owner Can See Order Details",
+    "commands": [{
+      "id": "46b9b2bf-0cbf-48e9-933f-4d3a8b9ca31d",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dc664f22-b719-4a91-9050-01f65280b955",
+      "comment": "",
+      "command": "click",
+      "target": "id=SeeAllOrdersBtn",
+      "targets": [
+        ["id=SeeAllOrdersBtn", "id"],
+        ["css=#SeeAllOrdersBtn", "css:finder"],
+        ["xpath=//input[@id='SeeAllOrdersBtn']", "xpath:attributes"],
+        ["xpath=//div[8]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de3a2216-c3d2-49ad-9304-4e52351cf386",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View Order",
+      "targets": [
+        ["linkText=View Order", "linkText"],
+        ["css=tr:nth-child(1) .openDialog1", "css:finder"],
+        ["xpath=//a[contains(text(),'View Order')]", "xpath:link"],
+        ["xpath=//table[@id='Tableorders']/tbody[2]/tr/td[8]/a", "xpath:idRelative"],
+        ["xpath=//td[8]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'View Order')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8358829-2094-48c4-b9ae-fd5fa448b2ea",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1d3f32c-d00e-4d88-80bc-624689fd9a8f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=#ViewOrderModal .modal-content",
+      "targets": [
+        ["css=#ViewOrderModal .modal-content", "css:finder"],
+        ["xpath=//div[@id='ViewOrderModal']/div/div", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "942e2f32-5201-46b9-9748-7773fc06ecdb",
+    "name": "TC20a - Order details displays status",
+    "commands": [{
+      "id": "e3a9d36c-c555-4242-86d8-f42a468fcb81",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75aa13ca-4c0a-4057-bc00-31db1ce7682d",
+      "comment": "",
+      "command": "click",
+      "target": "id=SeeAllOrdersBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d20fd854-4706-4fe6-a0e2-63b9d059775a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View Order",
+      "targets": [
+        ["css=.window-overlay", "css:finder"],
+        ["xpath=//div[@id='chrome-container']/div[3]", "xpath:idRelative"],
+        ["xpath=//div[10]/div[2]/div[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26cc283f-19bc-45db-b80d-7b85cbb7ed20",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e43935b8-bd84-4eb4-91a0-242a1abf623b",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//b[contains(.,'Status: ')]",
+      "targets": [
+        ["css=b:nth-child(11)", "css:finder"],
+        ["xpath=//div[@id='ord-details']/b[6]", "xpath:idRelative"],
+        ["xpath=//b[6]", "xpath:position"],
+        ["xpath=//b[contains(.,'Status: ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f4a2b9d6-1309-40b7-b5bd-e7cb027c4c83",
+    "name": "TC20b - Order details displays who ordered item",
+    "commands": [{
+      "id": "4c08670e-e924-4e27-8ca2-12178bd64b2f",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2526b4c-9449-46b6-a49b-79f8e59758a4",
+      "comment": "",
+      "command": "click",
+      "target": "id=SeeAllOrdersBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8c5380eb-bef1-4ab5-abfe-d1885616f773",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View Order",
+      "targets": [
+        ["css=.kix-page:nth-child(3) .kix-paragraphrenderer:nth-child(9) .kix-lineview-content:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='kix-appview']/div[7]/div/div/div/div/div/div/div[2]/div[3]/div[2]/div/div/div/div/div/div/div[9]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div/div/div/div/div/div[9]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "56249e5d-f620-479c-98ff-cfd209293030",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e9fd15c-7cb3-4d87-b16e-28678c99db85",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//b[contains(.,'Contact Name:')]",
+      "targets": [
+        ["css=b:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='ord-details']/b", "xpath:idRelative"],
+        ["xpath=//b", "xpath:position"],
+        ["xpath=//b[contains(.,'Contact Name:')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "09e6b314-c54a-425f-980b-f86d1fb9259e",
+    "name": "TC20c - Order details displays delivery address",
+    "commands": [{
+      "id": "82ea8424-3268-4be7-a7ea-988c41882704",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/cart.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10d6a289-c680-4335-9adf-d355e1fbb63a",
+      "comment": "",
+      "command": "click",
+      "target": "id=SeeAllOrdersBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b599418c-6d7c-40e6-b7da-3a45e72d4c76",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=View Order",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "33870df0-ef68-428e-bb54-03d29406b21e",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e402558-a9ee-44f5-8aa0-218973b0624d",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=b:nth-child(3)",
+      "targets": [
+        ["css=b:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='ord-details']/b[2]", "xpath:idRelative"],
+        ["xpath=//b[2]", "xpath:position"],
+        ["xpath=//b[contains(.,'Contact Phone:')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "47597b39-2fba-434a-96a2-52f2220e6e7e",
+    "name": "TC25 - User can select food preference",
+    "commands": [{
+      "id": "3b3841f3-931c-4708-a851-d47ac2242c9f",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf8e34f3-e983-4a41-a9bb-4b659f9a4a21",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [
+        ["id=ViewPreferencesBtn", "id"],
+        ["css=#ViewPreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='ViewPreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f050ee42-fd46-4365-b4e5-a2ec5ed7e68a",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [
+        ["name=Dessert", "name"],
+        ["css=li:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='Dessert']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb9d4a12-e08e-44c0-9db9-254818b83f31",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [
+        ["id=SavePreferencesBtn", "id"],
+        ["css=#SavePreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='SavePreferencesBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efcc25bb-0bfa-4df2-9b80-c7c3bd05960e",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Success!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e238c851-83ac-4876-a35b-bc02039a04cc",
+    "name": "TC25a - List of selectable food categories are displayed",
+    "commands": [{
+      "id": "19dd9ddc-49b7-4409-b327-c07d1584fbca",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12b980bd-b0c3-4df7-853f-ead255a4b2f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [
+        ["id=ViewPreferencesBtn", "id"],
+        ["css=#ViewPreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='ViewPreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e63746fe-9128-4469-95e0-6b9bf818b068",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=preferences",
+      "targets": [
+        ["id=preferences", "id"],
+        ["css=#preferences", "css:finder"],
+        ["xpath=//ul[@id='preferences']", "xpath:attributes"],
+        ["xpath=//ul", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f7f189ec-8585-4107-89da-bc338207abc5",
+    "name": "TC25b - User can choose first, second, and third preference",
+    "commands": [{
+      "id": "856cc4fc-f403-4a7a-baad-e17131227689",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb97b179-97eb-4519-bb17-dce8bfc64b1d",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02395eef-a7f0-47d5-95fd-523930ee93b8",
+      "comment": "",
+      "command": "click",
+      "target": "name=Deli",
+      "targets": [
+        ["name=Deli", "name"],
+        ["css=li:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='Deli']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li/input", "xpath:idRelative"],
+        ["xpath=//li/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7f0a3ef8-b4e4-4415-b268-3428ef60f764",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [
+        ["name=Dessert", "name"],
+        ["css=li:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='Dessert']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb6a9d9b-20f8-48e4-b22d-35eacb7c14e3",
+      "comment": "",
+      "command": "click",
+      "target": "name=Beverage",
+      "targets": [
+        ["name=Beverage", "name"],
+        ["css=li:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='Beverage']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[3]/input", "xpath:idRelative"],
+        ["xpath=//li[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b195ec8a-2199-414e-a3d5-167870035450",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [
+        ["id=SavePreferencesBtn", "id"],
+        ["css=#SavePreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='SavePreferencesBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[5]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "423b16a1-1669-4d7d-8f3d-e1d304a22e3f",
+      "comment": "",
+      "command": "//assertAlert",
+      "target": "Success!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9e18500c-e892-4403-9634-582cd14e65b8",
+    "name": "TC25c - User cant select more than three preferences",
+    "commands": [{
+      "id": "8db964ef-6cbb-4776-aff6-78c29e3b8cd0",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3bc50fe3-3d4f-497c-8b41-bb5d93b4b8b8",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ba871d4-752c-4c0f-863a-92a2b7c059c9",
+      "comment": "",
+      "command": "click",
+      "target": "name=Deli",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bea1f71d-9274-497a-80d8-8b7b2fbb0b9b",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd0a4e6c-aa86-4e5f-aa19-6d57d1853b97",
+      "comment": "",
+      "command": "click",
+      "target": "name=Italian",
+      "targets": [
+        ["name=Italian", "name"],
+        ["css=li:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Italian']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[4]/input", "xpath:idRelative"],
+        ["xpath=//li[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e83bf1b-e6ae-4e4a-ac53-ce5c5252c4a0",
+      "comment": "",
+      "command": "click",
+      "target": "name=Beverage",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bfa5fa9a-5e17-49b6-af02-72df29686762",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aaf113a7-c137-4210-aa3d-cb2d1319713f",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "You can only select up to 3 preferences",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "40edde5c-1444-4c29-9520-a5bee0c951b7",
+    "name": "TC25d - User can edit preferences",
+    "commands": [{
+      "id": "6f053414-9941-4b94-8b7f-d13a0c6894ad",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "43f1fcd9-150f-4343-b317-2b5ad4e2a9c7",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "42f13f54-0080-41fd-b22a-44a94d1e1e98",
+      "comment": "",
+      "command": "click",
+      "target": "name=Deli",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9e320374-bc04-4b17-85a7-1649d239aa3c",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "46206e46-4ef2-43e0-ba94-f6ccfeeb57ff",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02fac083-9691-4b99-8c9d-c846a94c7e1f",
+      "comment": "",
+      "command": "//assert alert",
+      "target": "Success!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "48d5e330-0e84-48fe-900b-9277a9d4b00b",
+    "name": "TC26 - Owner can categorize food type",
+    "commands": [{
+      "id": "be44cad0-ba0a-4588-ad29-009d6d87d633",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a841a86a-470f-4228-b04d-df9c96b432e1",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "0ba095a3-1d8f-4dd6-8383-531ed5c39672",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "8588be37-6994-4ff8-ae2d-a0da1dc9ceb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "65ba38aa-741f-47af-b257-c8a3c46daacb",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "94153b43-bef1-4afe-bc7c-632a3a363f05",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [
+        ["id=admin", "id"],
+        ["css=#admin", "css:finder"],
+        ["xpath=//input[@id='admin']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[10]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[10]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b5d71ff7-f3ec-40fe-9c75-7c735df75a9a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4) .btn-default",
+      "targets": [
+        ["css=tr:nth-child(4) > td:nth-child(1) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[4]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Calories: 300')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19d9648c-ce24-4bde-b616-acc7fac5b128",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "pasta"
+    }, {
+      "id": "2ee9cec8-316c-486c-86c4-b0021631a943",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "e067e980-035d-402e-a138-11180b35e716",
+      "comment": "",
+      "command": "type",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "img/pasta.jpg"
+    }, {
+      "id": "53bf8daa-a8d5-4773-b93d-8167a234fd39",
+      "comment": "",
+      "command": "click",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0890c34f-9bca-439d-a563-fe7d9c842674",
+      "comment": "",
+      "command": "select",
+      "target": "id=type",
+      "targets": [],
+      "value": "label=Italian"
+    }, {
+      "id": "310441f7-c489-4cb3-921e-b588916a0fa3",
+      "comment": "",
+      "command": "click",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbf83196-3908-4932-be63-5c28c7f66796",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitNewItemBtn",
+      "targets": [
+        ["id=SubmitNewItemBtn", "id"],
+        ["css=#SubmitNewItemBtn", "css:finder"],
+        ["xpath=//input[@id='SubmitNewItemBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6278f48-6fa4-485c-9433-2b67ec1824eb",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71fc9e72-461a-4b85-870b-51726a79aa81",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=tr:nth-child(5) > td:nth-child(7) > label",
+      "targets": [
+        ["css=tr:nth-child(5) > td:nth-child(7) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td[7]/label", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[7]/label", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ce9460c9-ead8-4f37-a54e-bd2089dfb759",
+    "name": "TC26a - Menu type provides list of types",
+    "commands": [{
+      "id": "e588c45b-bc0e-4fb6-b575-a152c338d27d",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "18fc9daa-1cc4-4bc0-b983-a7f29140cd83",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "f960584d-5676-4d34-b256-4c2ea1626942",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "02fab6b8-f4f2-4a5b-8a86-c687a79bc45d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7890609-ac35-4a8e-adf3-3d96d1f64b16",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "260b4b18-e271-4310-8baa-83857adcc577",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d45e83d1-b4b4-4516-b24c-d0f3b8726482",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4) .btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3520c8b0-3f6d-445d-bbb7-d0940eb2b15c",
+      "comment": "",
+      "command": "select",
+      "target": "id=type",
+      "targets": [],
+      "value": "label=Italian"
+    }, {
+      "id": "7d322d0a-ed2b-4f0a-9871-8a5324aababd",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["css=#type", "css:finder"],
+        ["xpath=//select[@id='type']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[5]/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "02c9c435-12a5-47a4-a8cf-00179a8a4aa3",
+    "name": "TC26b - Can only select one menu type per item",
+    "commands": [{
+      "id": "f4168a58-8868-4744-a10a-18967cbaf81c",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e140ad0-3f5e-4da0-8529-70504a385e93",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [],
+      "value": "admin"
+    }, {
+      "id": "45168b20-646d-40b6-bf8c-7c26087f2c8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [],
+      "value": "999-999-9999"
+    }, {
+      "id": "974a9869-22eb-4982-a43c-3aab68a69160",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "be9a5876-0dd9-45b5-8a8a-de1df0f3ab4d",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bbcddd29-19f7-4a1f-9170-9a8dfa625075",
+      "comment": "",
+      "command": "click",
+      "target": "id=admin",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4493542e-69f4-4b2c-aa3d-4edc219d7813",
+      "comment": "",
+      "command": "click",
+      "target": "css=.row:nth-child(4) .btn-default",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81ec7046-49a7-4e47-b105-8788551d1763",
+      "comment": "",
+      "command": "type",
+      "target": "id=price",
+      "targets": [
+        ["id=price", "id"],
+        ["css=#price", "css:finder"],
+        ["xpath=//input[@id='price']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "dc2f121a-e71a-4713-beaf-8966aae13cca",
+      "comment": "",
+      "command": "type",
+      "target": "id=name",
+      "targets": [
+        ["id=name", "id"],
+        ["css=#name", "css:finder"],
+        ["xpath=//input[@id='name']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": "pasta"
+    }, {
+      "id": "862e1ac0-82c1-4c1a-b3b2-9a695b39d67a",
+      "comment": "",
+      "command": "type",
+      "target": "id=img_url",
+      "targets": [
+        ["id=img_url", "id"],
+        ["css=#img_url", "css:finder"],
+        ["xpath=//input[@id='img_url']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[2]/div/div/table/tbody/tr[4]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[4]/td/input", "xpath:position"]
+      ],
+      "value": "img/pasta.jpg"
+    }, {
+      "id": "da63f191-65ea-4075-a6cc-d6f6b57b957b",
+      "comment": "",
+      "command": "select",
+      "target": "id=type",
+      "targets": [],
+      "value": "label=Italian"
+    }, {
+      "id": "c598d2d1-9c8f-4772-ad7d-a5eda5986571",
+      "comment": "",
+      "command": "click",
+      "target": "id=SubmitNewItemBtn",
+      "targets": [
+        ["id=SubmitNewItemBtn", "id"],
+        ["css=#SubmitNewItemBtn", "css:finder"],
+        ["xpath=//input[@id='SubmitNewItemBtn']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8a808402-5e13-4da3-b55d-9ea7321b52c0",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(5) > td:nth-child(7) > label",
+      "targets": [
+        ["css=tr:nth-child(5) > td:nth-child(7) > label", "css:finder"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td[7]/label", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[7]/label", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "12a88fe2-517e-4c8f-bd60-065b348d793d",
+      "comment": "",
+      "command": "type",
+      "target": "id=menu_type67",
+      "targets": [
+        ["id=menu_type71", "id"],
+        ["css=#menu_type71", "css:finder"],
+        ["xpath=//input[@id='menu_type71']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[5]/td[7]/label/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td[7]/label/input", "xpath:position"]
+      ],
+      "value": "test"
+    }, {
+      "id": "321391ce-0e61-4202-892d-0dc9959328bc",
+      "comment": "",
+      "command": "click",
+      "target": "id=edit67",
+      "targets": [
+        ["id=edit71", "id"],
+        ["css=#edit71", "css:finder"],
+        ["xpath=//input[@id='edit71']", "xpath:attributes"],
+        ["xpath=//table[@id='cart']/tbody/tr[6]/td[7]/input", "xpath:idRelative"],
+        ["xpath=//td[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "6640f0da-0981-4e90-b513-098e5e4036c4",
+    "name": "TC24 - User Is Provided Order Recommendations Based Off Preferences",
+    "commands": [{
+      "id": "833199d2-7000-40c7-a107-887477a5ad87",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd2f7eec-d7e5-4f17-8fc8-1baa4b51c35b",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [
+        ["id=ViewPreferencesBtn", "id"],
+        ["css=#ViewPreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='ViewPreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b93fb97-1a9b-47c5-a4a4-c36ecc9fede9",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [
+        ["name=Dessert", "name"],
+        ["css=li:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='Dessert']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4489f8e5-2c7b-4c08-b5df-48dab27ea06e",
+      "comment": "",
+      "command": "click",
+      "target": "name=Italian",
+      "targets": [
+        ["name=Italian", "name"],
+        ["css=li:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Italian']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[4]/input", "xpath:idRelative"],
+        ["xpath=//li[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "318e4ca9-e9a4-472a-afaf-7fc2322ec1db",
+      "comment": "",
+      "command": "click",
+      "target": "name=Japanese",
+      "targets": [
+        ["name=Japanese", "name"],
+        ["css=li:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='Japanese']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[6]/input", "xpath:idRelative"],
+        ["xpath=//li[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de1d3b56-5794-45bf-864c-5a00e4e77655",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [
+        ["id=SavePreferencesBtn", "id"],
+        ["css=#SavePreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='SavePreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38b8e13d-89fd-49bf-af33-10e1d9a39651",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "205f5b83-73b7-4380-b644-67af30fa9ab0",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=rec-title",
+      "targets": [
+        ["id=rec-title", "id"],
+        ["css=#rec-title", "css:finder"],
+        ["xpath=//h2[@id='rec-title']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'We recommend you try')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b6d170e8-3a41-4fef-820c-dd77695652cc",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Icecream')]",
+      "targets": [
+        ["css=.rec-Icecream > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Icecream')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "417d3222-ff1c-443d-8ea0-e48cf6e0cff4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Pizza')]",
+      "targets": [
+        ["css=.rec-Pizza > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td[2]/label", "xpath:idRelative"],
+        ["xpath=//td[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Pizza')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86ad8994-ae34-4d27-a181-8f39ce9854d5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Sushi')]",
+      "targets": [
+        ["css=.rec-Sushi > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td[3]/label", "xpath:idRelative"],
+        ["xpath=//td[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sushi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "67a491cb-549a-4e9a-b5b8-91a155878fdd",
+    "name": "TC24a - Suggested Items Is Displayed On Cart Page",
+    "commands": [{
+      "id": "131720f3-e0cc-43db-8aac-4f586ec0e469",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "985e9367-9da0-46c8-a6b1-4e64c8630605",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f2b119a-2401-4aa2-9720-a402f0f494b5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=rec-title",
+      "targets": [
+        ["id=rec-title", "id"],
+        ["css=#rec-title", "css:finder"],
+        ["xpath=//h2[@id='rec-title']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'We recommend you try')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b1451744-ad7d-4ad2-ad43-d01b833f1a89",
+    "name": "TC24b - Check Suggested Items Are Akin To Preferences",
+    "commands": [{
+      "id": "a607f405-04ae-4789-9ca6-a345c427daef",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e6aaff2-d104-4a04-874a-bad8ccb864a8",
+      "comment": "",
+      "command": "click",
+      "target": "id=ViewPreferencesBtn",
+      "targets": [
+        ["id=ViewPreferencesBtn", "id"],
+        ["css=#ViewPreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='ViewPreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div[7]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3355ad5-56fd-451c-b8d1-ee8146db3a09",
+      "comment": "",
+      "command": "click",
+      "target": "name=Dessert",
+      "targets": [
+        ["name=Dessert", "name"],
+        ["css=li:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='Dessert']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[2]/input", "xpath:idRelative"],
+        ["xpath=//li[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "067122eb-cf20-4631-b161-504e1d3de36c",
+      "comment": "",
+      "command": "click",
+      "target": "name=Italian",
+      "targets": [
+        ["name=Italian", "name"],
+        ["css=li:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='Italian']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[4]/input", "xpath:idRelative"],
+        ["xpath=//li[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "05b65187-95b3-4c77-8474-30652ac2eedf",
+      "comment": "",
+      "command": "click",
+      "target": "name=Japanese",
+      "targets": [
+        ["name=Japanese", "name"],
+        ["css=li:nth-child(6) > input", "css:finder"],
+        ["xpath=//input[@name='Japanese']", "xpath:attributes"],
+        ["xpath=//ul[@id='preferences']/li[6]/input", "xpath:idRelative"],
+        ["xpath=//li[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "180af8f8-dec2-4331-b540-107576254613",
+      "comment": "",
+      "command": "click",
+      "target": "id=SavePreferencesBtn",
+      "targets": [
+        ["id=SavePreferencesBtn", "id"],
+        ["css=#SavePreferencesBtn", "css:finder"],
+        ["xpath=//input[@id='SavePreferencesBtn']", "xpath:attributes"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ac6ffca-32b9-41ff-8e18-56e552802349",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ea82fbc-f7f5-469a-bfcf-9ae551388635",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "id=rec-title",
+      "targets": [
+        ["id=rec-title", "id"],
+        ["css=#rec-title", "css:finder"],
+        ["xpath=//h2[@id='rec-title']", "xpath:attributes"],
+        ["xpath=//form[@id='order']/div/div[3]/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'We recommend you try')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "811ea22a-d5c8-4aca-a329-b2eee5ad46a4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Icecream')]",
+      "targets": [
+        ["css=.rec-Icecream > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'Icecream')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfc74b5f-d2f0-45f2-89fc-ebcb84670f7f",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Pizza')]",
+      "targets": [
+        ["css=.rec-Pizza > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td[2]/label", "xpath:idRelative"],
+        ["xpath=//td[2]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Pizza')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e6b6760-1bcc-44b2-ab4a-350f09e5bf01",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//label[contains(.,'Sushi')]",
+      "targets": [
+        ["css=.rec-Sushi > label", "css:finder"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[2]/td[3]/label", "xpath:idRelative"],
+        ["xpath=//td[3]/label", "xpath:position"],
+        ["xpath=//label[contains(.,'Sushi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "543c61dc-652c-471e-b6a4-b530b281e85a",
+    "name": "TC24c - User Can Remove Recommendations",
+    "commands": [{
+      "id": "bb2bd8ee-c4d8-4d05-9c5a-9296fbec2324",
+      "comment": "",
+      "command": "open",
+      "target": "http://onlinecafeteria.com/index.html",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "628a28d8-c012-4b69-b2e7-53bbb18801e6",
+      "comment": "",
+      "command": "click",
+      "target": "id=AddToCartBtn",
+      "targets": [
+        ["id=AddToCartBtn", "id"],
+        ["css=#AddToCartBtn", "css:finder"],
+        ["xpath=//input[@id='AddToCartBtn']", "xpath:attributes"],
+        ["xpath=//div[4]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b950e8e-2fd4-4d82-81aa-1add3dcb16b1",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08ae2028-d8c3-4090-a6e0-f9ec306efa82",
+      "comment": "",
+      "command": "click",
+      "target": "id=remove-recIcecream",
+      "targets": [
+        ["id=remove-recIcecream", "id"],
+        ["css=#remove-recIcecream", "css:finder"],
+        ["xpath=//input[@id='remove-recIcecream']", "xpath:attributes"],
+        ["xpath=//table[@id='recommendations']/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78dcbd99-201b-45fe-a7af-e36cfca6186f",
+      "comment": "",
+      "command": "pause",
+      "target": "2000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "abc34e5f-8aa2-4c1b-ab97-d9ed30979c72",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//form[@id='order']/div/div[4]/div/div/div",
+      "targets": [
+        ["css=.row:nth-child(4) .search-table-outter", "css:finder"],
+        ["xpath=//form[@id='order']/div/div[4]/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "74132739-1b64-4bb9-bee3-f1c7ea0b8f0e",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://onlinecafeteria.com/", "http://onlinecafeteria.com/cart.html", "http://localhost/cart.html"],
+  "plugins": []
+}
