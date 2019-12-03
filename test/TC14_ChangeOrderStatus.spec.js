@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe(' Change Order Status', function() {
+describe('TC14 - Change Order Status', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,8 +13,8 @@ describe(' Change Order Status', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it(' Change Order Status', async function() {
-    await driver.get("http://localhost/all_order.html")
+  it('TC14 - Change Order Status', async function() {
+    await driver.get("http://www.onlinecafeteria.com/all_order.html")
     await driver.findElement(By.css("tr:nth-child(1) .fa")).click()
     await driver.findElement(By.id("Editstatus")).click()
     {
@@ -23,5 +23,10 @@ describe(' Change Order Status', function() {
     }
     await driver.findElement(By.id("Editstatus")).click()
     await driver.findElement(By.id("UpdateStatusBtn")).click()
+    await driver.wait(until.elementLocated(By.css("tr:nth-child(1) > td:nth-child(7)")), 30000)
+    {
+      const elements = await driver.findElements(By.css("tr:nth-child(1) > td:nth-child(7)"))
+      assert(elements.length)
+    }
   })
 })

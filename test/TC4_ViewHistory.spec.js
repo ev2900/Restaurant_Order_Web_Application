@@ -14,8 +14,8 @@ describe('TC4 - View order history', function() {
     await driver.quit();
   })
   it('TC4 - View order history', async function() {
-    await driver.get("http://onlinecafeteria.com//cart.html")
-    await driver.setRect(791, 824)
+    await driver.get("http://onlinecafeteria.com/index.html")
+    await driver.manage().window().setRect(791, 824)
     await driver.findElement(By.css("div:nth-child(6) .btn-default")).click()
   })
 })

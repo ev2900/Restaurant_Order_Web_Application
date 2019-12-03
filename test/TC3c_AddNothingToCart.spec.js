@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC3.3 - Add nothing to cart', function() {
+describe('TC3b - Add nothing to cart', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,9 +13,9 @@ describe('TC3.3 - Add nothing to cart', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC3.3 - Add nothing to cart', async function() {
-    await driver.get("http://onlinecafeteria.com//cart.html")
-    await driver.setRect(791, 824)
+  it('TC3b - Add nothing to cart', async function() {
+    await driver.get("http://onlinecafeteria.com/index.html")
+    await driver.manage().window().setRect(791, 824)
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
     assert(await driver.findElement(By.css("h1")).getText() == "Place an order:")

@@ -14,7 +14,7 @@ describe('TC12 - Admin adds item to menu', function() {
     await driver.quit();
   })
   it('TC12 - Admin adds item to menu', async function() {
-    await driver.get("http://onlinecafeteria.com/add_menu_item.html")
+    await driver.get("http://www.onlinecafeteria.com/add_menu_item.html")
     await driver.findElement(By.id("name")).click()
     await driver.findElement(By.id("name")).sendKeys("Lobster")
     await driver.findElement(By.id("price")).click()
@@ -22,12 +22,6 @@ describe('TC12 - Admin adds item to menu', function() {
     await driver.findElement(By.id("img_url")).click()
     await driver.findElement(By.id("img_url")).sendKeys("lobster.jpg")
     await driver.findElement(By.xpath("//input[@value=\'Submit\']")).click()
-    await driver.get("http://onlinecafeteria.com/place_order.html")
-    await driver.findElement(By.id("AddToCartBtn")).click()
-    await driver.sleep(1000)
-    {
-      const elements = await driver.findElements(By.css("tr:nth-child(27) img"))
-      assert(elements.length)
-    }
+    await driver.get("http://www.onlinecafeteria.com/place_order.html")
   })
 })

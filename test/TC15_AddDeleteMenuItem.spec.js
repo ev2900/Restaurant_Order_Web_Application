@@ -14,19 +14,27 @@ describe('TC15 - Add/Delete Menu Item', function() {
     await driver.quit();
   })
   it('TC15 - Add/Delete Menu Item', async function() {
-    await driver.get("http://onlinecafeteria.com/place_order.html")
+    await driver.get("http://www.onlinecafeteria.com/")
+    await driver.findElement(By.xpath("//input[@value=\'Log out\']")).click()
+    await driver.findElement(By.id("name")).sendKeys("admin")
+    await driver.findElement(By.id("phone")).sendKeys("999-999-9999")
+    await driver.findElement(By.css(".btn-default")).click()
+    await driver.findElement(By.id("AddToCartBtn")).click()
     await driver.findElement(By.id("admin")).click()
+    await driver.findElement(By.id("delete99")).click()
     await driver.findElement(By.xpath("//input[@value=\'Add menu item\']")).click()
-    await driver.findElement(By.id("name")).click()
-    await driver.findElement(By.id("name")).sendKeys("ItemToDelete")
-    await driver.findElement(By.id("price")).click()
-    await driver.findElement(By.id("price")).sendKeys("20")
-    await driver.findElement(By.id("SubmitNewItemBtn")).click()
-    await driver.findElement(By.id("delete50")).click()
-    await driver.sleep(2000)
+    await driver.findElement(By.id("name")).sendKeys("soda")
+    await driver.findElement(By.id("price")).sendKeys("2")
+    await driver.findElement(By.id("img_url")).sendKeys("img/soda.jpg")
     {
-      const elements = await driver.findElements(By.id("delete50"))
-      assert(!elements.length)
+      const dropdown = await driver.findElement(By.id("type"))
+      await dropdown.findElement(By.xpath("//option[. = 'Beverage']")).click()
+    }
+    await driver.findElement(By.id("SubmitNewItemBtn")).click()
+    await driver.wait(until.elementLocated(By.css("tr:nth-child(3) > td:nth-child(6) > label")), 30000)
+    {
+      const elements = await driver.findElements(By.css("tr:nth-child(3) > td:nth-child(6) > label"))
+      assert(elements.length)
     }
   })
 })

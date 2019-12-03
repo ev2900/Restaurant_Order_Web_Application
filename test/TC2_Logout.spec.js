@@ -14,8 +14,8 @@ describe('TC2 - Logout', function() {
     await driver.quit();
   })
   it('TC2 - Logout', async function() {
-    await driver.get("http://onlinecafeteria.com//")
-    await driver.setRect(930, 824)
+    await driver.get("http://onlinecafeteria.com/index.html")
+    await driver.manage().window().setRect(930, 824)
     await driver.findElement(By.xpath("//input[@value=\'Log out\']")).click()
     assert(await driver.findElement(By.css("h1")).getText() == "Online Cafeteria")
   })

@@ -19,7 +19,7 @@ describe('TC20c - Order details displays delivery address', function() {
     await driver.findElement(By.linkText("View Order")).click()
     await driver.sleep(2000)
     {
-      const elements = await driver.findElements(By.xpath("//b[contains(.,\'Address:\')]"))
+      const elements = await driver.findElements(By.css("b:nth-child(3)"))
       assert(elements.length)
     }
   })

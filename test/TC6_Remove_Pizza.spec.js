@@ -14,8 +14,8 @@ describe('TC6 - Remove pizza from a cart', function() {
     await driver.quit();
   })
   it('TC6 - Remove pizza from a cart', async function() {
-    await driver.get("http://onlinecafeteria.com//cart.html")
-    await driver.setRect(791, 824)
+    await driver.get("http://onlinecafeteria.com/index.html")
+    await driver.manage().window().setRect(791, 824)
     await driver.findElement(By.xpath("//input[@value=\'Edit cart\']")).click()
     await driver.findElement(By.xpath("//ul[@id=\'cart\']/li/input")).click()
     {

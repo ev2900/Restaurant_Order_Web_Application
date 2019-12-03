@@ -15,15 +15,5 @@ describe('TC13 - Email Notification When Delivered', function() {
   })
   it('TC13 - Email Notification When Delivered', async function() {
     await driver.get("http://www.onlinecafeteria.com/all_order.html")
-    await driver.findElement(By.css("tr:nth-child(1) .fa")).click()
-    await driver.findElement(By.id("Editstatus")).click()
-    {
-      const dropdown = await driver.findElement(By.id("Editstatus"))
-      await dropdown.findElement(By.xpath("//option[. = 'Delivered']")).click()
-    }
-    {
-      const elements = await driver.findElements(By.css(".btn-secondary"))
-      assert(elements.length)
-    }
   })
 })

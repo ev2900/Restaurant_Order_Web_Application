@@ -14,13 +14,13 @@ describe('TC1 - Login', function() {
     await driver.quit();
   })
   it('TC1 - Login', async function() {
-    await driver.get("http://onlinecafeteria.com//")
-    await driver.setRect(791, 824)
-    await driver.findElement(By.id("name")).click()
+    await driver.get("http://onlinecafeteria.com/index.html")
     await driver.findElement(By.id("name")).sendKeys("Test User")
-    await driver.findElement(By.id("phone")).click()
     await driver.findElement(By.id("phone")).sendKeys("123-456-7891")
     await driver.findElement(By.xpath("//input[@value=\'Log in\']")).click()
-    assert(await driver.findElement(By.css("h1")).getText() == "Your cart currently has:")
+    {
+      const elements = await driver.findElements(By.xpath("//h1[@id=\'cart_label\']"))
+      assert(elements.length)
+    }
   })
 })

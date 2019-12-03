@@ -14,12 +14,17 @@ describe('TC3 - Add a pizza to cart', function() {
     await driver.quit();
   })
   it('TC3 - Add a pizza to cart', async function() {
-    await driver.get("http://onlinecafeteria.com//cart.html")
-    await driver.setRect(791, 824)
+    await driver.get("http://onlinecafeteria.com/index.html")
+    await driver.findElement(By.id("name")).sendKeys("Test User")
+    await driver.findElement(By.id("phone")).sendKeys("123-456-7891")
+    await driver.findElement(By.css(".btn-default")).click()
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
-    await driver.findElement(By.id("Pizza")).click()
     await driver.findElement(By.id("Pizza")).sendKeys("1")
     await driver.findElement(By.xpath("//input[@value=\'Add to cart\']")).click()
-    assert(await driver.findElement(By.xpath("//ul[@id=\'cart\']/li")).getText() == "Item: Pizza\\\\nQuantity: 1")
+    await driver.wait(until.elementLocated(By.css("li:nth-child(1)")), 30000)
+    {
+      const elements = await driver.findElements(By.css("li:nth-child(1)"))
+      assert(elements.length)
+    }
   })
 })

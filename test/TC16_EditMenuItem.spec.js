@@ -14,16 +14,15 @@ describe('TC16 - Edit Menu Item ', function() {
     await driver.quit();
   })
   it('TC16 - Edit Menu Item ', async function() {
-    await driver.get("http://onlinecafeteria.com/place_order.html")
+    await driver.get("http://onlinecafeteria.com/")
+    await driver.findElement(By.id("AddToCartBtn")).click()
     await driver.findElement(By.id("admin")).click()
-    await driver.findElement(By.id("menu_price4")).click()
-    await driver.findElement(By.id("menu_price4")).sendKeys("100.00")
-    await driver.findElement(By.id("edit4")).click()
-    await driver.findElement(By.xpath("//input[@value=\'Place an order\']")).click()
-    assert(await driver.findElement(By.xpath("//table[@id=\'cart\']/tbody/tr[9]/td")).getText() == "Price: $100")
-    await driver.findElement(By.id("admin")).click()
-    await driver.findElement(By.id("menu_price4")).click()
-    await driver.findElement(By.id("menu_price4")).sendKeys("7.00")
-    await driver.findElement(By.id("edit4")).click()
+    await driver.findElement(By.id("menu_price64")).click()
+    await driver.findElement(By.id("menu_price64")).sendKeys("6.00")
+    await driver.findElement(By.id("edit64")).click()
+    {
+      const elements = await driver.findElements(By.xpath("//tr[4]/td/label"))
+      assert(elements.length)
+    }
   })
 })

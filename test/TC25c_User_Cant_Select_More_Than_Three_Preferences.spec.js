@@ -2,7 +2,7 @@
 const { Builder, By, Key, until } = require('selenium-webdriver')
 const assert = require('assert')
 
-describe('TC25c - User can't select more than three preferences', function() {
+describe('TC25c - User cant select more than three preferences', function() {
   this.timeout(30000)
   let driver
   let vars
@@ -13,7 +13,7 @@ describe('TC25c - User can't select more than three preferences', function() {
   afterEach(async function() {
     await driver.quit();
   })
-  it('TC25c - User can't select more than three preferences', async function() {
+  it('TC25c - User cant select more than three preferences', async function() {
     await driver.get("http://onlinecafeteria.com/index.html")
     await driver.findElement(By.id("ViewPreferencesBtn")).click()
     await driver.findElement(By.name("Deli")).click()
